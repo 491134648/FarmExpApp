@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C81AD75-76C1-4E28-A3B1-90113D001604}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FarmExp.CommonLibary</RootNamespace>
+    <AssemblyName>FarmExp.CommonLibary</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Concurrent, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.36.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Interactive.Async, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ix-Async.1.2.3\lib\net45\System.Interactive.Async.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Reflection.Metadata, Version=1.0.21.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.0.21\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collections\ComparisonHelper.cs" />
+    <Compile Include="Collections\EqualityHelper.cs" />
+    <Compile Include="DataAnnotations\PasswordAttribute.cs" />
+    <Compile Include="Data\AnyRadixConvert.cs" />
+    <Compile Include="Data\CheckExistsType.cs" />
+    <Compile Include="Data\CombHelper.cs" />
+    <Compile Include="Data\Compression.cs" />
+    <Compile Include="Data\JsonHelper.cs" />
+    <Compile Include="Data\MathHelper.cs" />
+    <Compile Include="Data\OperationResult.cs" />
+    <Compile Include="Data\OperationResultType.cs" />
+    <Compile Include="Data\PageCondition.cs" />
+    <Compile Include="Data\SerializeHelper.cs" />
+    <Compile Include="Data\Singleton.cs" />
+    <Compile Include="Data\SingletonDictionary.cs" />
+    <Compile Include="Data\SingletonList.cs" />
+    <Compile Include="Data\SortCondition.cs" />
+    <Compile Include="Develop\CodeRamer.cs" />
+    <Compile Include="Develop\CodeTimer.cs" />
+    <Compile Include="Develop\T4\T4ModelInfo.cs" />
+    <Compile Include="Disposable.cs" />
+    <Compile Include="Drawing\ValidateCoder.cs" />
+    <Compile Include="Drawing\ValidateCodeType.cs" />
+    <Compile Include="Dynamic\Exposed.cs" />
+    <Compile Include="Dynamic\MetaObject.cs" />
+    <Compile Include="Exceptions\ExceptionMessage.cs" />
+    <Compile Include="Exceptions\OSharpException.cs" />
+    <Compile Include="Extensions\AssemblyExtensions.cs" />
+    <Compile Include="Extensions\BooleanExtensions.cs" />
+    <Compile Include="Extensions\CollectionExtensions.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Extensions\ExpressionExtensions.cs" />
+    <Compile Include="Extensions\LinqToXmlExtensions.cs" />
+    <Compile Include="Extensions\MemoryCacheExtensions.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Extensions\ParamterCheckExtensions.cs" />
+    <Compile Include="Extensions\RandomExtensions.cs" />
+    <Compile Include="Extensions\StringBuilderExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\ThreadExtensions.cs" />
+    <Compile Include="Extensions\TryCatchExtensions.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Filter\CollectionPropertySorter.cs" />
+    <Compile Include="Filter\FilterGroup.cs" />
+    <Compile Include="Filter\FilterHelper.cs" />
+    <Compile Include="Filter\FilterOperate.cs" />
+    <Compile Include="Filter\FilterRule.cs" />
+    <Compile Include="Filter\OperateCodeAttribute.cs" />
+    <Compile Include="IO\DirectoryHelper.cs" />
+    <Compile Include="IO\FileHelper.cs" />
+    <Compile Include="Net\IpLocation.cs" />
+    <Compile Include="Net\IpLocator.cs" />
+    <Compile Include="Reflection\FastInvokeHandler.cs" />
+    <Compile Include="Resources.Designer.cs" />
+    <Compile Include="Secutiry\CommunicationCryptor.cs" />
+    <Compile Include="Secutiry\DesHelper.cs" />
+    <Compile Include="Secutiry\HashHelper.cs" />
+    <Compile Include="Secutiry\RSACryptoServiceOpenSSL.cs" />
+    <Compile Include="Secutiry\RsaHelper.cs" />
+    <Compile Include="Web\UserAgentHelper.cs" />
+    <Compile Include="Windows\RegistryBaseKey.cs" />
+    <Compile Include="Windows\RegistryHelper.cs" />
+    <Compile Include="Windows\SystemInfo.cs" />
+    <Compile Include="Windows\SystemInfoHandler.cs" />
+    <Compile Include="Windows\WMIPath.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0-rc3\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0-rc3\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

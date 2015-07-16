@@ -1,0 +1,4 @@
+D:\Project\FarmExp\FarmExp.Service\bin\Debug\FarmExp.Service.dll
+D:\Project\FarmExp\FarmExp.Service\bin\Debug\FarmExp.Service.pdb
+D:\Project\FarmExp\FarmExp.Service\obj\Debug\FarmExp.Service.dll
+D:\Project\FarmExp\FarmExp.Service\obj\Debug\FarmExp.Service.pdb

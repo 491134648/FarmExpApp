@@ -1,0 +1,5 @@
+D:\Project\FarmExp\FarmExp.IService\bin\Debug\FarmExp.IService.dll
+D:\Project\FarmExp\FarmExp.IService\bin\Debug\FarmExp.IService.pdb
+D:\Project\FarmExp\FarmExp.IService\obj\Debug\FarmExp.IService.csprojResolveAssemblyReference.cache
+D:\Project\FarmExp\FarmExp.IService\obj\Debug\FarmExp.IService.dll
+D:\Project\FarmExp\FarmExp.IService\obj\Debug\FarmExp.IService.pdb

@@ -1,0 +1,5 @@
+D:\Project\FarmExp\FarmExp.DataInterface\bin\Debug\FarmExp.DataInterface.dll
+D:\Project\FarmExp\FarmExp.DataInterface\bin\Debug\FarmExp.DataInterface.pdb
+D:\Project\FarmExp\FarmExp.DataInterface\obj\Debug\FarmExp.DataInterface.csprojResolveAssemblyReference.cache
+D:\Project\FarmExp\FarmExp.DataInterface\obj\Debug\FarmExp.DataInterface.dll
+D:\Project\FarmExp\FarmExp.DataInterface\obj\Debug\FarmExp.DataInterface.pdb

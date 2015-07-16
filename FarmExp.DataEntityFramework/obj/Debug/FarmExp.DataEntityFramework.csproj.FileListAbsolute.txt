@@ -1,0 +1,5 @@
+D:\Project\FarmExp\FarmExp.DataEntityFramework\bin\Debug\FarmExp.DataEntityFramework.dll
+D:\Project\FarmExp\FarmExp.DataEntityFramework\bin\Debug\FarmExp.DataEntityFramework.pdb
+D:\Project\FarmExp\FarmExp.DataEntityFramework\obj\Debug\FarmExp.DataEntityFramework.csprojResolveAssemblyReference.cache
+D:\Project\FarmExp\FarmExp.DataEntityFramework\obj\Debug\FarmExp.DataEntityFramework.dll
+D:\Project\FarmExp\FarmExp.DataEntityFramework\obj\Debug\FarmExp.DataEntityFramework.pdb

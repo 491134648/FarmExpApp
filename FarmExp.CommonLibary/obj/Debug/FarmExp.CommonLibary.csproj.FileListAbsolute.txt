@@ -1,0 +1,17 @@
+D:\Project\FarmExp\FarmExp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.Resources.resources
+D:\Project\FarmExp\FarmExp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.csproj.GenerateResource.Cache
+D:\Project\FarmExp\FarmExp\FarmExp.CommonLibary\bin\Debug\FarmExp.CommonLibary.dll
+D:\Project\FarmExp\FarmExp\FarmExp.CommonLibary\bin\Debug\FarmExp.CommonLibary.pdb
+D:\Project\FarmExp\FarmExp\FarmExp.CommonLibary\bin\Debug\Newtonsoft.Json.dll
+D:\Project\FarmExp\FarmExp\FarmExp.CommonLibary\bin\Debug\Newtonsoft.Json.xml
+D:\Project\FarmExp\FarmExp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.dll
+D:\Project\FarmExp\FarmExp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.pdb
+D:\Project\FarmExp\FarmExp.CommonLibary\bin\Debug\FarmExp.CommonLibary.dll
+D:\Project\FarmExp\FarmExp.CommonLibary\bin\Debug\FarmExp.CommonLibary.pdb
+D:\Project\FarmExp\FarmExp.CommonLibary\bin\Debug\Newtonsoft.Json.dll
+D:\Project\FarmExp\FarmExp.CommonLibary\bin\Debug\Newtonsoft.Json.xml
+D:\Project\FarmExp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.csprojResolveAssemblyReference.cache
+D:\Project\FarmExp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.Resources.resources
+D:\Project\FarmExp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.csproj.GenerateResource.Cache
+D:\Project\FarmExp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.dll
+D:\Project\FarmExp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.pdb
