@@ -1,10 +1,13 @@
 ﻿using System;
-using Microsoft.Data.Entity;
 using System.Data;
 using System.Reflection;
 using System.Linq;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Data.Entity;
+using FarmExp.Models;
+using System.Data.Entity.Infrastructure;
+using System.Threading.Tasks;
 
 namespace FarmExp.Data.EntityFramework
 {
@@ -26,19 +29,18 @@ namespace FarmExp.Data.EntityFramework
         }
        /// <summary>
        /// 附加实体至上下文
-      
+       /// </summary>
         protected virtual TEntity AttachEntityToContext<TEntity>(TEntity entity) where TEntity : BaseEntity, new()
         {
             //little hack here until Entity Framework really supports stored procedures
             //otherwise, navigation properties of loaded entities are not loaded until an entity is attached to the context
-            var alreadyAttached = Set<TEntity>().Local.FirstOrDefault(x => x.Id == entity.Id);
+            var alreadyAttached = Set<TEntity>().Local.FirstOrDefault(x => x == entity);
             if (alreadyAttached == null)
             {
                 //attach new entity
                 Set<TEntity>().Attach(entity);
                 return entity;
             }
-
             //entity is already loaded
             return alreadyAttached;
         }
@@ -55,7 +57,7 @@ namespace FarmExp.Data.EntityFramework
             return base.Set<TEntity>();
         }
        /// <summary>
-       /// 执行存数过程
+       /// 执行存储过程
        /// </summary>
        /// <typeparam name="TEntity"></typeparam>
        /// <param name="commandText"></param>
@@ -99,16 +101,16 @@ namespace FarmExp.Data.EntityFramework
 
             return result;
         }
-       /// <summary>
-       /// 执行Sql语句返回Ienumerable对象
-       /// </summary>
-       /// <typeparam name="TElement"></typeparam>
-       /// <param name="sql"></param>
-       /// <param name="parameters"></param>
-       /// <returns></returns>
-        public IEnumerable<TElement> SqlQuery<TElement>(string sql, params object[] parameters)
+        /// <summary>
+        /// 执行Sql语句返回IQueryable对象
+        /// </summary>
+        /// <typeparam name="TElement"></typeparam>
+        /// <param name="sql"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public IQueryable<TElement> SqlQuery<TElement>(string sql, params object[] parameters)
         {
-            return this.Database.SqlQuery<TElement>(sql, parameters);
+            return this.Database.SqlQuery<TElement>(sql, parameters).AsQueryable<TElement>();
         }
        /// <summary>
        /// 执行Sql语句，返回受影响的行数
@@ -143,5 +145,27 @@ namespace FarmExp.Data.EntityFramework
             return result;
         }
 
+        public int SaveChangeToDb()
+        {
+            return base.SaveChanges();
+        }
+
+        public virtual Task<int> SaveChangeToDbAsync()
+        {
+            return base.SaveChangesAsync();
+        }
+
+        public void Modified<TEntity>(TEntity item) where TEntity : BaseEntity
+        {
+            base.Entry<TEntity>(item).State = EntityState.Modified;
+        }
+
+        public void Modified<TEntity>(IEnumerable<TEntity> items) where TEntity : BaseEntity
+        {
+            foreach(TEntity item in items)
+            {
+                base.Entry<TEntity>(item).State = EntityState.Modified;
+            }
+        }
     }
 }

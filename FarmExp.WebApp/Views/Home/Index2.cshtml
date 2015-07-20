@@ -1,0 +1,585 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="kewords" content="鲜香农,自然新鲜,农副产品,湖南干活,各地干货,新疆红枣,进口干果坚果,国内专业农副产品电商平台!"/>
+    <meta name="description" content="鲜香农是一家专注现代农业,致力于打造国内专业农副产品线上销售平台,来自湖南，服务全球!"/>
+    <title>鲜香园  自然新鲜当然更美味</title>
+<style type="text/css">
+   html{display:block;}    
+   html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, big, cite, code, del, em, font, img, ins, small, strong, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    margin: 0; 
+    padding: 0; }
+   a { color: #369; text-decoration: none;padding-left:1px;float:left; }
+   ol, ul, li { list-style: none; }
+   body { color: #666; background: #fff; font: 12px/150% Arial,"simsun","microsoft yahei"; text-align: center; }
+   #header { z-index: 10; position: relative; }     
+#header .maincontent { width: 996px; margin: 0 auto; }
+#header .top { min-width: 996px; width: auto!important; width: 996px;height: 40px; line-height: 40px; background: #dadada; border-bottom: 1px solid #c7c7c7; }
+#header .top .maincontent { position: relative; z-index: 20; }
+#header .top .content {  }
+#header .top li { float: left; }
+.mb_app_link {margin-left: 0;padding-left: 15px;padding-bottom: 1px;background: url(../images/header_phone.gif) 0 0px no-repeat;}
+#header .top .left { float: left;}
+#header .top .left a{margin-right: 25px;}
+#header .top .left a.high { margin-right: 5px; }
+#header .top .left span { margin: 0 10px; color: #bcbcbc; }
+#header .top .left .yizhan_link{padding-right:0;}
+#header .top .right { float: right; }
+#header .top .right li { padding: 0 0 0 10px; }
+#header .top .right .downlist { position: relative; min-width: 70px; margin-right: 5px; border: 1px solid #dadada; border-top: none; border-bottom: none; }
+#header .top .right .downlist .cover { display: none; position: absolute; z-index: 9001; left: 0px; top: 38px; width: 100%; background: #f4f4f4; height: 5px; line-height: 5px; font-size: 0px; }
+#header .top .right .downlist_curr .cover { display: block; }
+#header .top .right .downlist_curr { border-color: #c0c0c0; background: #f4f4f4; box-shadow: 2px 2px 3px rgba(0,0,0,0.25); }
+#header .top .right .downlist_curr .Sep_line { visibility: hidden; }
+#header .top .right .sublist { width: 100%; display: none; position: absolute; z-index: 9000; right: -1px; top: 40px; border: 1px solid #c0c0c0; background: #f4f4f4; box-shadow:2px 2px 3px rgba(0,0,0,0.25); }
+#header .top .right .sublist_message { width: 115px; }
+#header .top .right .sublist ul { padding: 5px; text-align: left; }
+#header .top .right .sublist li { float: none; padding: 0; }
+#header .top .right .sublist li a { display: block; padding: 0 0 0 10px; color: #949494; line-height: 35px; }
+#header .top .right .sublist li a:hover { background: #e4e4e4; text-decoration: none; color: #666; }
+#header .top .right .downlist_curr .sublist { display: block; }
+#header .top .right .downicon, #header .top .right .downlist_curr .downicon { padding-right: 12px; background: url(../images/header_icon_down_active.gif) right center no-repeat; text-decoration: none; }
+#header .top .right .newdownicon { background: url(../images/header_ico_message.png) right top no-repeat; }
+#header .top .right span { margin: 0 0 0 20px; color: #bcbcbc; }
+#header .top .right a span { margin: 0; color: #666; }
+#header .logo { min-width: 996px; width: auto!important; width: 996px;float: none; margin: 0; padding: 0; height: 92px; background: #f0f0f0; border-top: 1px solid #fff; text-align: center; }
+#header .logo img { position: relative; top: 21px; }
+#header .nav { min-width: 996px; width: auto!important; width: 996px; height: 50px; line-height: 50px; background: #3a9d9a; text-align: center; }
+#header .nav .index_a { color: #fff; font-family: 'microsoft yahei'; font-size: 17px; }
+#header .nav .navlist_curr .index_a { color: #0e6596; }
+#header .nav .index_a:hover { text-decoration: none; }
+#header .nav .navlist_a { color: #c4f7ff; font-family: 'microsoft yahei'; font-size: 17px; padding-left: 25px; background: url(../images/header_icon_down.gif) right center no-repeat; }
+#header .nav .navlist_curr .navlist_a { color: #0e6596; background: url(../images/header_icon_up.gif) right center no-repeat; text-decoration: none; }
+#header .nav .dest_navlist .navlist_a ,#header .nav li .index_a{display: inline-block;width: 100%;padding-right: 0;}
+#header .nav .navlist_a.dest{background:none;padding-right: 0px;}
+#header .nav ul { float: left; }
+#header .nav ul li { float: left; width: 120px; height: 50px; border-right: 1px solid #49a6a5; border-left: 1px solid #3a9d9a; }
+#header .nav ul li.curr { background: #28898d; }
+#header .nav ul li.curr.navlist_curr { background: #fbfbfb; }
+#header .nav ul li.navlist { position: relative; cursor: default; text-align: center; }
+#header .nav ul li.navlist .cover { display: none; position: absolute; z-index: 10000; left: 0px; top: 47px; width: 100%; background: #fbfbfb; height: 5px; line-height: 5px; font-size: 0px; }
+#header .nav ul .subnav { display: none; width: 365px; padding: 12px 36px 15px; position: absolute; z-index: 9999; top: 49px; left: -1px; background: #fbfbfb; border: 1px solid #c0c0c0; box-shadow: 2px 2px 3px rgba(0,0,0,0.25); text-align: left; }
+#header .nav ul .dest_mod{width:279px;padding: 12px 30px 15px;}
+#header .nav ul .service_mod{width:188px;}
+#header .nav ul .subnav dl { line-height: 24px; padding: 0 0 10px; border-bottom: 1px solid #e0e0e0; }
+#header .nav ul .subnav dl.last { border-bottom: none; }
+#header .nav ul .subnav dl dt { padding:10px 0 4px 5px; font-size: 16px; font-family: 'microsoft yahei'; color: #0e6596; font-weight: normal; line-height: 25px; }
+#header .nav ul .subnav dl dt a { margin-right: 20px; color: #0e6596; text-decoration: none;}
+#header .nav ul .subnav dl dt a.last{margin:0;}
+#header .nav ul .subnav dl dt .yizhan_link{padding-right: 0;}
+#header .nav ul .subnav dl dt a:hover { font-size: 16px; }
+#header .nav ul .subnav dl dd { color: #ccc; }
+#header .nav ul .subnav dl dd a { display:inline-block;margin: 0 5px; color: #949494; white-space: nowrap; }
+#header .nav ul .subnav dl dd a:hover { color: #0e6596; }
+#header .nav ul .navlist_curr { height: 49px; background: #fbfbfb; border: 1px solid #c0c0c0; border-bottom: none; }
+#header .nav ul .navlist_curr .subnav { display: block; }
+#header .nav ul li.navlist_curr .cover { display: block; }
+#header .nav .searchbox { position:relative;float: right; }
+#header .nav .searchbox .text { width: 200px; height: 25px; line-height: 25px; padding: 1px 1px 1px 8px;*margin-top:0;border: 1px solid #317798; background:#e1ebea; border-radius: 0;font-size: 12px;border-radius: 3px;_margin-top:10px;}
+.index_page_searchbox .search_popupmenu{top:39px;}
+.box,.box10,.box20,.box5-10,.box10-5,.box10-20,.box20-10,.box-list,.box-tab {border-radius: 4px; background: #fff; overflow: hidden; zoom: 1; }
+.box-s,.box10-s,.box20-s,.box5-10-s,.box10-5-s,.box10-20-s,.box20-10-s,.box-list-s.box-tab-s { box-shadow: 0 5px 10px #bdbdbd; }
+.box10 { padding: 10px; }
+.box20 { padding: 20px; }
+.box5-10 { padding: 5px 10px; }
+.box10-5 { padding: 10px 5px; }
+.box10-20 { padding: 10px 20px; }
+.box20-10 { padding: 20px 10px; }
+.box-f60 { border-color: #f60; }
+.box-tab { border-top-left-radius: 0; }
+.box-none { border: none; border-radius: 0; }
+.clear { clear: both; height: 0px; line-height: 0px; font-size: 0px; }
+.clearfix { *zoom: 1; }
+.clearfix:after,.clearfix:before { content: ''; display: table; height: 0px; line-height: 0px; font-size: 0; }
+.clearfix:after { clear: both; }/**box**/
+.index .box { width: 100%;}
+.index .box .title { height: 38px; position: relative;}
+.index .box .title h1 { font-family: 'microsoft yahei';color: #2b2b2b; font-size: 18px; }
+.index .box .title .more { position: absolute; right: 0; top:0;}
+.index .box .title .more a{color:#0e6596}
+.index .box .content {  margin-bottom: 30px;}
+
+/**新鲜出炉 fresh**/
+.index .fresh {}
+.index .fresh li {  float: left; padding-right: 37px; width: 196px; padding-bottom: 40px;font-family: 'microsoft yahei';}
+.index .fresh li .image { display: inline-block; margin-bottom: 5px; width: 196px; height: 196px;}
+.index .fresh li .image img { width: 196px; height: 196px;}
+.index .fresh li h2 { color: #555; font-size: 14px; font-weight: 100; height: 25px; line-height: 25px; overflow: hidden; }
+.index .fresh li p { font-size: 12px; color: #666;line-height: 25px; padding-bottom: 5px;}
+.index .fresh li p span.name { width: 96px; height: 25px; margin-right: 10px; float: left;word-break:keep-all;white-space:nowrap;overflow: hidden;}
+.index .fresh li p span.from { width: 90px; float: left; text-align: right;}
+.index .fresh li a.like { font-size: 14px; line-height: 20px; min-width: 35px; display: inline-block; height: 20px; padding: 2px 10px 2px 40px; background: #94cf72 url(../images/index/index_icon.png) no-repeat 8px -38px; color: #fff; cursor: default; }
+.index .fresh li a:hover.like {/*background-color: #ff6c00; color: #fff;*/ text-decoration: none;}
+/**布局**/
+.index { text-align: left;}
+.index .container { margin: 25px auto;}
+.index .pageLeft { float: left; width: 662px; padding-right: 44px; }
+.index .pageRight { float: left; width: 290px; }
+.index h1,.index h2,.index h3{ font-weight: 100;}
+/**目的地 destination**/
+.index .destination {}
+.index .destination li { float: left; width: 312px; padding-right: 38px;}
+.index .destination li .image { width: 312px; height: 176px; margin-bottom: 20px;}
+.index .destination li .image .recommend_image{height:176px;overflow:hidden;margin-bottom:20px;}
+.index .destination li .image .recommend_author{color:#ffffff;font-size:11px;font-weight:normal;font-family:'microsoft yahei',sans-serif;display:none;position:relative;padding:6px;background:url(../images/scene/scene_alpha_3.png) repeat-x;}
+.index .destination li .image .recommend_author a{color:#ffffff;}
+.index .destination li .image img { width: 312px; height: 176px;}
+.index .destination li .name { position: relative; height: 30px; }
+.index .destination li .name h2{ color: #2b2b2b; font-weight: bold; font-size: 16px; height: 18px; line-height: 18px; overflow: hidden; }
+.index .destination li .name .weather { position: absolute; right: 0; top:0; font-size: 12px;}
+.index .destination li .intro { color: #9c9c9c; line-height: 20px;}
+.index .destination li .intro a {color: #9c9c9c;}
+.index li.last { padding-right: 0;}
+.h20 { height: 20px; }
+.right_col_bit { margin-bottom: 20px; padding: 20px; border: 1px solid #bdbdbd; border-radius: 4px; }
+.right_col_bit h3 { border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 10px; }
+    .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12, .span13, .span14, .span15, .span16 {
+        float: left;
+        min-height: 1px;
+        margin-left: 20px;
+        display: inline;
+    }
+      .container{
+        width: auto;
+        margin: 0;
+    }
+.index {
+  text-align: left;
+}
+/*li布局*/
+.wrap {
+  width: 100%;
+  height: auto;
+  min-width: 996px;
+  position: relative;
+  z-index: 0;
+}
+.clearfix { *zoom: 1; }
+/*清除浮动*/
+.clear { clear: both; height: 0px; line-height: 0px; font-size: 0px; }
+.clearfix { *zoom: 1; }
+.clearfix:after,.clearfix:before { content: ''; display: table; height: 0px; line-height: 0px; font-size: 0; }
+.clearfix:after { clear: both; }
+/**活动 event**/
+
+.index .event {}
+.index .event li { float: left; padding-bottom: 16px;}
+.index .event li .image { width:50px; height: 50px; float: left; margin-right: 12px;}
+.index .event li .image img { width: 50px; height: 50px;}
+.index .event li .text { float: left;  width:228px;}
+.index .event li .text h3 { width:228px; height: 30px; font-size: 14px; font-weight: 100; color: #2b2b2b; word-break:keep-all;white-space:nowrap;text-overflow:ellipsis; overflow:hidden;}
+.index .event li .text p {font-size: 12px; color: #9c9c9c;line-height: 20px;}
+.index .event li .text p span { padding-right: 15px;}
+
+/*footer*/
+#footer { min-width: 996px; width: auto!important; width: 996px; padding: 50px 0 40px; background: #2b2b2b; color: #818181; text-align: center; }
+#footer a { color: #818181; }
+#footer p { line-height: 24px; padding-bottom: 5px; }
+#footer ul { line-height: 24px; display: none; }
+#footer ul li { display: inline; }
+#footer ul li a { margin: 0 10px 0 5px; }
+/*helpCenter*/
+#footer .helpCenter { width: 996px; margin: 0 auto 50px; text-align: left; }
+#footer .helpCenter dl { float: left; width: 145px; height: 140px; padding-left: 15px; border-left: 1px solid #404040; }
+#footer .helpCenter dl.first { margin-left: 45px; }
+#footer .helpCenter dt { line-height: 24px; padding-bottom: 10px; font-size: 14px; font-weight: bold; color: #9c9c9c;}
+#footer .helpCenter dt a { color: #9c9c9c; }
+#footer .helpCenter dd { line-height: 24px; }
+#footer .helpCenter dd a { color: #818181; }
+#footer .helpCenter dd.sina { padding-left: 25px; background: url(../images/bottom_sina.gif) 0 center no-repeat; }
+#footer .helpCenter dd.weixin { padding-left: 25px; position:relative; background: url(../images/bottom_weixin.gif) 0 center no-repeat;}
+#footer .helpCenter dd.weixin .weixinqr{border: 3px solid #fff;position: absolute;right: -50px;top: -58px;display:none;}
+#footer .helpCenter dd.phone { padding-left: 25px; background: url(../images/bottom_phone.gif) 0 center no-repeat; }
+#footer .helpCenter p {  }
+#footer .helpCenter p img { width: 80px; height: 80px; border: 3px solid #fff; }
+#div_debug { width: 996px; margin: 0 auto; }
+
+.container,.container0 { width: 996px; margin: 38px auto; height: auto; min-height: 400px; text-align: left; }
+.container0 { margin-top: 0; margin-bottom: 0px; }
+
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="top clearfix">
+            <div class="maincontent">
+                <ul class="left">
+                    <li><a href="javacript:void(0)">湘味直达</a></li>
+                    <li><a href="javacript:void(0)" class="mb_app_link">大美新疆</a></li>
+                </ul>
+                <ul class="right">
+                    <li><a href="/user/login?url=%2F" rel="nofollow" class="co-3e8">登录</a> </li>
+                    <li><a href="/user/register" rel="nofollow" class="co-3e8 mr_23">免费注册</a></li>
+                    <li><a href="#" class="co-3e8" rel="nofollow" id="switch_version" version='new'>收藏本站</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="logo">
+            <div class="maincontent">
+                <a href="/" class="logoA"><span style="font:32px Tahoma;padding-top:30px">鲜香农，发现更好生活</span></a>
+                <!--<img class="new_gallery_face" alt="" src="http://c1.zdb.io/images/index/new_gallery_face.jpg" title="点击我有惊喜哦" />
+                <div class="new_gallery_tips">
+                    <img alt="" src="http://c1.zdb.io/images/index/new_gallery_tips.png" />
+                    <a href="#" class="indexCloseTips" title="关闭">&nbsp;</a>
+                    <a href="/gallery/sets/" class="indexNowGo" title="立即体验">&nbsp;</a>
+                </div>-->
+            </div>
+        </div>
+        <div class="nav">
+            <div class="maincontent">
+                <ul>
+                    <li class="navlist"><a href="/" class="index_a">首页</a></li>
+                    <li class="navlist">
+                        <a class="navlist_a"><span class="dest_txt">农鲜直达</span></a>
+                    </li>
+                    <li class="navlist">
+                        <a class="navlist_a">农场预定</a>
+                        <b class="cover"></b>
+                    </li>
+                    <li class="navlist ">
+                        <a class="navlist_a">吃在农场</a>
+                    </li>
+
+                    <li class="navlist last  ">
+                        <a class="navlist_a">农家故事</a>
+                    </li>
+                    <li class="navlist last  ">
+                        <a class="navlist_a">饮食百科</a>
+                    </li>
+                    <li class="navlist last  ">
+                        <a class="navlist_a">听你的故事</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="wrap index">
+            <div class="clearfix" style="margin: 25px auto; width: 996px; text-align: left;">
+                <div class="pageLeft">
+                    <!--官方推荐-->
+                    <div class="box destination">
+                        <div class="title">
+                            <h1>鲜农故事</h1>
+                        </div>
+                        <div class="content clearfix">
+                            <ul>
+                                <li>
+                                    <div class="image">
+                                        <div class="recommend_image">
+                                            <a href="http://www.doyouhike.net/dest/Cappadocia" title=""><img src="http://c1.zdb.io/files/recommend/2015/05/05/f/f5c4fea61234d9b48ffe657e0bb54b50.jpg" alt="卡帕多西亚"></a>
+                                            <div class="recommend_author">
+                                                来自：洋淘湖农场
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="name">
+                                        <h2><a href="http://www.doyouhike.net/dest/Cappadocia" title="">洋淘湖农场</a></h2>
+                                    </div>
+                                    <p class="intro"><a href="http://www.doyouhike.net/dest/Cappadocia" title="西极洞庭">坐落于湘北西洞庭边的富饶小镇，晨间,泛舟湖上,体验西极洞庭湖水之美,午时，品尝河水焖甲鱼的清香,午后小镇闲逛，感受的湖区鱼米之乡的繁华！</a></p>
+                                </li>
+                                <li class="last">
+                                    <div class="image">
+                                        <div class="recommend_image">
+                                            <a href="http://www.doyouhike.net/dest/yili" title=""><img src="http://c1.zdb.io/files/recommend/2015/05/05/e/e805d9730a188f2fc9b93d46288cc2d7.jpg" alt="伊犁"></a>
+                                            <div class="recommend_author">
+                                                来自：kelly
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="name">
+                                        <h2><a href="http://www.doyouhike.net/dest/yili" title="">新疆伊犁</a></h2>
+                                    </div>
+                                    <p class="intro"><a href="http://www.doyouhike.net/dest/yili" title="">骏驰西域，一路向西，去伊犁看花开成海，喀拉峻草原如茵，霍城薰衣草迷人紫色，伊犁河绝美日落。</a></p>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!--农鲜直达-->
+                    <div class="box fresh ">
+                        <div class="title">
+                            <h1>农鲜直达</h1>
+                        </div>
+                        <div class="content ">
+                            <ul class="clearfix">
+                                <li>
+                                    <a href="http://www.doyouhike.net/forum/cycling/2284669,0,0,0.html" class="image" title=""><img src="http://c1.zdb.io/files/recommend/2015/05/08/e/e36aa2ebd72af643f5f491f4545a7911.jpg" alt=""></a>
+                                    <h2><a href="http://www.doyouhike.net/forum/cycling/2284669,0,0,0.html" title="">邂逅失落的骑楼，益骑中国海口车友嘉年华</a></h2>
+                                    <p class="clearfix">
+                                    </p><div class="h20 fl overflow pb5" style="width:90px;">
+                                        <a href="###" class="info_user pr16" title="益骑中国" rel="info_user_1189765">益骑中国</a>
+                                    </div>
+                                    <div class="h20 fr overflow pb5 tr" style="width:106px;">
+                                        来自： <a title="自行车" href="http://www.doyouhike.net/forum/cycling/">自行车</a>
+                                    </div>
+                                    <p></p>
+                                    <a href="javascript:void(0)" class="like" title="">549</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.doyouhike.net/forum/nature/2285376,0,0,1.html" class="image" title=""><img src="http://c1.zdb.io/files/recommend/2015/05/08/2/2825fef6c8ba67a590cda1eaee64868a.jpg" alt=""></a>
+                                    <h2><a href="http://www.doyouhike.net/forum/nature/2285376,0,0,1.html" title="">草木有情，那些花花绿绿的果实</a></h2>
+                                    <p class="clearfix">
+                                    </p><div class="h20 fl overflow pb5" style="width:90px;">
+                                        <a href="###" class="info_user pr16" title="桐壶更衣" rel="info_user_126827">桐壶更衣</a>
+                                    </div>
+                                    <div class="h20 fr overflow pb5 tr" style="width:106px;">
+                                        来自： <a title="自然" href="http://www.doyouhike.net/forum/nature/">自然</a>
+                                    </div>
+                                    <p></p>
+                                    <a href="javascript:void(0)" class="like" title="">2243</a>
+                                </li>
+                                <li class="last">
+                                    <a href="http://www.doyouhike.net/forum/junior/topics/2280723,0,0,0.html" class="image" title=""><img src="http://c1.zdb.io/files/recommend/2015/05/08/b/b7e9a24b9846d80d2ae02aed466064a9.jpg" alt=""></a>
+                                    <h2><a href="http://www.doyouhike.net/forum/junior/topics/2280723,0,0,0.html" title="">春雨狂瀑--10岁萌娃跳瀑布 </a></h2>
+                                    <p class="clearfix">
+                                    </p><div class="h20 fl overflow pb5" style="width:90px;">
+                                        <a href="###" class="info_user pr16" title="wfengliu" rel="info_user_510983">wfengliu</a>
+                                    </div>
+                                    <div class="h20 fr overflow pb5 tr" style="width:106px;">
+                                        来自： <a title="水上运动" href="http://www.doyouhike.net/forum/aqua/">水上运动</a>
+                                    </div>
+                                    <p></p>
+                                    <a href="javascript:void(0)" class="like" title="">2735</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.doyouhike.net/forum/globe/2277346,0,0,0.html" class="image" title=""><img src="http://c1.zdb.io/files/recommend/2015/05/08/6/63dba7d7b4a8463ec95a2ad5aeba12c2.jpg" alt=""></a>
+                                    <h2><a href="http://www.doyouhike.net/forum/globe/2277346,0,0,0.html" title="">环游印度60天</a></h2>
+                                    <p class="clearfix">
+                                    </p><div class="h20 fl overflow pb5" style="width:90px;">
+                                        <a href="###" class="info_user pr16" title="圆_缘" rel="info_user_900604">圆_缘</a>
+                                    </div>
+                                    <div class="h20 fr overflow pb5 tr" style="width:106px;">
+                                        来自： <a title="异域之旅" href="http://www.doyouhike.net/forum/globe/">异域之旅</a>
+                                    </div>
+                                    <p></p>
+                                    <a href="javascript:void(0)" class="like" title="">1742</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.doyouhike.net/forum/backpacking/2285876,0,0,1.html" class="image" title=""><img src="http://c1.zdb.io/files/recommend/2015/05/08/a/ab8a5b85dd8120eb6b43ddbf51a3b6a9.jpg" alt=""></a>
+                                    <h2><a href="http://www.doyouhike.net/forum/backpacking/2285876,0,0,1.html" title=""> 那一抹山水，那一陇苗寨！</a></h2>
+                                    <p class="clearfix">
+                                    </p><div class="h20 fl overflow pb5" style="width:90px;">
+                                        <a href="###" class="info_user pr16" title="慕文.山野" rel="info_user_344388">慕文.山野</a>
+                                    </div>
+                                    <div class="h20 fr overflow pb5 tr" style="width:106px;">
+                                        来自： <a title="长假远行" href="http://www.doyouhike.net/forum/backpacking/">长假远行</a>
+                                    </div>
+                                    <p></p>
+                                    <a href="javascript:void(0)" class="like" title="">2154</a>
+                                </li>
+                                <li class="last">
+                                    <a href="http://www.doyouhike.net/forum/photo/2284465,0,0,7.html" class="image" title=""><img src="http://c1.zdb.io/files/recommend/2015/05/08/1/1a6419c5d67bd614edc8f82221646394.jpg" alt=""></a>
+                                    <h2><a href="http://www.doyouhike.net/forum/photo/2284465,0,0,7.html" title="">美丽大川西，醉梦藏江南</a></h2>
+                                    <p class="clearfix">
+                                    </p><div class="h20 fl overflow pb5" style="width:90px;">
+                                        <a href="###" class="info_user pr16" title="丙酮" rel="info_user_313530">丙酮</a>
+                                    </div>
+                                    <div class="h20 fr overflow pb5 tr" style="width:106px;">
+                                        来自： <a title="驴光掠影" href="http://www.doyouhike.net/forum/photo/">驴光掠影</a>
+                                    </div>
+                                    <p></p>
+                                    <a href="javascript:void(0)" class="like" title="">1694</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.doyouhike.net/forum/canyoning/2285216,0,0,1.html" class="image" title=""><img src="http://c1.zdb.io/files/recommend/2015/05/08/5/57b85b087a9ab55df0d40e8c4766d6b4.jpg" alt=""></a>
+                                    <h2><a href="http://www.doyouhike.net/forum/canyoning/2285216,0,0,1.html" title="">神秘的马料村和东马古道</a></h2>
+                                    <p class="clearfix">
+                                    </p><div class="h20 fl overflow pb5" style="width:90px;">
+                                        <a href="###" class="info_user pr16" title="鹰歌" rel="info_user_53049">鹰歌</a>
+                                    </div>
+                                    <div class="h20 fr overflow pb5 tr" style="width:106px;">
+                                        来自： <a title="溪涧运动" href="http://www.doyouhike.net/forum/canyoning/">溪涧运动</a>
+                                    </div>
+                                    <p></p>
+                                    <a href="javascript:void(0)" class="like" title="">1084</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.doyouhike.net/forum/discover_suzhou/2286094,0,0,1.html" class="image" title=""><img src="http://c1.zdb.io/files/recommend/2015/05/08/c/c07be1eff1bb1f22869efb3d23d12b7b.jpg" alt=""></a>
+                                    <h2><a href="http://www.doyouhike.net/forum/discover_suzhou/2286094,0,0,1.html" title="">发现苏州之坑萌基与深基坑的荒谬作业</a></h2>
+                                    <p class="clearfix">
+                                    </p><div class="h20 fl overflow pb5" style="width:90px;">
+                                        <a href="###" class="info_user pr16" title="elona" rel="info_user_266896">elona</a>
+                                    </div>
+                                    <div class="h20 fr overflow pb5 tr" style="width:106px;">
+                                        来自： <a title="发现苏州" href="http://www.doyouhike.net/forum/discover_suzhou/">发现苏州</a>
+                                    </div>
+                                    <p></p>
+                                    <a href="javascript:void(0)" class="like" title="">1347</a>
+                                </li>
+                                <li class="last">
+                                    <a href="http://www.doyouhike.net/forum/photo/2284376,0,0,1.html" class="image" title=""><img src="http://c1.zdb.io/files/recommend/2015/05/08/b/bfba54c8e95932ccc9aefbee0eb168e7.jpg" alt=""></a>
+                                    <h2><a href="http://www.doyouhike.net/forum/photo/2284376,0,0,1.html" title="">龙脊梯田，大山里的别致韵律</a></h2>
+                                    <p class="clearfix">
+                                    </p><div class="h20 fl overflow pb5" style="width:90px;">
+                                        <a href="###" class="info_user pr16" title="飞天篮球猪" rel="info_user_543651">飞天篮球猪</a>
+                                    </div>
+                                    <div class="h20 fr overflow pb5 tr" style="width:106px;">
+                                        来自： <a title="驴光掠影" href="http://www.doyouhike.net/forum/photo/">驴光掠影</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pageRight">
+
+                    <!--相关活动-->
+                    <div class="box event">
+                        <div class="title">
+                            <h1>他们的故事</h1>
+                        </div>
+                        <div class="content">
+                            <ul class="clearfix">
+                                <li>
+                                    <div class="image"><a href="/user/512963"><img alt="" src="http://c1.zdb.io/files/faces/63/user512963.jpg"></a></div>
+                                    <div class="text">
+                                        <h3><a href="http://www.doyouhike.net/forum/globe/2283374,0,0,1.html" title="">蓝色土耳其，热气球滑翔伞约起</a></h3>
+                                        <p><span><a href="#" class="info_user pr16" rel="info_user_512963">lqh56789</a></span><span>日期:2015-06-13</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="image"><a href="/user/627590"><img alt="" src="http://c1.zdb.io/files/faces/f/5/f5a7abb47.jpg"></a></div>
+                                    <div class="text">
+                                        <h3><a href="http://www.doyouhike.net/forum/backpacking/1831247,0,0,1.html" title="">去赛里木湖看花海成片，去喀拉峻看“五花草甸”</a></h3>
+                                        <p><span><a href="#" class="info_user pr16" rel="info_user_627590">hua-hua</a></span><span>日期:2015-05-28</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="image"><a href="/user/916548"><img alt="" src="http://c1.zdb.io/files/faces/0/a/0af4ca578.jpg"></a></div>
+                                    <div class="text">
+                                        <h3><a href="http://www.doyouhike.net/forum/globe/2283777,0,0,1.html" title="">土耳其约伴~~7月初出发</a></h3>
+                                        <p><span><a href="#" class="info_user pr16" rel="info_user_916548">lynne鱼摆摆</a></span><span>日期:2015-07-03</span></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="box publish">
+                        <div class="content"><a href="/event/event/add" class="button-large">我也要发布活动</a></div>
+                    </div>
+                    <!--近期活动-->
+                    <div class="box event">
+                        <div class="title">
+                            <h1>近期活动</h1>
+                        </div>
+                        <div class="content">
+                            <ul class="clearfix">
+                                <li>
+                                    <div class="image"><a href="/user/151735"><img alt="" src="http://c1.zdb.io/files/faces/35/user151735.gif"></a></div>
+                                    <div class="text">
+                                        <h3><a href="http://www.doyouhike.net/forum/mountain/2282822,0,0,1.html">【走出户外】大雁顶</a></h3>
+                                        <p><span><a href="#" class="info_user pr16" rel="info_user_151735">安全宣导小组</a></span><span>出发:2015-05-17</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="image"><a href="/user/151735"><img alt="" src="http://c1.zdb.io/files/faces/35/user151735.gif"></a></div>
+                                    <div class="text">
+                                        <h3><a href="http://www.doyouhike.net/forum/mountain/2282459,0,0,1.html">【讲座】夏季户外常见危险识别与处理</a></h3>
+                                        <p><span><a href="#" class="info_user pr16" rel="info_user_151735">安全宣导小组</a></span><span>出发:2015-05-19</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="image"><a href="/user/362401"><img alt="" src="http://c1.zdb.io/files/faces/01/user362401.jpg"></a></div>
+                                    <div class="text">
+                                        <h3><a href="http://www.doyouhike.net/forum/mountain/2285457,0,0,1.html">【清洁山野】梧桐山（罗龙界）</a></h3>
+                                        <p><span><a href="#" class="info_user pr16" rel="info_user_362401">SZ星光</a></span><span>出发:2015-05-17</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="image"><a href="/user/974870"><img alt="" src="http://c1.zdb.io/files/faces/e/1/e194031c6.jpg"></a></div>
+                                    <div class="text">
+                                        <h3><a href="http://www.doyouhike.net/forum/deepblue/1132556,0,0,1.html">端午仙本那潜水OW FD</a></h3>
+                                        <p><span><a href="#" class="info_user pr16" rel="info_user_974870">meir826</a></span><span>出发:2015-06-12</span></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--磨房每天在努力-->
+                    <div class="box news">
+                        <div class="title">
+                            <h1>磨房每天在努力</h1>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li class="overflow"><a href="/forum/helpdesk/2280694,0,0,0.html" title="磨房户外线路">磨房户外线路</a> </li>
+                                <li class="overflow"><a href="/forum/helpdesk/1/1098344,0,0,0.html" title="磨房户外指南">磨房户外指南</a> </li>
+                                <li class="overflow"><a href="/dujia/" title="磨房潜水度假">磨房潜水度假</a> </li>
+                                <li class="overflow"><a href="/appdownload" title="磨房去玩APP">磨房去玩APP</a> </li>
+                                <li class="overflow"><a href="/forum/helpdesk/965951,0,0,0.html" title="磨房触屏版上线">磨房触屏版</a></li>
+                                <li class="overflow"><a href="http://www.doyouhike.net/forum/helpdesk/955211,0,0,0.html" title="发现心世界">发现心世界</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <div id="footer">
+        <div class="footerContent">
+            <!--help-->
+            <div class="helpCenter">
+                <dl class="first">
+                    <dt>关于我们</dt>
+                    <dd><a href="/doc/about.html">磨房简介</a></dd>
+                    <dd><a href="/doc/job.html">加入磨房</a></dd>
+                    <dd><a href="/doc/contact.html">联系我们</a></dd>
+                </dl>
+                <dl>
+                    <dt>网站条款</dt>
+                    <dd><a href="/doc/copyright.html">版权说明</a></dd>
+                    <dd><a href="/doc/privacy.html">隐私条款</a></dd>
+                    <dd><a href="/doc/declaration.html">权利声明</a></dd>
+                </dl>
+                <dl>
+                    <dt><a href="/doc/about.html">帮助中心</a></dt>
+                    <dd><a href="/doc/city_forum.html">玩转磨房</a></dd>
+                    <dd><a href="/forum/leisure/176462,0,0,0.html">推荐阅读</a></dd>
+                    <dd><a href="/doc/links.html">友情链接</a></dd>
+                </dl>
+                <dl>
+                    <dt>关注我们</dt>
+                    <dd class="sina"><a href="http://weibo.com/1819732165">新浪微博</a></dd>
+                    <dd class="weixin">
+                        <a href="javascript:void(0);">mofangweixin</a>
+                        <img alt="磨房微信" class="weixinqr" src="http://c1.zdb.io/images/bottom_weiin.png" />
+                    </dd>
+                </dl>
+                <dl class="last">
+                    <dt>移动应用</dt>
+                    <dd class="phone"><a href="/appdownload">点击查看全部</a></dd>
+                    <dd class="phone"><a href="javascript:void(0);">移动端下载扫一扫&gt&gt</a></dd>
+                </dl>
+                <p><img alt="二维码图片" src="http://c1.zdb.io/images/dycode.jpg" /></p>
+                <div class="clear"></div>
+            </div>
+
+            <p class="copyP">
+                &copy; 2000 - 2015 www.doyouhike.net  Version 4.7.8 - 2015-05-05 17:46:59 +0800  粤ICP备11038623号-2 &nbsp;
+                <!--<a href="https://cert.ebs.gov.cn/03ac4c8d-aca7-4753-b8fe-b88d06fbb77a" target="_blank"><img src="https://cert.ebs.gov.cn/Images/govIcon.gif" title="深圳市市场监督管理局企业主体身份公示" alt="深圳市市场监督管理局企业主体身份公示" width="20" height="27" style="border-width:0px;border:hidden;" /></a>-->
+                <!--<script type="text/javascript" src="1http://www.ebs.gov.cn/Validate/IconProcess.aspx?domainid=03ac4c8d-aca7-4753-b8fe-b88d06fbb77a&show=pic&width=20&height=27" ></script>-->
+            </p>
+            <ul>
+                <li><a href="/doc/about.html">关于我们</a>|</li>
+                <li><a href="/doc/copyright.html">版权声明</a>|</li>
+                <li><a href="/doc/copyright.html">隐私保护</a>|</li>
+                <li><a href="/doc/contact.html">联系我们</a></li>
+            </ul>
+
+        </div>
+    </div>
+</body>
+</html>

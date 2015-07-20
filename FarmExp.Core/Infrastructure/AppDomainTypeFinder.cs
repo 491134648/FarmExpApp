@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
+using FarmExp.CommonLibary;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace FarmExp.Core
 {
+    /// <summary>
+    /// 提供当前AppDomain的程序及Type
+    /// </summary>
     public class AppDomainTypeFinder:ITypeFinder
     {
         #region Fields
 
-        private bool ignoreReflectionErrors = true;
-        private bool loadAppDomainAssemblies = true;
+        private bool ignoreReflectionErrors = true;//是否忽略反射错误
+        private bool loadAppDomainAssemblies = true;//导入AppDomain程序集
+        //程序集导入模型
         private string assemblySkipLoadingPattern = "^System|^mscorlib|^Microsoft|^AjaxControlToolkit|^Antlr3|^Autofac|^AutoMapper|^Castle|^ComponentArt|^CppCodeProvider|^DotNetOpenAuth|^EntityFramework|^EPPlus|^FluentValidation|^ImageResizer|^itextsharp|^log4net|^MaxMind|^MbUnit|^MiniProfiler|^Mono.Math|^MvcContrib|^Newtonsoft|^NHibernate|^nunit|^Org.Mentalis|^PerlRegex|^QuickGraph|^Recaptcha|^Remotion|^RestSharp|^Rhino|^Telerik|^Iesi|^TestDriven|^TestFu|^UserAgentStringLibrary|^VJSharpCodeProvider|^WebActivator|^WebDev|^WebGrease";
+        //程序及导入约束模型
         private string assemblyRestrictToLoadingPattern = ".*";
         private IList<string> assemblyNames = new List<string>();
 
@@ -62,22 +65,44 @@ namespace FarmExp.Core
         #endregion
 
         #region Methods
-
+        /// <summary>
+        /// 发现类类型
+        /// </summary>
+        /// <typeparam name="T">类型</typeparam>
+        /// <param name="onlyConcreteClasses">是否仅包含实体</param>
+        /// <returns></returns>
         public IEnumerable<Type> FindClassesOfType<T>(bool onlyConcreteClasses = true)
         {
             return FindClassesOfType(typeof(T), onlyConcreteClasses);
         }
-
+        /// <summary>
+        /// 依据来源类型发现T类型枚举
+        /// </summary>
+        /// <param name="assignTypeFrom">来源类型</param>
+        /// <param name="onlyConcreteClasses">仅包含实体类</param>
+        /// <returns></returns>
         public IEnumerable<Type> FindClassesOfType(Type assignTypeFrom, bool onlyConcreteClasses = true)
         {
             return FindClassesOfType(assignTypeFrom, GetAssemblies(), onlyConcreteClasses);
         }
-
+        /// <summary>
+        /// 获取某程序集的中T类型枚举
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="assemblies"></param>
+        /// <param name="onlyConcreteClasses"></param>
+        /// <returns></returns>
         public IEnumerable<Type> FindClassesOfType<T>(IEnumerable<Assembly> assemblies, bool onlyConcreteClasses = true)
         {
             return FindClassesOfType(typeof(T), assemblies, onlyConcreteClasses);
         }
-
+        /// <summary>
+        /// 依据来源类型查找程序集的类型枚举
+        /// </summary>
+        /// <param name="assignTypeFrom"></param>
+        /// <param name="assemblies"></param>
+        /// <param name="onlyConcreteClasses"></param>
+        /// <returns></returns>
         public IEnumerable<Type> FindClassesOfType(Type assignTypeFrom, IEnumerable<Assembly> assemblies, bool onlyConcreteClasses = true)
         {
             var result = new List<Type>();
@@ -136,9 +161,10 @@ namespace FarmExp.Core
             }
             return result;
         }
-
-        /// <summary>Gets the assemblies related to the current implementation.</summary>
-        /// <returns>A list of assemblies that should be loaded by the Nop factory.</returns>
+        /// <summary>
+        /// 获得程序集
+        /// </summary>
+        /// <returns></returns>
         public virtual IList<Assembly> GetAssemblies()
         {
             var addedAssemblyNames = new List<string>();
@@ -156,10 +182,10 @@ namespace FarmExp.Core
         #region Utilities
 
         /// <summary>
-        /// Iterates all assemblies in the AppDomain and if it's name matches the configured patterns add it to our list.
+        /// 迭代当前AppDomain程序集，如果它的名字相匹配的配置模式添加到我们的列表.
         /// </summary>
-        /// <param name="addedAssemblyNames"></param>
-        /// <param name="assemblies"></param>
+        /// <param name="addedAssemblyNames">程序集名称List</param>
+        /// <param name="assemblies">程序集List</param>
         private void AddAssembliesInAppDomain(List<string> addedAssemblyNames, List<Assembly> assemblies)
         {
             foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
@@ -176,10 +202,10 @@ namespace FarmExp.Core
         }
 
         /// <summary>
-        /// Adds specificly configured assemblies.
+        /// 添加特别配置程序集.
         /// </summary>
-        /// <param name="addedAssemblyNames"></param>
-        /// <param name="assemblies"></param>
+        /// <param name="addedAssemblyNames">程序集名称List</param>
+        /// <param name="assemblies">程序集List</param>
         protected virtual void AddConfiguredAssemblies(List<string> addedAssemblyNames, List<Assembly> assemblies)
         {
             foreach (string assemblyName in AssemblyNames)
@@ -222,15 +248,13 @@ namespace FarmExp.Core
         /// </returns>
         protected virtual bool Matches(string assemblyFullName, string pattern)
         {
-            return Regex.IsMatch(assemblyFullName, pattern, RegexOptions.IgnoreCase | RegexOptions.Compiled);
+            return assemblyFullName.IsMatch(pattern, RegexOptions.IgnoreCase | RegexOptions.Compiled);
         }
 
         /// <summary>
-        /// Makes sure matching assemblies in the supplied folder are loaded in the app domain.
+        /// AppDomain导入文件夹中匹配程序集
         /// </summary>
-        /// <param name="directoryPath">
-        /// The physical path to a directory containing dlls to load in the app domain.
-        /// </param>
+        /// <param name="directoryPath">文件夹路径</param>
         protected virtual void LoadMatchingAssemblies(string directoryPath)
         {
             var loadedAssemblyNames = new List<string>();
@@ -243,7 +267,7 @@ namespace FarmExp.Core
             {
                 return;
             }
-
+            //获取Bin目录下dll文件的程序集
             foreach (string dllPath in Directory.GetFiles(directoryPath, "*.dll"))
             {
                 try

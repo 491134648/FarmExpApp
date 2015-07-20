@@ -1,0 +1,563 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    body,div,p,ul,ol,li,i,em,span,dd,dt,dl,form,table,th,td,tr,input{margin:0;padding:0;}
+body{font-size:12px;font-family:\5b8b\4f53;color:#444;background:#eee;}
+ul i,ul span,ol i,ol span,dl i,dl span{display:block;}
+i,em{font-style:normal;} 
+img{border:none;}
+ul,li{list-style:none;}
+a{color:#444;text-decoration:none;}
+a:hover{color:#C06;text-decoration:underline;}
+.spanclass,.divTab{display:none;}
+.mark{height:100%;float:left;font:normal 16px/24px Microsoft YaHei;color:#454545;}
+.subMark{height:100%;float:right;line-height:24px;}
+.clear{clear:both;content:' ';display:block;font-size:0;line-height:0;width:0;height:0;visibility:hidden;}
+.clearfix:after{content:'';display:block;clear:both;visibility:hidden;overflow:hidden;height:0;}
+.clearfix{zoom:1;}
+.mb20{margin-bottom:20px;}
+.mr20{margin-right:20px;}
+
+.content{width:998px;margin:0px auto;border-left:1px solid #ccc;border-right:1px solid #ccc;background:#fff;}
+body #navibar{width:998px;}
+.ivy990{width:990px;margin:0px auto 10px;}
+/*block(layout.css 框架)*/
+.layABC{width:990px;}
+.layAB{width:740px;float:left;}
+.layC{width:230px;float:right;}
+.layA{width:210px;float:left;}
+.layBC{width:768px;float:right;}
+/*modBoxA*/
+.modBoxA{line-height:20px;}
+.modBoxA .thA{height:25px;padding-left:10px;border-bottom:1px solid #000;overflow:hidden;}
+.modBoxA .thA .mark{line-height:16px;}
+.modBoxA .thA .subMark{padding-right:10px;}
+.modBoxA .tbA{padding:10px;background-color:#f4f4f4}
+/*modBoxB*/
+.modBoxB{line-height:20px;}
+.modBoxB .thB{height:24px;padding-top:1px;border-bottom:1px solid #000;overflow:hidden;}
+.modBoxB .thB .mark{padding-left:10px;font: normal 24px/24px Microsoft YaHei;}
+.modBoxB .tbB{padding:10px;}
+/*expPicA*/
+.expPicA li{float:left;line-height:20px;}
+.expPicA li a img{border:1px solid #e6e6e6;display:block;}
+.expPicA li a:hover img{border:1px solid #888;}
+.expPicA li em{display:block;}
+/*expPicB*/
+.expPicB li{width:100%;float:left;}
+.expPicB .iPic{float:left;}
+.expPicB .iTxt{width:90px;float:right;line-height:20px;}
+/*expTxtA*/
+.expTxtA li{height:24px;padding-left:10px;line-height:24px;background:url(http://www1.pclady.com.cn/global/2012/images_h/bk/ladedia.png) no-repeat -597px 10px;}
+.expTxtA .iTit{float:left;}
+.expTxtA .iName{width:50px;height:24px;float:right;overflow:hidden;text-align:right;}
+ /*header*/
+.ladyHead .logoBar .logo,.subNav .sLogo em,.ladyHead .Nav a,.ks .aKS{background:url(http://www1.pclady.com.cn/global/2012/images_h/bk/ladedia.png) no-repeat;}
+
+.ladyHead{width:996px;margin:0px auto 8px;}
+.ladyHead .logoBar{height:90px;padding:10px 5px;}
+.ladyHead .logoBar .logo{width:225px;height:90px;float:left;background-position:0px 0px;}
+.ladyHead .logoBar .logo .logoLady{width:165px;height:90px;float:left;}
+.ladyHead .logoBar .logo .logoSub{width:60px;height:90px;float:left;}
+.ladyHead .logoBar .ivy750{width:750px;float:right;}
+.ladyHead .Nav{height:39px;font:normal 16px/39px Microsoft YaHei;background:#1a1a1a;}
+.ladyHead .Nav a{width:99px;text-align:center;float:left;color:#fff;background-position:98px -97px;}
+
+.subNav{height:34px;margin-bottom:10px;background:#e8e8e8;}
+.subNav .sLogo{height:34px;padding:0 110px 0 17px;float:left;font:bold 20px/32px Microsoft YaHei;color:#fff; background:#c06;position:relative;}
+.subNav .sLogo em{width:107px;height:34px;display:inline-block;background-position:0px -140px;position:absolute;top:0px;right:0px;_right:-1px;}
+.subNav .sGuide{float:left;padding:4px 0 0 30px;line-height:30px;color:#a6a6a6;}
+.subNav .sGuide em,.subNav .sGuide a{color:#676767;}
+
+.ks{width:310px;float:right;padding:6px 7px 0 0;}
+.ks .aKS{width:54px;height:22px;display:block;background-position:-300px 2px}
+.ks .inpTxt{width:188px;height:20px;padding-left:5px;line-height:20px;border:1px solid #ccc;color:#878787;vertical-align:-2px;}
+.ks .search{width:50px;height:22px;line-height:22px;border:0px;color:#FFF;background:#333;cursor:pointer;}
+.ks .searchH{background:#c06;}
+/*block(footer.css 底部)*/
+body #footer{width:990px;margin:0px auto;background:none;min-width:990px;}
+body #footer .channelLinks{display:none;}
+body #footer .companyLinks{background:none;border:0;}
+body #footer .companyLinks,body #footer .copyRight{width:990px;margin:auto;}
+body #footer .companyLinks a:link,body #footer .companyLinks,body #footer .companyLinks a:visited,body #footer .copyRight table .trTop td,body #footer .copyRight table .trTop a,body #footer .copyRight table td,body #footer a:link,body #footer a:visited{color:#6f6f6f;}
+ 
+.olTop,.Title .mark,.slideS .aLeft,.slideS .aRight,.picList .subMark i,.Slide .slideC .aLeft,.Slide .slideC .aRight{background:url(http://www1.pclady.com.cn/global/2012/images_h/bk/ladedia.png) no-repeat;}
+
+
+.tagNav{width:988px;margin:0px auto;padding:10px 1px;background:#fafafa;}
+.tagNav dt{width:988px;height:31px;margin-bottom:5px;overflow:hidden;background:url(http://www1.pclady.com.cn/global/2012/images_h/bk/ladedia.png) repeat-x 0 -274px;}
+.tagNav dt .sTit{width:80px;margin:0 1px 6px 0;text-align:center;float:left;font-weight:bold;line-height:25px;}
+.tagNav dt em{height:25px;margin:0 1px 6px 0;padding:0px 8px;line-height:25px;float:left;background:#ededed;}
+.tagNav dt em.cur{height:31px;color:#fff;background:url(http://www1.pclady.com.cn/global/2012/images_h/bk/cur.png) top center no-repeat;}
+.tagNav dd{padding:0px 10px;line-height:20px;color:#878787;}
+.tagNav dd a{color:#878787;}
+.tagNav dd a:hover{color:#c06;}
+
+.capital,.inner,.Free,.picList,.pEnd{width:990px;margin:0px auto 20px;}
+
+.focus{width:350px;height:460px;padding:5px;float:left;background:#333;}
+.focus .pPic{margin-bottom:10px;}
+.focus .pTit{margin-bottom:5px;display:block;font:normal 22px/30px Microsoft YaHei;text-align:center;color:#fff;}
+.focus .pTit a{color:#fff;}
+.focus .pDes{padding:0px 10px;text-indent:24px;line-height:24px;color:#fff;}
+.topNews{width:370px;float:right;}
+.topNews .sTit{margin-bottom:5px;padding-top:5px;font:bold 18px/30px Microsoft YaHei;display:block;text-align:center;}
+.topNews .sTit a{color:#c06}
+.topNews .pDes{margin-bottom:10px;line-height:24px;text-indent:24px;}
+.topNews .pLine{width:100%;height:10px;margin-bottom:15px;overflow:hidden;border-bottom:1px solid #ececec;}
+.topNews li{height:26px;padding-left:37px;font:normal 15px/26px Microsoft YaHei;background-position:-577px 12px;}
+.olTop{background-position:-570px -12px;}
+.olTop li{padding-left:30px;line-height:28px;}
+
+
+.Title{height:28px;margin-bottom:10px;padding-left:10px;overflow:hidden;border-bottom:1px solid #222;}
+.Title .mark{width:220px;height:28px;background-position:-130px -100px;}
+.Title .subMark{padding-top:4px;}
+
+.inner .Pet .mark{background-position:-130px -190px;}
+.inner .Bride .mark{background-position:-350px -130px;}
+.inner .Style .mark{background-position:-350px -190px;}
+
+.Hot{width:740px;height:159px;margin-bottom:20px;overflow:hidden;}
+.Hot ul{width:800px;}
+.Hot li{width:200px;float:left;margin-right:45px;padding-left:15px;line-height:20px;}
+.Hot .iTxt{padding-top:10px;line-height:24px;}
+.Hot .iTxt .sTit{margin-bottom:3px;font-weight:bold;}
+.Hot .iDes{width:200px;padding-top:5px;float:left;}
+
+.slideS{width:713px;margin-bottom:20px;padding-left:27px;position:relative;}
+.slideS .aLeft{width:15px;height:30px;background-position:-330px -30px;position:absolute;top:90px;left:5px;}
+.slideS .aLeft:hover{background-position:-350px -30px;}
+.slideS .aRight{width:15px;height:30px;background-position:-370px -30px;position:absolute;top:90px;right:3px;}
+.slideS .aRight:hover{background-position:-390px -30px;}
+.slideS .slide{width:688px;height:212px;position:relative;}
+.slideS .slide li{width:212px;margin-right:26px;float:left;}
+.slideS .slide .iBg{height:24px;margin:-25px 1px 0px;background:#000;filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;}
+.slideS .slide .iTit{height:24px;line-height:24px;margin:-25px 1px 0px;text-align:center;overflow:hidden;position:relative;}
+.slideS .slide .iTit a{color:#fff;}
+.slideS .slide .iPic a{width:212px;height:210px;overflow:hidden;display:block;}
+
+.inner{margin-bottom:0px;}
+.inner .Title{margin-top:-4px;}
+.inner .modBoxB{width:360px;height:198px;margin-bottom:20px;float:left;}
+.inner .modBoxB .pPic{width:100px;height:135px;padding-top:5px;float:left;overflow:hidden;}
+.inner .modBoxB .pPic img{height:135px;}
+.inner .modBoxB .expTxtA{width:220px;float:right;}
+.inner .modBoxB li.KG{height:5px;line-height:0px;overflow:hidden;font-size:0px;background:none;}
+
+
+.modBoxA .Brand{padding:12px 15px;line-height:24px;color:#a0a0a0;}
+.modBoxA .pcTG li.KG{height:9px;line-height:0px;font-size:0px;overflow:hidden;background:none;}
+.modBoxA .Video{position:relative;padding:10px 0 0 0;}
+.Video .icon{width:29px;height:29px;position:absolute;top:125px;right:5px;background:url(http://www1.pclady.com.cn/global/2012/images_h/ladyindex/video.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www1.pclady.com.cn/global/2012/images_h/ladyindex/video.png',sizingMethod='crop');}
+.Video .pBg{height:30px;margin-top:-30px;background:#000;filter:alpha(opacity=60);-moz-opacity:0.6;opacity:0.6;}
+.Video .pTit{height:30px;margin-top:-30px;line-height:30px;text-align:center;overflow:hidden;position:relative;}
+.Video .pTit a{color:#fff;}
+
+.Slide .slideC{width:200px;height:105px;padding-left:12px;position:relative;}
+.Slide .slideC .aLeft{width:10px;height:20px;position:absolute;top:39px;left:-5px;background-position:-370px 0px;}
+.Slide .slideC .aLeft:hover{background-position:-390px 0px;}
+.Slide .slideC .aRight{width:10px;height:20px;position:absolute;top:39px;right:-5px;background-position:-430px 0px;}
+.Slide .slideC .aRight:hover{background-position:-410px 0px;}
+.Slide .slideC .slide{width:188px;}
+.Slide .slideC li{width:82px;margin-right:24px;float:left;}
+
+.modBoxA .Bang{padding-bottom:7px;}
+.Bang .bangC{height:83px;}
+.Bang .bangC .pPic{float:left;}
+.Bang .bangC .pTxt{width:120px;float:right;color:#878787;}
+.Bang .bangC .pTxt .sTit{padding-bottom:2px;display:block;}
+.Bang .bangC .pTxt .aMore{color:#c06;}
+
+
+.hotFoc .toPic{margin-bottom:20px;}
+.hotFoc .tbA{height:76px;overflow:hidden;}
+.hotFoc .tbA .pTxt{height:25px;line-height:25px;}
+.hotFoc .tbA .pTxt.pBD{margin-bottom:5px;padding-bottom:5px;border-bottom:1px dotted #bebebe;}
+.hotFoc .tbA .pTxt img{margin-right:10px;vertical-align:middle;}
+.hotFoc .tbA .pMore{padding-top:3px;text-align:right;}
+.hotFoc .tbA .pMore a{color:#878787;}
+.hotFoc .tbA .pMore a:hover{color:#c06;}
+
+.modBoxA .hotBrand{width:220px;padding:10px 5px 0;overflow:hidden;}
+.hotBrand ul{width:230px;}
+.hotBrand li{width:72px;margin:0 3px 4px 0;text-align:center;float:left;}
+
+.Free{overflow:hidden;}
+.Free .Title .mark{background-position:-130px -130px;}
+.Free ul{width:1100px;}
+.Free li{width:103px;margin:0px 32px 0 10px;display:inline;}
+.Free .iDes{padding-top:5px;}
+.Free .iDes strong{color:#c06;}
+
+.picList .subMark{height:24px;padding-right:10px;}
+.picList .subMark a{float:left;}
+.picList .subMark i{width:20px;height:20px;float:left;background-position:-298px -26px;}
+.picList .boxBg{height:133px;background:#2b2b2b;}
+.picList .boxPic{width:954px;margin:-121px 12px 0;padding:12px 0 0 12px;overflow:hidden;background:#fff;}
+.picList .boxPic ul{width:1000px;}
+.picList .boxPic li{width:137px;margin-right:11px;padding-right:13px;float:left;text-align:center;background:url(http://www1.pclady.com.cn/global/2012/images_h/ladyindex/bg-x.png) no-repeat 149px -8px;}
+
+.picList.Pet .mark{background-position:-350px -70px;}
+.picList.Fashion .mark{width:400px;background-position:-130px -220px;}
+.picList.Health .mark{background-position:-350px -160px;}
+.picList.Emotion .mark{background-position:-350px -100px;}
+.picList.Bride .mark{background-position:-350px -130px;}
+
+
+.keyHot .mark{padding:0 15px;font:normal 16px/24px Microsoft YaHei;}
+.modBoxA .thA span.current{ background:#000; color:#fff;}
+.keyHot .tbA{padding:15px 0 15px 30px;height:96px;line-height:24px;}
+.keyHot .tbA a{display:inline-block;}
+.Edit .tbA{padding:15px 18px;height:96px;line-height:24px;}
+.modBoxA .thA .mark{line-height:24px;}
+.modBoxA .thA{padding-left:0;}
+</style>
+<div class="subNav">
+    <span class="sLogo">原材料<em></em></span>
+    <span class="sGuide"><em>您现在所在的位置：</em><a href="http://www.pclady.com.cn/" target="_blank">首页</a> &gt; <a href="http://www.pclady.com.cn/rdzq/" target="_blank">PClady百科</a> &gt; <a href="http://health.pclady.com.cn/healthzq/" target="_blank">健康百科</a> &gt; 原材料百科</span>
+    <div class="ks">
+        <form target="_blank" style="margin: 0pt;" method="get" action="http://ks.pclady.com.cn/lady_index.jsp" name="s">
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tbody>
+                    <tr>
+                        <td width="61"><a href="http://ks.pclady.com.cn/" target="_blank" class="aKS"></a></td>
+                        <td>
+                            <input type="hidden" value="lady_cms" name="qx">
+                            <input type="hidden" value="lady_bbs" name="qx">
+                            <input type="text" value="美白" name="q" class="inpTxt" onclick="if(this.value=='美白')this.value='';this.style.color='#444'" onblur="if(this.value==''){this.value='美白';this.style.color='#878787'}">
+                        </td>
+                        <td width="50"><input type="submit" value="搜索" onfocus="this.blur();" class="search" name="提交" onmouseover="this.className='search searchH'" onmouseout="this.className='search'"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+<div class="tagNav">
+    <dl>
+        <dt>
+            <strong class="sTit"><a href="http://health.pclady.com.cn/healthzq/#000017046">疾病百科</a></strong>
+            <em><a href="http://health.pclady.com.cn/menses/">月经</a></em>
+            <em><a href="http://health.pclady.com.cn/zg/">子宫</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/biyun/byff/">避孕</a></em>
+            <em><a href="http://health.pclady.com.cn/lc/">卵巢</a></em>
+            <em><a href="http://health.pclady.com.cn/endocrine/">内分泌</a></em>
+            <em><a href="http://health.pclady.com.cn/breast/">乳房</a></em>
+            <em><a href="http://health.pclady.com.cn/miscarriage/">流产</a></em>
+            <em><a href="http://health.pclady.com.cn/pf/">皮肤</a></em>
+            <em><a href="http://health.pclady.com.cn/kqiang/">口腔</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/paidu/">排毒</a></em>
+            <em><a href="http://health.pclady.com.cn/insomnia/">失眠</a></em>
+            <em><a href="http://health.pclady.com.cn/bm/">便秘</a></em>
+            <em><a href="http://health.pclady.com.cn/huzu/">护足</a></em>
+            <em><a href="http://health.pclady.com.cn/sc/">阴道</a></em>
+            <em><a href="http://health.pclady.com.cn/gynecological/">妇科疾病</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/cwjb/">肠胃疾病</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/stjb/">身体疾病</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/gnq/">更年期</a></em>
+            <em><a href="http://health.pclady.com.cn/urethritis/">尿道炎</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/xxgb/">心血管病</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/ckjb/">产科疾病</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/yinshi/">饮食</a></em>
+            <em><a href="http://health.pclady.com.cn/ysh/">养生</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/xlbj/">心理保健</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/yysp/">营养食谱</a></em>
+            <em><a href="http://health.pclady.com.cn/vitamin/">维生素</a></em>
+            <em><a href="http://health.pclady.com.cn/yjk/">亚健康</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/bus/">补肾</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/shenx/">肾虚</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/wy/">胃炎</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/sheny/">肾炎</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/wky/">胃溃疡</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/cyan/">肠炎</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/weiz/">胃胀</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/wt/">胃疼</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/shenjs/">肾结石</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/wa/">胃癌</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/weilys/">微量元素</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/danbz/">蛋白质</a></em>
+            <em><a href="http://health.pclady.com.cn/healthzq/cbzw/">草本植物</a></em>
+            <em class="cur">原材料</em>
+            <em><a href="">狐臭</a></em>
+            <em><a href="">泡脚</a></em>
+            <em><a href="">尖锐湿疣</a></em>
+            <em><a href="">痔疮</a></em>
+            <em><a href="">脱发</a></em>
+            <em><a href="">颈椎病</a></em>
+            <em><a href="">智齿</a></em>
+        </dt>
+        <dd>
+            <a href="http://health.pclady.com.cn/healthzq/luxue/">鹿血</a> |
+            <a href="http://health.pclady.com.cn/healthzq/hby/">海豹油</a> |
+            <a href="http://health.pclady.com.cn/healthzq/ygy/">鱼肝油</a> |
+            <a href="http://health.pclady.com.cn/healthzq/dha/">DHA</a> |
+            <a href="http://health.pclady.com.cn/healthzq/ytp/">羊胎盘</a> |
+            <a href="http://health.pclady.com.cn/healthzq/ncr/">牛初乳</a> |
+            <a href="http://health.pclady.com.cn/healthzq/daisj/">袋鼠精</a> |
+            <a href="http://health.pclady.com.cn/healthzq/shayr/">鲨鱼肉</a> |
+            <a href="http://health.pclady.com.cn/healthzq/syrgf/">鲨鱼软骨粉</a> |
+            <a href="http://health.pclady.com.cn/healthzq/wgl/">维骨力</a> |
+            <a href="http://health.pclady.com.cn/healthzq/jks/">甲壳素</a> |
+            <a href="http://health.pclady.com.cn/healthzq/gujy/">骨胶原</a> |
+            <a href="http://health.pclady.com.cn/healthzq/haigy/">海狗油</a> |
+            <a href="http://health.pclady.com.cn/healthzq/zzf/">珍珠粉</a> |
+        </dd>
+    </dl>
+</div>
+<div class="capital">
+    <div class="layAB">
+        <div class="focus">
+            <p class="pPic"><a href="http://health.pclady.com.cn/92/929101.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/health/ysjk/swyy/1303/11.jpg" width="350" height="350" alt="每天200克DHA才能让你变聪明"></a></p>
+            <p class="pTit"><a href="http://health.pclady.com.cn/92/929101.html" target="_blank">每天200克DHA才能让你变聪明</a></p>
+            <p class="pDes">现在鼓吹含DHA的食品满天飞，从牛奶到酸奶，从味精到寿司，但是这些DHA食品真的能让你变聪明吗？…</p>
+        </div>
+        <div class="topNews">
+            <strong class="sTit"><a href="http://health.pclady.com.cn/94/948215.html" target="_blank">鹿血竟是害死咸丰帝的凶手？</a></strong>
+            <p class="pDes">鹿是偶蹄目的1科，共16属约52种，大多数种类普遍具有的特点是：四肢细长、尾巴较短，雄性体性，大于雌性。…</p>
+            <strong class="sTit"><a href="http://health.pclady.com.cn/94/948213.html" target="_blank">海豹油神奇作用 提高免疫力</a></strong>
+            <p class="pDes">海豹系深海哺乳动物，生活在加拿大北部北极圈内最低零下50℃高寒水域，以名贵的鳝鱼为食，体内聚焦厚厚的脂…</p>
+            <p class="pLine"></p>
+            <ul class="expTxtA">
+                <li><a href="http://health.pclady.com.cn/94/948212.html" target="_blank">宝宝身体好 鱼肝油少不了</a></li>
+                <li><a href="http://health.pclady.com.cn/94/948210.html" target="_blank">脑发育关键 了解DHA及其功效</a></li>
+                <li><a href="http://health.pclady.com.cn/92/929126.html" target="_blank">春天是否还给宝宝补充鱼肝油</a></li>
+                <li><a href="http://health.pclady.com.cn/92/929124.html" target="_blank">添加鱼肝油的注意事项</a></li>
+            </ul>
+            <p class="pLine"></p>
+            <ul class="expTxtA">
+                <li><a href="http://health.pclady.com.cn/92/929119.html" target="_blank">宝宝吃鱼肝油有哪些好处</a></li>
+                <li><a href="http://health.pclady.com.cn/92/929118.html" target="_blank">鱼肝油过量会维A中毒</a></li>
+                <li><a href="http://health.pclady.com.cn/92/929114.html" target="_blank">宝宝身体好 鱼肝油少不了</a></li>
+                <li><a href="http://health.pclady.com.cn/92/929112.html" target="_blank">识别鱼肝油“花边” 长见识</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="layC">
+        <div class="ivy230 mb20"><a href="http://try.pclady.com.cn/" target="_blank"><img src="http://img0.pclady.com.cn/pclady/beauty/hairstyle/bkfx/1505/1.jpg"></a></div>
+        <div class="modBoxA">
+            <div class="thA"><span class="mark">原材料文章排行榜</span></div>
+            <div class="tbA olTop">
+                <ol>
+                    <li><a href="http://health.pclady.com.cn/healthzq/1301/930330.html" target="_blank">骨胶原的适用人群</a></li>
+                    <li><a href="http://health.pclady.com.cn/healthzq/1301/930326.html" target="_blank">骨胶原哪个牌子好</a></li>
+                    <li><a href="http://health.pclady.com.cn/healthzq/1301/930074.html" target="_blank">牛初乳怎么吃</a></li>
+                    <li><a href="http://health.pclady.com.cn/healthzq/1301/930066.html" target="_blank">牛初乳的副作用</a></li>
+                    <li><a href="http://health.pclady.com.cn/healthzq/1301/932281.html" target="_blank">羊胎盘的作用</a></li>
+                    <li><a href="http://health.pclady.com.cn/healthzq/1301/932279.html" target="_blank">孕妇dha什么时候吃</a></li>
+                    <li><a href="http://health.pclady.com.cn/healthzq/1301/932269.html" target="_blank">海豹油软胶囊价格</a></li>
+                    <li><a href="http://health.pclady.com.cn/healthzq/1301/932247.html" target="_blank">更年期吃鹿血可以吗</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="inner">
+    <div class="layAB">
+        <div class="modBoxB mr20">
+            <div class="thB"><span class="mark"><a href="http://health.pclady.com.cn/healthzq/ygy/" target="_blank">鱼肝油的作用</a></span><a href="http://health.pclady.com.cn/healthzq/ygy/" target="_blank" class="subMark">更多&gt;&gt;</a></div>
+            <div class="tbB">
+                <p class="pPic"><a href="http://health.pclady.com.cn/94/948212.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/1303/10/948212_13.jpg" alt="鱼肝油"></a></p>
+                <ul class="expTxtA">
+                    <li><a href="http://health.pclady.com.cn/92/929126.html" target="_blank">春天是否还给宝宝补充鱼肝油</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/929124.html" target="_blank">添加鱼肝油的注意事项</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/929119.html" target="_blank">宝宝吃鱼肝油有哪些好处</a></li>
+                    <li class="KG"></li>
+                    <li><a href="http://health.pclady.com.cn/92/929118.html" target="_blank">鱼肝油过量会维A中毒</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/929114.html" target="_blank">宝宝身体好 鱼肝油少不了</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/929112.html" target="_blank">识别鱼肝油“花边” 长见识</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="modBoxB">
+            <div class="thB"><span class="mark"><a href="http://health.pclady.com.cn/healthzq/dha/" target="_blank">了解DHA及其功效</a></span><a href="http://health.pclady.com.cn/healthzq/dha/" target="_blank" class="subMark">更多&gt;&gt;</a></div>
+            <div class="tbB">
+                <p class="pPic"><a href="http://health.pclady.com.cn/94/948210.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/1303/10/948210_11.jpg" alt="DHA的作用"></a></p>
+                <ul class="expTxtA">
+                    <li><a href="http://health.pclady.com.cn/92/929105.html" target="_blank">DHA对儿童的成长有哪些好处</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/929104.html" target="_blank">孕妇补充DHA的三个途径</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/929103.html" target="_blank">DHA联动阻断基因技术治疗淋病</a></li>
+                    <li class="KG"></li>
+                    <li><a href="http://health.pclady.com.cn/92/929101.html" target="_blank">每天200克DHA才能让你变聪明</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/929092.html" target="_blank">宝宝怎样合理补充DHA</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/929090.html" target="_blank">多吃鱼 DHA有助健脑和护心脑</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="modBoxB mr20">
+            <div class="thB"><span class="mark"><a href="http://health.pclady.com.cn/healthzq/ncr/" target="_blank">牛初乳的营养价值</a></span><a href="http://health.pclady.com.cn/healthzq/ncr/" target="_blank" class="subMark">更多&gt;&gt;</a></div>
+            <div class="tbB">
+                <p class="pPic"><a href="http://health.pclady.com.cn/94/948205.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/1303/10/948205_9.jpg" alt="牛初乳"></a></p>
+                <ul class="expTxtA">
+                    <li><a href="http://health.pclady.com.cn/92/927266.html" target="_blank">妈妈滥用牛初乳 宝宝很受伤</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/927265.html" target="_blank">牛初乳虽好 宝宝切勿轻尝</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/927263.html" target="_blank">提高免疫力 牛初乳少不得</a></li>
+                    <li class="KG"></li>
+                    <li><a href="http://health.pclady.com.cn/92/927258.html" target="_blank">添加牛初乳 小心宝宝性早熟</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/927257.html" target="_blank">添加牛初乳 必须科学补充</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/927252.html" target="_blank">适量添加牛初乳 增强免疫力</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="modBoxB">
+            <div class="thB"><span class="mark"><a href="http://health.pclady.com.cn/healthzq/gujy/" target="_blank">骨胶原的适用人群</a></span><a href="http://health.pclady.com.cn/healthzq/gujy/" target="_blank" class="subMark">更多&gt;&gt;</a></div>
+            <div class="tbB">
+                <p class="pPic"><a href="http://health.pclady.com.cn/94/948199.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/1303/10/948199_3.jpg" alt="骨质疏松补充骨胶原"></a></p>
+                <ul class="expTxtA">
+                    <li><a href="http://health.pclady.com.cn/92/929100.html" target="_blank">30岁的女人要怎么补充骨胶原蛋白</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/929097.html" target="_blank">你了解身体骨骼的那些秘密吗</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/929096.html" target="_blank">科普解码 骨胶原蛋白是好东西</a></li>
+                    <li class="KG"></li>
+                    <li><a href="http://health.pclady.com.cn/92/929094.html" target="_blank">4种胶原蛋白食物 锁住水嫩肌肤</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/927603.html" target="_blank">4种美食 让你把骨胶原吃下去</a></li>
+                    <li><a href="http://health.pclady.com.cn/92/927602.html" target="_blank">护肤美容 首选骨胶原护肤品</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="layC">
+        <div class="modBoxA mb20">
+            <div class="thA"><a href="http://health.pclady.com.cn/kb/" target="_blank" class="mark">疾病护理</a></div>
+            <div class="tbA Slide">
+                <div class="slideC" id="slide01">
+                    <a href="javascript:void(0)" class="aLeft" onclick="tab01.playTo(tab01.curPage-2)" onmouseout="tab01.stop()"></a>
+                    <div class="slide" style="overflow: hidden;">
+
+                        <div class="contentWrap" style="overflow: hidden; position: relative; width: 100%;">
+                            <ul class="expPicA" style="width: 1272px;">
+                                <li class="current" style="float: left;"><a href="http://health.pclady.com.cn/130/1304015.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/health/kb/1505/270x360(72.jpg" width="80" height="100" alt="了解内分泌平衡法则 内分泌失调的危害"></a></li>
+                                <li class="" style="float: left;"><a href="http://health.pclady.com.cn/130/1304003.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/health/kb/1505/365x270(46.jpg" width="80" height="100" alt="妇科病爱剩女 妇科病从此防治"></a></li>
+                                <li class="" style="float: left;"><a href="http://health.pclady.com.cn/130/1303993.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/health/kb/1505/365x270(28.jpg" width="80" height="100" alt="经期心情差 抑郁烦燥如何改善"></a></li>
+                                <li class="" style="float: left;"><a href="http://health.pclady.com.cn/130/1304001.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/health/kb/1505/360x270(97.jpg" width="80" height="100" alt="你的“早更女友”10大表现"></a></li>
+                                <li class="" style="float: left;"><a href="http://health.pclady.com.cn/130/1303997.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/health/kb/1505/360x270(18.jpg" width="80" height="100" alt="姑娘 你知道贪凉的代价吗"></a></li>
+                                <li class="" style="float: left;"><a href="http://health.pclady.com.cn/130/1302875.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/health/kb/1505/360x270(88.jpg" width="80" height="100" alt="徐若瑄的孕期保养秘诀 专家称不要全信"></a></li>
+                                <li class="" style="float: left;"><a href="http://health.pclady.com.cn/130/1304015.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/health/kb/1505/270x360(72.jpg" width="80" height="100" alt="了解内分泌平衡法则 内分泌失调的危害"></a></li>
+                                <li class="" style="float: left;"><a href="http://health.pclady.com.cn/130/1304003.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/health/kb/1505/365x270(46.jpg" width="80" height="100" alt="妇科病爱剩女 妇科病从此防治"></a></li>
+                                <li class="" style="float: left;"><a href="http://health.pclady.com.cn/130/1303993.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/health/kb/1505/365x270(28.jpg" width="80" height="100" alt="经期心情差 抑郁烦燥如何改善"></a></li>
+                                <li class="" style="float: left;"><a href="http://health.pclady.com.cn/130/1304001.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/health/kb/1505/360x270(97.jpg" width="80" height="100" alt="你的“早更女友”10大表现"></a></li>
+                                <li class="" style="float: left;"><a href="http://health.pclady.com.cn/130/1303997.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/health/kb/1505/360x270(18.jpg" width="80" height="100" alt="姑娘 你知道贪凉的代价吗"></a></li>
+                                <li class="" style="float: left;"><a href="http://health.pclady.com.cn/130/1302875.html" target="_blank"><img src="http://img0.pclady.com.cn/pclady/health/kb/1505/360x270(88.jpg" width="80" height="100" alt="徐若瑄的孕期保养秘诀 专家称不要全信"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" class="aRight" onclick="tab01.playTo(tab01.curPage+2)" onmouseout="tab01.stop()"></a>
+                </div>
+                <ul class="expTxtA">
+                    <li><a href="http://health.pclady.com.cn/130/1304015.html" target="_blank">了解内分泌平衡法则 内分泌失调的</a></li>
+                    <li><a href="http://health.pclady.com.cn/130/1304003.html" target="_blank">妇科病爱剩女 妇科病从此防治</a></li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            window.tab01 = new pc.tab.scroll({
+                target: pc.getElems('#slide01 .slide li'),
+                width: 106,
+                animateTime: 500,
+                autoPlay: false
+            })
+        </script>
+        <div class="modBoxA">
+            <div class="thA"><span class="mark"><a href="http://www.pclady.com.cn/wiki/" target="_blank">相关知识点</a></span></div>
+            <div class="tbA pcTG">
+                <ul class="expTxtA" id="wikiCont"><li><a href="http://www.pclady.com.cn/wiki/g1z18504.html" target="_blank">韩式短发新娘发型如何做</a></li><li><a href="http://www.pclady.com.cn/wiki/g1z18495.html" target="_blank">小p老师百变发型教你怎么编韩式短发</a></li><li><a href="http://www.pclady.com.cn/wiki/g1z18494.html" target="_blank">韩式女生短发纹理烫</a></li><li class="KG"></li><li><a href="http://www.pclady.com.cn/wiki/g1z18503.html" target="_blank">夏日韩版男士短发发型有哪些</a></li><li><a href="http://www.pclady.com.cn/wiki/g1z18502.html" target="_blank">韩国女明星短发发型</a></li><li><a href="http://www.pclady.com.cn/wiki/g1z18501.html" target="_blank">短发怎样编头发</a></li></ul>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function cb(data) {
+                var liList = "";
+                for (var i = 0; i < data.length; i++) {
+                    var html = "", temp = data[i];
+                    if (i == 2) {
+                        html += '<li><a href="' + temp.url + '" target="_blank">' + temp.title + '</a></li><li class="KG"></li>';
+                    } else {
+                        html += '<li><a href="' + temp.url + '" target="_blank">' + temp.title + '</a></li>';
+                    }
+                    liList += html;
+                }
+                document.getElementById("wikiCont").innerHTML = liList;
+            }
+            var cnCode = encodeURIComponent("原材料");
+            var scri = document.createElement("script");
+            scri.src = "http://wiki.pclady.com.cn/interface/json_by_keyword.jsp?kw=" + cnCode + "&size=6&callback=cb";
+            scri.charset = "utf-8";
+            document.body.appendChild(scri);
+        </script>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="picList Health">
+    <div class="Title"><a href="http://pet.pclady.com.cn/" target="_blank" class="mark"></a><span class="subMark"><a href="http://pet.pclady.com.cn/" target="_blank">更多&gt;&gt;</a></span></div>
+    <div class="boxBg"></div>
+    <div class="boxPic">
+        <ul class="expPicA">
+            <li><a target="_blank" href="http://dress.pclady.com.cn/129/1293273.html"><img src="http://img0.pclady.com.cn/pclady/dress/style/1504/paipai1.jpg" width="135" height="180" alt="这个季节最好来件皮夹克"><em>这个季节最好来件皮夹</em></a></li>
+            <li><a target="_blank" href="http://dress.pclady.com.cn/128/1285417.html"><img src="http://img0.pclady.com.cn/pclady/dress/style/1504/zhengzheng1.jpg" width="135" height="180" alt="要duang多少钱？中国时装周潮搭品牌大揭秘"><em>中国时装周潮搭品牌大</em></a></li>
+            <li><a target="_blank" href="http://dress.pclady.com.cn/128/1284263.html"><img src="http://img0.pclady.com.cn/pclady/dress/fashion/1504/paipai111.jpg" width="135" height="180" alt="高腰露脐上衣 让你腿duang的一下长10厘米"><em>高腰露脐上衣 让你一</em></a></li>
+            <li><a target="_blank" href="http://dress.pclady.com.cn/127/1275585.html"><img src="http://img0.pclady.com.cn/pclady/dress/street/1503/nvren.jpg" width="135" height="180" alt="春暖花开韩国妹子教你换季如何穿新衣"><em>韩国妹子教你换季如何</em></a></li>
+            <li><a target="_blank" href="http://dress.pclady.com.cn/127/1279358.html"><img src="http://img0.pclady.com.cn/pclady/dress/fashion/1503/wakakak111.jpg" width="135" height="180" alt="允儿铁了心要称霸机场 给零失手公主跪了！"><em>允儿铁了心要称霸机场</em></a></li>
+            <li><a target="_blank" href="http://dress.pclady.com.cn/127/1279928.html"><img src="http://img0.pclady.com.cn/pclady/dress/fashion/1503/24.jpg" width="135" height="180" alt="千万别让你的女人变成翻版韩星 会被勾搭走的！"><em>一大波韩星求勾搭！</em></a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+
+
+    <div class="pEnd">
+        <div class="layAB modBoxA keyHot">
+            <div class="thA" id="lumpTab"><span class="mark">热点专区</span></div>
+            <div class="tbA" id="links_con">
+                <div class="contentdiv">
+                    <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                        <tbody>
+                            <tr>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/yoga/">瑜伽</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/sx/leg/">美腿</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/jianfeicao/">减肥操</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/rufangzhengxing/longxiong/">隆胸</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/jf/recipe/">减肥食谱</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/shoutun/meitun/">美臀</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/aerobics/">健美操</a></td>
+                            </tr>
+                            <tr>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/sx/face/">瘦脸</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/meibuzhengxing/syp/">双眼皮</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/xy/">洗牙</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/shoulian/zysl/">怎样瘦脸</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/jfss/">减肥瘦身</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/jianshenwu/">健身舞</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/jf/jianfeiyao/">减肥药</a></td>
+                            </tr>
+                            <tr>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/shoulian/slz/">瘦脸针</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/meitui/sdt/">瘦大腿</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/meimao/">眉毛</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/meibuzhengxing/sypss/">双眼皮手术</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/ss/">瘦身</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/jf/jianfeicha/">减肥茶</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/dz/">点痣</a></td>
+                            </tr>
+                            <tr>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/meibuzhengxing/gsyp/">割双眼皮</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/sx/chest/fxcp/">丰胸产品</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/bibuzhengxing/longbi/">隆鼻</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/meitui/sxt/">瘦小腿</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/rufangzhengxing/ruyun/">乳晕</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/kuaisujianfei/">快速减肥</a></td>
+                                <td><a target="_blank" href="http://fitness.pclady.com.cn/zxzq/fx/">丰胸</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="layC modBoxA Edit">
+            <div class="thA"><span class="mark">联系编辑</span></div>
+            <div class="tbA">
+                <table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td>主编：毕岩 020-38178288-8375<br>编辑：贝学文 020-38178288-4213<br>广告联系： 010-82667102</td></tr></tbody></table>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>

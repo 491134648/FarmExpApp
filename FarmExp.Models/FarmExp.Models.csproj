@@ -57,6 +57,7 @@
     <Compile Include="Customers\LoginInfo.cs" />
     <Compile Include="Customers\Role.cs" />
     <Compile Include="Customers\StateProvince.cs" />
+    <Compile Include="Customers\Town.cs" />
     <Compile Include="Log\LogLevel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

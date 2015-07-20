@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace FarmExp.Core
 {
+    /// <summary>
+    /// 泛型单例
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
    public class Singleton<T>:Singleton
     {
         static T instance;
@@ -21,6 +25,10 @@ namespace FarmExp.Core
             }
         }
     }
+    /// <summary>
+    /// 某类型单例List
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class SingletonList<T> : Singleton<IList<T>>
     {
         static SingletonList()
@@ -34,6 +42,11 @@ namespace FarmExp.Core
             get { return Singleton<IList<T>>.Instance; }
         }
     }
+    /// <summary>
+    /// 某类型单例
+    /// </summary>
+    /// <typeparam name="TKey"></typeparam>
+    /// <typeparam name="TValue"></typeparam>
     public class SingletonDictionary<TKey, TValue> : Singleton<IDictionary<TKey, TValue>>
     {
         static SingletonDictionary()
@@ -47,6 +60,9 @@ namespace FarmExp.Core
             get { return Singleton<Dictionary<TKey, TValue>>.Instance; }
         }
     }
+    /// <summary>
+    /// 单例
+    /// </summary>
     public class Singleton
     {
         static Singleton()
@@ -61,5 +77,5 @@ namespace FarmExp.Core
         {
             get { return allSingletons; }
         }
-    }"""""""'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    }
 }

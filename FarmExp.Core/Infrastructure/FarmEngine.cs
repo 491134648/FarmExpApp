@@ -3,6 +3,7 @@ using Autofac.Integration.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Mvc;
 
 namespace FarmExp.Core
 {
@@ -33,27 +34,23 @@ namespace FarmExp.Core
         }
 
         /// <summary>
-        /// Register dependencies
+        /// 依赖注入
         /// </summary>
         /// <param name="config">Config</param>
         protected virtual void RegisterDependencies(FarmConfig config)
         {
+            //创建依赖容器
             var builder = new ContainerBuilder();
             var container = builder.Build();
-
-            //we create new instance of ContainerBuilder
-            //because Build() or Update() method can only be called once on a ContainerBuilder.
-
-
-            //dependencies
             var typeFinder = new WebAppTypeFinder(config);
             builder = new ContainerBuilder();
+            //注入Config,IEngine，ItypeFinder实例
             builder.RegisterInstance(config).As<FarmConfig>().SingleInstance();
             builder.RegisterInstance(this).As<IEngine>().SingleInstance();
             builder.RegisterInstance(typeFinder).As<ITypeFinder>().SingleInstance();
             builder.Update(container);
 
-            //register dependencies provided by other assemblies
+            //注入另外程序集的依赖注入提供者
             builder = new ContainerBuilder();
             var drTypes = typeFinder.FindClassesOfType<IDependencyRegistrar>();
             var drInstances = new List<IDependencyRegistrar>();
@@ -77,12 +74,12 @@ namespace FarmExp.Core
         #region Methods
 
         /// <summary>
-        /// Initialize components and plugins in the nop environment.
+        /// 初始化
         /// </summary>
         /// <param name="config">Config</param>
         public void Initialize(FarmConfig config)
         {
-            //register dependencies
+            //依赖注入
             RegisterDependencies(config);
 
             //startup tasks

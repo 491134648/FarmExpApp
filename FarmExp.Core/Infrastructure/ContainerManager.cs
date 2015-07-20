@@ -126,7 +126,7 @@ namespace FarmExp.Core
                 }
                 return Container.BeginLifetimeScope(MatchingScopeLifetimeTags.RequestLifetimeScopeTag);
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 return Container.BeginLifetimeScope(MatchingScopeLifetimeTags.RequestLifetimeScopeTag);
             }

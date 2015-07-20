@@ -11,6 +11,7 @@ namespace FarmExp.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string USName { get; set; }
         public string NameKey { get; set; }
         public virtual City City { get; set; }
         public virtual ICollection<Town> Towns { get; set; }

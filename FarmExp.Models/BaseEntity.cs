@@ -9,7 +9,7 @@ namespace FarmExp.Models
         /// Gets or sets the entity identifier
         /// </summary>
         public bool IsDeleteed { get; set; }
-        public DateTime CreateOn { get; set; }
+        public DateTime CreateOnUtc { get; set; }
         public int DisplayOrder { get; set; }
         public string ExtendField { get; set; }
         public override bool Equals(object obj)

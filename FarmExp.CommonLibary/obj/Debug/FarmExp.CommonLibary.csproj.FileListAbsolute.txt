@@ -15,3 +15,16 @@ D:\Project\FarmExp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.Resources
 D:\Project\FarmExp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.csproj.GenerateResource.Cache
 D:\Project\FarmExp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.dll
 D:\Project\FarmExp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.pdb
+C:\FarmExp\FarmExpApp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.Resources.resources
+C:\FarmExp\FarmExpApp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.csproj.GenerateResource.Cache
+C:\FarmExp\FarmExpApp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.dll
+C:\FarmExp\FarmExpApp\FarmExp.CommonLibary\obj\Debug\FarmExp.CommonLibary.pdb
+C:\FarmExp\FarmExpApp\FarmExp.CommonLibary\bin\Debug\FarmExp.CommonLibary.dll.config
+C:\FarmExp\FarmExpApp\FarmExp.CommonLibary\bin\Debug\FarmExp.CommonLibary.dll
+C:\FarmExp\FarmExpApp\FarmExp.CommonLibary\bin\Debug\FarmExp.CommonLibary.pdb
+C:\FarmExp\FarmExpApp\FarmExp.CommonLibary\bin\Debug\Newtonsoft.Json.dll
+C:\FarmExp\FarmExpApp\FarmExp.CommonLibary\bin\Debug\System.Interactive.Async.dll
+C:\FarmExp\FarmExpApp\FarmExp.CommonLibary\bin\Debug\System.Reflection.Metadata.dll
+C:\FarmExp\FarmExpApp\FarmExp.CommonLibary\bin\Debug\Newtonsoft.Json.xml
+C:\FarmExp\FarmExpApp\FarmExp.CommonLibary\bin\Debug\System.Interactive.Async.xml
+C:\FarmExp\FarmExpApp\FarmExp.CommonLibary\bin\Debug\System.Reflection.Metadata.xml

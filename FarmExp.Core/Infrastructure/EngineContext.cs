@@ -8,6 +8,11 @@ namespace FarmExp.Core
 {
    public class EngineContext
     {
+        /// <summary>
+        /// 创建EngineContext实例
+        /// </summary>
+        /// <param name="config">FarmConfi</param>
+        /// <returns>IEngine</returns>
         protected static IEngine CreateEngineInstance(FarmConfig config)
         {
             if (config != null && !string.IsNullOrEmpty(config.EngineType))
@@ -21,9 +26,15 @@ namespace FarmExp.Core
             }
             return new FarmEngine();
         }
+        /// <summary>
+        /// 初始化IEngine
+        /// </summary>
+        /// <param name="forceRecreate">是否强制重建</param>
+        /// <returns></returns>
         [MethodImpl(MethodImplOptions.Synchronized)]
         public static IEngine Initialize(bool forceRecreate)
         {
+            //判断IEngine实例是否为空及是否强制重建
             if (Singleton<IEngine>.Instance == null || forceRecreate)
             {
                 var config = ConfigurationManager.GetSection("NopConfig") as FarmConfig;

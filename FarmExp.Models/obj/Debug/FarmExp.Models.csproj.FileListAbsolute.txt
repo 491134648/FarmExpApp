@@ -2,3 +2,7 @@ D:\Project\FarmExp\FarmExp.Models\bin\Debug\FarmExp.Models.dll
 D:\Project\FarmExp\FarmExp.Models\bin\Debug\FarmExp.Models.pdb
 D:\Project\FarmExp\FarmExp.Models\obj\Debug\FarmExp.Models.dll
 D:\Project\FarmExp\FarmExp.Models\obj\Debug\FarmExp.Models.pdb
+C:\FarmExp\FarmExpApp\FarmExp.Models\bin\Debug\FarmExp.Models.dll
+C:\FarmExp\FarmExpApp\FarmExp.Models\bin\Debug\FarmExp.Models.pdb
+C:\FarmExp\FarmExpApp\FarmExp.Models\obj\Debug\FarmExp.Models.dll
+C:\FarmExp\FarmExpApp\FarmExp.Models\obj\Debug\FarmExp.Models.pdb

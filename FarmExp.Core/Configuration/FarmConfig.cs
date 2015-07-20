@@ -6,6 +6,9 @@ using System.Xml;
 
 namespace FarmExp.Core
 {
+    /// <summary>
+    /// 应用配置Config
+    /// </summary>
    public class FarmConfig:IConfigurationSectionHandler
     {
         /// <summary>

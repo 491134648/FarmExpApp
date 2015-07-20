@@ -45,7 +45,7 @@ namespace FarmExp.CommonLibary
            {
                test= Encoding.UTF8.GetString(_privateKeyRsaProvider.Decrypt(System.Convert.FromBase64String(ciperText), false));
            }
-           catch(Exception ex)
+           catch(Exception)
            {
 
            }
@@ -253,7 +253,7 @@ namespace FarmExp.CommonLibary
                }
                binr.BaseStream.Seek(-1, SeekOrigin.Current);
            }
-       catch(Exception e)
+       catch(Exception)
            {
 
            }

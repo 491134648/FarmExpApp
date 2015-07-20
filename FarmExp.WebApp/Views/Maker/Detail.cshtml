@@ -1,0 +1,711 @@
+﻿
+@{
+    ViewBag.Title = "绿家农场"+"鲜香农，专业农副产品推广平台";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    /** 目的地 焦点图 **/
+.attractions .focusView { position: relative; height: 350px; }
+.attractions .focusView .images { width: 670px; height: 350px; overflow: hidden; }
+.attractions .focusView .images .img_li { position: absolute; width: 670px; height: 350px; overflow: hidden; }
+.attractions .focusView .images .img_li img { /* width: 670px; */ }
+.attractions .focusView .images .img_info { position: absolute; bottom: 0; left: 0; height: 40px; width: 646px; padding: 10px 12px; line-height: 24px; background: url(../images/scene/scene_alpha.png) repeat; color: #ffffff; }
+.attractions .focusView .images .img_info h6, .attractions .focusView .images .img_info p { margin-top: 8px; *margin-top: 18px; font-size: 12px; text-align: right; font-weight: normal; }
+.attractions .focusView .control { position: absolute; z-index: 10; bottom: 0; right: 0; width: 646px; height: 40px; padding: 10px 12px; }
+.attractions .focusView .control li { position: relative; float: left; margin-right: 5px; display: inline-block; }
+.attractions .focusView .control li.current a { border: 2px solid #f59d47; border-radius: 3px; }
+.attractions .focusView .control li a { display: inline-block; width: 62px; height: 40px; border: 2px solid transparent; overflow: hidden; }
+.attractions .focusView .control li a img { width: 62px; }
+.attractions .recommend, .attractions .been, .attractions .want_go, .attractions .publish, .attractions .must_go { padding-bottom: 45px; }
+fieldset,img{ vertical-align:middle;border:0;}
+.wrap { width: 100%; height: auto; min-width: 996px; position: relative;z-index: 0;}
+** 景点首页 **/
+.attractions .pageLeft { float: left; width: 670px; padding-right: 36px; }
+.attractions .pageRight { float: left; width: 290px; }
+.attractions .bc_wrap { width: 100%; /* height: 100px;  */
+margin-bottom: 0px; }
+.attractions .mb20 { margin-bottom: 10px; }
+.attractions .bc_wrap .site_crumb { font-size: 12px; font-family: arial, "simsun", sans-serif; color: #666; margin-bottom: 10px; }
+.attractions .bc_wrap .site_crumb a { color: #28898d; font-weight: bold; }
+.attractions .summary { position: relative; float: left; width: 996px; line-height: 48px; }
+.continent .ctnent_summary { float: left; height: 35px; margin-bottom: 5px; line-height: 35px; }
+.attractions .title span, .continent .title span { padding-right: 5px; color: #3a9d9a; font-size: 20px; font-weight: bold; }
+.attractions .summary .title span { padding-right: 5px; font-size: 24px; line-height: 48px; font-family: 'microsoft yahei', sans-serif; font-weight: 100; color: #3a9d9a; }
+.attractions .summary .headLine { width: 425px; word-break: break-all; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; float: left; }
+.attractions .summary .title .last_span { color: #999999; text-transform: capitalize; }
+.attractions .summary .title p { line-height: 16px; color: #999999; white-space: nowrap; }
+.attractions .summary .widgetBox span { padding: 0 2px; font-size: 18px; line-height: 23px; color: #ffffff; font-weight: normal; }
+.attractions .summary .want_togo span, .attractions .summary .been_btn span { padding: 0 2px; padding-left: 35px; font-size: 18px; line-height: 23px; color: #ffffff; font-weight: normal; }
+.attractions .widgetBox .poptips span, .attractions .widgetBox .poptips1 span { color: black; font-size: 12px; }
+.attractions .short_desc { float: left; line-height: 20px; width: 100%; color: #b9b9b9; }
+#wishgo_num, #visited_num { padding-left: 0; }
+.attractions .widgetBox .want_togo, .attractions .widgetBox .been_btn { position: relative; display: inline-block; height: 35px; padding: 0 10px; border-radius: 3px; background: #4db6b3; vertical-align: middle; line-height: 35px; color: #fff; }
+.attractions .widgetBox .been_btn { margin-right: 0; }
+.attractions .widgetBox .want_togo:hover, .attractions .widgetBox .been_btn:hover { text-decoration: none; }
+.attractions .summary .widgetBox .wtg_img, .attractions .summary .widgetBox .bbtn_img { display: inline-block; height: 35px; padding-left: 35px; line-height: 35px; background: url(../images/scene/scene_bg.png) no-repeat; }
+.attractions .summary .widgetBox .wtg_img { background-position: -6px -233px; }
+.attractions .summary .widgetBox .bbtn_img { background-position: -6px -276px; }
+.attractions .want_togo:hover, .attractions .been_btn:hover { background: #5fcac7; }
+.attractions .poptips, .attractions .poptips1 { position: absolute; display: none; top: -32px; left: 0; padding: 0 3px; border: 1px solid #e2d7a4; line-height: 18px; background: #fffae5; color: #7a7a7a; white-space: nowrap; }
+.attractions .poptips p, .attractions .poptips1 p { line-height: 21px; word-wrap: normal; }
+.attractions .i_img { position: absolute; top: 22px; left: 14px; width: 15px; height: 15px; background: url(../images/scene/scene_bg.png) -4px -537px no-repeat; }
+.show .poptips, .show .poptips1 { display: block; }
+/* 洲页面样式 */
+.continent .ctnent_summary { line-height: 35px; }
+.continent .t1 { background: #3a9d9a; }
+.continent .t2 { background: #ffffff; }
+.continent .ctnent_summary .t1, .continent .ctnent_summary .t2 { float: left; width: 5px; height: 36px; }
+.continent .ctnent_summary .title span { display: inline-block; padding: 0px 13px; background: #3a9d9a; font-size: 26px; color: white; }
+.mb20 { margin-bottom: 20px; }
+.dest_new_version .container { margin-top: 25px; }
+.scene cite, .scene em { font-style: normal; }
+.scene .site_crumb { font-size: 12px; font-family: simsun, sans-serif; color: #666; margin-bottom: 20px; }
+.scene .site_crumb a { color: #28898d; font-weight: bold; }
+.scene .pageLeft { float: left; width: 670px; padding-right: 36px; }
+.scene .pageRight { float: left; width: 290px; }
+.container,.container0 { width: 996px; margin: 38px auto; height: auto; min-height: 550px; text-align: left; }
+.container0 { margin-top: 0; margin-bottom: 0px; }
+.attractions .widgetBox { float: right; }
+.widgetBox a { margin: 0 5px; color: #999999; cursor: pointer; }
+/**************** 游记 *****************/
+.travelogue .title .travelogue_header { padding-left: 20px; font-family: 'microsoft yahei', sans-serif; font-size: 20px; font-weight: normal; background: url(../images/scene/scene_bg.png) -3px -129px no-repeat; }
+.travelogue_header, .travelogue .widgetBox { float: left; font-size: 14px; }
+.travelogue_header { margin-right: 20px; }
+.widgetBox a { margin: 0 5px; color: #999999; cursor: pointer; }
+.widgetBox .info_user { margin-left: 0; }
+.attractions #info_tip .LinksBox li a { margin: 0 45px 0 0; }
+.attractions #info_tip .LinksBox li.Last a, .continent #info_tip .LinksBox li.Last a { margin: 0; }
+.widgetBox a.cur { color: #3a9d9a; }
+.travelogue .button_right { float: right; margin-top: -5px; }
+.travelogue .button-mini { margin-right: 0; border-radius: 0; height: 28px; line-height: 28px; }
+.attractions .button-mini span, .continent .button-mini span { display: inline-block; height: 28px; padding-right: 20px; color: white; font-size: 15px; font-weight: normal; background: url(../images/scene/scene_bg.png) 57px -312px no-repeat; }
+.travelogue .content { padding-top: 33px; }
+.travelogue .content li { border-top: 1px solid #e2e2e2; height: 102px; padding: 28px 0; }
+.attractions #info_tip li, .continent #info_tip li { height: auto; }
+.travelogue .content .img_wrap { float: left; width: 150px; height: 100px; overflow: hidden; }
+.attractions .img_wrap img, .continent .img_wrap img { width: 150px; /* height: 100px;  */ }
+.travelogue .content .desc { float: right; width: 500px; height: 120px; }
+.travelogue .desc .widgetBox, .travelogue .desc .widgetBox { width: 100%; height: 59px; }
+.travelogue .widgetBox .rounded_rectangle { float: left; width: 53px; height: 53px; }
+.travelogue .rounded_rectangle img { width: 45px; height: 45px; -moz-border-radius: 50%; padding: 2px; box-shadow: 0 0 2px rgba(0, 0, 0, 0.3); -webkit-border-radius: 50%; border-radius: 50%; border-radius: 50%; }
+.travelogue .widgetBox .fun_box { float: left; width: 380px; height: 100%; padding: 0 10px; line-height: 20px; }
+.travelogue .fun_box .see_count, .travelogue .fun_box .comt_count { margin-right: 10px; padding: 3px 0 3px 23px; background: url(../images/scene/scene_bg.png) no-repeat; }
+.travelogue .fun_box .see_count { background-position: -6px -394px; }
+.travelogue .fun_box .comt_count { background-position: -6px -420px; }
+.travelogue .widgetBox .good_wrap { position: relative; }
+.attractions .scene_area { margin-bottom: 30px; padding-bottom: 0; }
+.travelogue .widgetBox .good { position: absolute; display: inline-block; right: 0; width: 54px; height: 44px; margin: -3px 0 0 0; padding: 1px 3px 0 3px; background: #a4dd84; border-radius: 3px; text-align: center; }
+.goodNum { position: absolute; display: none; left: 70%; top: -5px; margin-left: -20px; font-size: 12px; color: #fa7b00; text-align: center; z-index: 999; }
+.travelogue .desc .widgetBox span { color: #9b9b9b; font-size: 12px; }
+.travelogue .widgetBox .widget_right { float: right; margin: -2px 5px 0 0; }
+.travelogue .desc p { width: 100%; height: 42px; line-height: 22px; text-indent: 2em; color: #7b7b7b; font-size: 14px; overflow: hidden; text-overflow: ellipsis; word-wrap: break-word; word-break: break-all; }
+.travelogue .widgetBox .fun_box a { color: #28898d; cursor: pointer; }
+.travelogue .widgetBox .fun_box h3 { width: 370px; word-break: break-all; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.travelogue .widgetBox .fun_box .top { margin-top: 6px; }
+.widgetBox .fun_box h3 a { margin: 0; }
+.travelogue .widgetBox .good_wrap .good_count { padding: 0 5px; color: white; }
+.travelogue .good_wrap .good:hover { text-decoration: none; background: #8bc768 }
+.travelogue .good .good_count, .travelogue .good .good_img { position: relative; display: inline-block; line-height: 18px; }
+.travelogue .good .good_img { width: 24px; height: 27px; margin: 0 9px; background: url(../images/scene/scene_bg.png) -3px -359px no-repeat; }
+.farm-details-tab {
+	font-size: 0;
+/*	padding: 10px 0;*/
+/*	margin-bottom: 20px;*/
+	border:1px #ddd solid;
+}
+  .farm-details-tab span {display: inline-block;font-size: 18px;font-weight: 700;padding:5px  0;width: 20%;width: 19.8%;
+	text-align: center;
+	border-right: 1px #ddd solid;
+	cursor: pointer;
+    }
+  span.tab-current {
+  color: #151515;
+  font-weight: 700;
+  background: #cee8ba;
+}
+  .attractions .button-large { width: 100%; height: 46px; padding: 0; line-height: 46px; }
+  .button-large { height: 50px; line-height: 50px; font-size: 24px;padding: 0 40px; }/**最大号按钮**/
+  .button, .button-main, .button-large,.button-mini,.btn { display: inline-block; text-align: center; border: none; background: #fa7b00!important; color: #fff!important;  width: auto; padding: 0 20px; height: 30px; line-height: 30px;  cursor: pointer; font-family: 'microsoft yahei'; font-size: 28px; *overflow:visible;}
+/************ 约伴 ************/
+.attractions .company_main { margin-bottom: 35px; }
+.attractions .company_main .no_result { padding-top: 70px; font-size: 14px; text-align: center; font-family: 'microsoft yahei', sans-serif; color: #898989; }
+.attractions .company_main .image { float: left; }
+.attractions .company_main img, .attractions .want_go img, .attractions .been img { width: 50px; height: 50px; }
+.attractions .company_main li { height: 50px; padding-bottom: 15px; }
+.attractions .company_main .text { padding-left: 58px; line-height: 26px; color: #9c9c9c; }
+.attractions .company_main .text h3 { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.attractions .company_main .text a { color: #666; font-weight: normal; }
+.attractions .company_main .text .info_user { color: #28898d; }
+.attractions .company_main .text a:hover { color: #28898d; }
+.attractions .company .box { padding-bottom: 0; }
+</style>
+<script src="~/Scripts/images.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var focusImgLi = $('.focusView .images .img_li');
+        if (focusImgLi.size())
+            focusImgLi.soChange({
+                thumbObj: $('.focusView .control li'), //导航对象，默认为空
+                thumbNowClass: 'current', //导航对象当前的class,默认为now
+                thumbOverEvent: true,//鼠标经过thumbObj时是否切换对象，默认为 true，为false时，只有鼠标点击thumbObj才切换对象
+                changeTime: 5000, //对象自动切换时间，默认为5000ms，即5秒
+                delayTime: 300 //鼠标经过时对象切换迟滞时间，推荐值为300ms
+            });
+    });
+        var focusImgLi = $('.focusView .images .img_li');
+        if (focusImgLi.size())
+            focusImgLi.soChange({
+                thumbObj: $('.focusView .control li'), //导航对象，默认为空
+                thumbNowClass: 'current', //导航对象当前的class,默认为now
+                thumbOverEvent: true,//鼠标经过thumbObj时是否切换对象，默认为 true，为false时，只有鼠标点击thumbObj才切换对象
+                changeTime: 5000, //对象自动切换时间，默认为5000ms，即5秒
+                delayTime: 300 //鼠标经过时对象切换迟滞时间，推荐值为300ms
+            });
+    });
+    //图片上下div中心
+    (function adjust_pic() {
+        var cntr_width, cntr_height, an_cntr_width, an_cntr_height, margin_top;
+        if ($('.adjust_pic_position').hasClass('img_li')) {
+            cntr_width = $('.focusView .images').width();
+            cntr_height = $('.focusView .images').height();
+        }
+        if ($('.adjust_pic_position').hasClass('must_go')) {
+            an_cntr_width = $('.must_go img').parent().width();
+            an_cntr_height = $('.must_go img').parent().height();
+        }
+        $('.adjust_pic_position img').each(function () {
+            if ($(this).attr('size') !== undefined) {
+                var tmpStr = $(this).attr('size').split('X');
+                var width = tmpStr[0];
+                var height = tmpStr[1];
+                var ratio = width / height;
+                var new_height;
+                if ($(this).parent().parent().hasClass('img_li')) {
+                    new_height = cntr_width / ratio;
+                    margin_top = '-' + (new_height - cntr_height) / 2 + 'px';
+
+                } else {
+                    new_height = an_cntr_width / ratio;
+                    margin_top = '-' + (new_height - an_cntr_height) / 2 + 'px';
+                }
+                $(this).css('marginTop', margin_top);
+            }
+        });
+    })();
+
+</script>
+<div class="container">
+    <div class="scene wrap attractions">
+        <div class="clearfix">
+            <div class="bc_wrap mb20">
+                <div class="site_crumb mb20">
+                    <a href="/dest">农场故事</a> » <a href="/dest/neimenggu" title="">湖南</a> » <a href="/dest/hulunbeier-city" title="">常德</a> »洋淘湖农场
+                </div>
+                <div class="summary">
+                    <div class="title clearfix">
+                        <div class="headLine">
+                            <span id="node_id" node_id="3149">奇乾 |</span><span class="last_span">qiqian</span>
+                        </div>
+                        <div class="widgetBox">
+                            <a class="want_togo" href="javascript:void(0);">
+                                <span class="wtg_img">想去</span>
+                                <div class="poptips1">
+                                    <span id="wishgo_num" class="count_num">0</span>人想去
+                                    <i class="i_img"></i>
+                                </div>
+                                <b class="goodNum">+1</b>
+                                <div></div>
+
+                            </a>
+                            <a class="been_btn addMyImpress" href="javascript:void(0);">
+                                <span class="bbtn_img">去过</span>
+                                <div class="poptips">
+                                    <span id="visited_num" class="count_num">2</span>人去过
+                                    <i class="i_img"></i>
+                                </div>
+                                <b class="goodNum">+1</b>
+                                <div></div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="short_desc"><p></p></div>
+                <div class="clearfix"></div><!--清除浮动-->
+
+
+            </div>
+
+            <div class="pageLeft">
+
+                <div class="recommend">
+                    <!--滚动图片-->
+                    <div class="focusView clearfix">
+                        <ul class="images">
+                            <li class="img_li adjust_pic_position" style="display: list-item; opacity: 0.996057350657239;">
+                                <a href="/forum/921456,0,0,0.html" title="">
+                                    <img size="800X531" src="http://c1.zdb.io/files/2012/10/31/5/5f74eae36b23e1f3fffbcf9be19093fc_b.jpg" alt="" style="margin-top: -47.35625px;">
+                                </a>
+                                <div class="img_info">
+                                    <h6>来自: 一对手</h6>
+                                    <!--<p>2012-10-31 20:13</p>-->
+                                </div>
+                            </li>
+                            <li class="img_li adjust_pic_position" style="display: none;">
+                                <a href="/forum/921456,0,0,0.html" title="">
+                                    <img size="800X531" src="http://c1.zdb.io/files/2012/10/31/a/a772f06120741b1e6b33d70d993779ef_b.jpg" alt="" style="margin-top: -47.35625px;">
+                                </a>
+                                <div class="img_info">
+                                    <h6>来自: 一对手</h6>
+                                    <!--<p>2012-10-31 20:14</p>-->
+                                </div>
+                            </li>
+                            <li class="img_li adjust_pic_position" style="display: none;">
+                                <a href="/forum/921456,0,0,0.html" title="">
+                                    <img size="800X531" src="http://c1.zdb.io/files/2012/10/31/0/0838df0db0f2ed7ac82a42ec46f9c27f_b.jpg" alt="" style="margin-top: -47.35625px;">
+                                </a>
+                                <div class="img_info">
+                                    <h6>来自: 一对手</h6>
+                                    <!--<p>2012-10-31 20:14</p>-->
+                                </div>
+                            </li>
+                            <li class="img_li adjust_pic_position" style="display: none;">
+                                <a href="/forum/921456,0,0,0.html" title="">
+                                    <img size="800X531" src="http://c1.zdb.io/files/2012/10/31/b/ba9ff7648e57b3cc6137eebdecbacb3b_b.jpg" alt="" style="margin-top: -47.35625px;">
+                                </a>
+                                <div class="img_info">
+                                    <h6>来自: 一对手</h6>
+                                    <!--<p>2012-10-31 20:14</p>-->
+                                </div>
+                            </li>
+                            <li class="img_li adjust_pic_position" style="display: list-item; opacity: 0.00394264934276112;">
+                                <a href="/forum/921456,0,0,0.html" title="">
+                                    <img size="800X531" src="http://c1.zdb.io/files/2012/10/31/5/5aa65b53a3d2639c3f1b6436dee5f128_b.jpg" alt="" style="margin-top: -47.35625px;">
+                                </a>
+                                <div class="img_info">
+                                    <h6>来自: 一对手</h6>
+                                    <!--<p>2012-10-31 20:14</p>-->
+                                </div>
+                            </li>
+
+                        </ul>
+                        <ul class="control clearfix">
+                            <li class="current">
+                                <a href="javascript:;"><img src="http://c1.zdb.io/files/2012/10/31/5/5f74eae36b23e1f3fffbcf9be19093fc_s.jpg"></a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;"><img src="http://c1.zdb.io/files/2012/10/31/a/a772f06120741b1e6b33d70d993779ef_s.jpg"></a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;"><img src="http://c1.zdb.io/files/2012/10/31/0/0838df0db0f2ed7ac82a42ec46f9c27f_s.jpg"></a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;"><img src="http://c1.zdb.io/files/2012/10/31/b/ba9ff7648e57b3cc6137eebdecbacb3b_s.jpg"></a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;"><img src="http://c1.zdb.io/files/2012/10/31/5/5aa65b53a3d2639c3f1b6436dee5f128_s.jpg"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!--不可不去-->
+                <!--游记-->
+                <div class="viewmore">
+                    <div class="farm-details-tab">
+                        <span class="tab-current">农场介绍</span>
+                        <span >他们说*游记</span>
+                        <span id="oldFarm" class="">农副产品</span>
+                    </div>
+                    <div class="travelogue">
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    <div class="img_wrap">
+                                        <a target="_blank" href="/forum/921456,0,0,0.html"><img src="http://c1.zdb.io/files/2012/10/31/6/6cac2f61e3e72dbabc747c7f4d7ec123_m.jpg"></a>
+                                    </div>
+                                    <div class="desc">
+                                        <div class="widgetBox">
+                                            <div class="rounded_rectangle"><a href="/user/155399"><img src="http://c1.zdb.io/files/faces/a/0/a09022f64t.jpg"></a></div>
+                                            <div class="fun_box">
+                                                <h3><a target="_blank" href="/forum/921456,0,0,0.html" title="[大片]晚秋东蒙全攻略，附观景台坐标--流星银河、炊烟黄叶、魔幻奇乾、 ...">[大片]晚秋东蒙全攻略，附观景台坐标--流星银河、炊烟黄叶、魔幻奇乾、 ...</a></h3>
+                                                <div class="top clearfix">
+                                                    <div class="widget_right">
+                                                        <span class="see_count" title="浏览">15647</span>
+                                                        <span class="comt_count" title="回复">268</span>
+                                                    </div>
+                                                    <span>作者：<a class="info_user" rel="info_user_155399" href="###">一对手</a></span><span>2012-10-31 20:24</span>
+                                                </div>
+                                            </div>
+                                            <div class="good_wrap">
+                                                <a class="good" tid="921456" title="好评">
+                                                    <span class="good_img"></span>
+                                                    <span class="good_count">241</span>
+                                                    <b class="goodNum">+1</b>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        <p>我也很久没有走国内线了，近年一直都往外跑。但今年都在家努力地工作赚钱，不过国庆8天长假不出去走走也实在对不起国务院，刚好有朋友想去东蒙看秋收，就糊里糊涂地找了这条并非看秋收的线路.................却 ...</p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_wrap">
+                                        <a target="_blank" href="/forum/265587,0,0,0.html"><img src="http://c1.zdb.io/files/2007/10/24/7/7a740b8a724f0e9e_m.jpg"></a>
+                                    </div>
+                                    <div class="desc">
+                                        <div class="widgetBox">
+                                            <div class="rounded_rectangle"><a href="/user/82945"><img src="http://c1.zdb.io/files/faces/45/user82945.jpg"></a></div>
+                                            <div class="fun_box">
+                                                <h3><a target="_blank" href="/forum/265587,0,0,0.html" title="梦中的童话 ----- 奇乾">梦中的童话 ----- 奇乾</a></h3>
+                                                <div class="top clearfix">
+                                                    <div class="widget_right">
+                                                        <span class="see_count" title="浏览">8292</span>
+                                                        <span class="comt_count" title="回复">100</span>
+                                                    </div>
+                                                    <span>作者：<a class="info_user" rel="info_user_82945" href="###">古～月</a></span><span>2007-10-24 21:20</span>
+                                                </div>
+                                            </div>
+                                            <div class="good_wrap">
+                                                <a class="good" tid="265587" title="好评">
+                                                    <span class="good_img"></span>
+                                                    <span class="good_count">14</span>
+                                                    <b class="goodNum">+1</b>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07年9月26日~10月11日,与烧烧,苗苗和老谢一行四人到北京,坝上,内蒙出游了又一个长假.  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此行感到最精彩,让我触动心灵,感受最深,为之动情的就是位于呼伦贝尔盟额尔古纳右旗北部，中国版图 ...</p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_wrap">
+                                        <a target="_blank" href="/forum/918435,0,0,0.html"><img src="http://c1.zdb.io/files/2012/10/14/7/7e6b7bca067de263d50863c58b9e987c_m.jpg"></a>
+                                    </div>
+                                    <div class="desc">
+                                        <div class="widgetBox">
+                                            <div class="rounded_rectangle"><a href="/user/404942"><img src="http://c1.zdb.io/files/faces/7/5/752a80cdct.jpg"></a></div>
+                                            <div class="fun_box">
+                                                <h3><a target="_blank" href="/forum/918435,0,0,0.html" title="你的年纪，我的季节--2012呼伦贝尔之秋(全篇完）">你的年纪，我的季节--2012呼伦贝尔之秋(全篇完）</a></h3>
+                                                <div class="top clearfix">
+                                                    <div class="widget_right">
+                                                        <span class="see_count" title="浏览">16514</span>
+                                                        <span class="comt_count" title="回复">386</span>
+                                                    </div>
+                                                    <span>作者：<a class="info_user" rel="info_user_404942" href="###">用手走路</a></span><span>2012-10-14 17:06</span>
+                                                </div>
+                                            </div>
+                                            <div class="good_wrap">
+                                                <a class="good" tid="918435" title="好评">
+                                                    <span class="good_img"></span>
+                                                    <span class="good_count">262</span>
+                                                    <b class="goodNum">+1</b>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        <p>“自由像风一样，那是我伸手可及的天堂；人心洁净安详，那是我早已回不去的故乡。”</p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_wrap">
+                                        <a target="_blank" href="/forum/916104,0,0,0.html"><img src="http://c1.zdb.io/files/2012/08/03/4/4ae615343e7297a20a9da3ee6a12ea9a_m.jpg"></a>
+                                    </div>
+                                    <div class="desc">
+                                        <div class="widgetBox">
+                                            <div class="rounded_rectangle"><a href="/user/668941"><img src="http://c1.zdb.io/files/faces/3/a/3a0504a50t.jpg"></a></div>
+                                            <div class="fun_box">
+                                                <h3><a target="_blank" href="/forum/916104,0,0,0.html" title="醉美秋色、一路拾黄，食神+吃货的呼伦贝尔美食和谐游">醉美秋色、一路拾黄，食神+吃货的呼伦贝尔美食和谐游</a></h3>
+                                                <div class="top clearfix">
+                                                    <div class="widget_right">
+                                                        <span class="see_count" title="浏览">20172</span>
+                                                        <span class="comt_count" title="回复">488</span>
+                                                    </div>
+                                                    <span>作者：<a class="info_user" rel="info_user_668941" href="###">myg_hlj</a></span><span>2012-09-28 21:51</span>
+                                                </div>
+                                            </div>
+                                            <div class="good_wrap">
+                                                <a class="good" tid="916104" title="好评">
+                                                    <span class="good_img"></span>
+                                                    <span class="good_count">173</span>
+                                                    <b class="goodNum">+1</b>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        <p>一直以为呼伦贝尔的美丽只属于草原，一直以为呼伦贝尔的美丽只属于夏天。本贴拟用近千张相片纠正这个不可饶恕的错误，带你走进秋天的童话--呼伦贝尔。跟贴会穿插美景及美食点评，色友及吃货有福了。话说，机缘巧 ...</p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_wrap">
+                                        <a target="_blank" href="/forum/974172,0,0,0.html"><img src="http://c1.zdb.io/files/2013/07/29/0/001484bb0da6aab850511ea9c6f55a42_m.jpg"></a>
+                                    </div>
+                                    <div class="desc">
+                                        <div class="widgetBox">
+                                            <div class="rounded_rectangle"><a href="/user/400318"><img src="http://c1.zdb.io/files/faces/0/8/08bd68135t.jpg"></a></div>
+                                            <div class="fun_box">
+                                                <h3><a target="_blank" href="/forum/974172,0,0,0.html" title="畅游在最美的草原上——2013这个夏天游走在呼伦贝尔">畅游在最美的草原上——2013这个夏天游走在呼伦贝尔</a></h3>
+                                                <div class="top clearfix">
+                                                    <div class="widget_right">
+                                                        <span class="see_count" title="浏览">3357</span>
+                                                        <span class="comt_count" title="回复">150</span>
+                                                    </div>
+                                                    <span>作者：<a class="info_user" rel="info_user_400318" href="###">yyduo</a></span><span>2013-07-26 10:23</span>
+                                                </div>
+                                            </div>
+                                            <div class="good_wrap">
+                                                <a class="good" tid="974172" title="好评">
+                                                    <span class="good_img"></span>
+                                                    <span class="good_count">11</span>
+                                                    <b class="goodNum">+1</b>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        <p>我的心爱在天边天边有一片辽阔的大草原草原茫茫天地间洁白的蒙古包散落在河边我的心爱在高山高山深处是巍巍的大兴安林海茫茫云雾间矫健的雄鹰俯瞰着草原呼伦贝尔大草原白云朵朵飘在飘在我心间呼伦贝尔大草原我的 ...</p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_wrap">
+                                        <a target="_blank" href="/forum/435673,0,0,0.html"><img src="http://c1.zdb.io/files/2010/06/28/2/234a1e1f1bd5673f2d34f62bb6ca7a3d_m.jpg"></a>
+                                    </div>
+                                    <div class="desc">
+                                        <div class="widgetBox">
+                                            <div class="rounded_rectangle"><a href="/user/328351"><img src="http://c1.zdb.io/files/faces/7/e/7e78ef84at.jpg"></a></div>
+                                            <div class="fun_box">
+                                                <h3><a target="_blank" href="/forum/435673,0,0,0.html" title="望不到的帝国——内蒙古地域的旅行笔记：（四）锡林郭勒的时间发条">望不到的帝国——内蒙古地域的旅行笔记：（四）锡林郭勒的时间发条</a></h3>
+                                                <div class="top clearfix">
+                                                    <div class="widget_right">
+                                                        <span class="see_count" title="浏览">18757</span>
+                                                        <span class="comt_count" title="回复">658</span>
+                                                    </div>
+                                                    <span>作者：<a class="info_user" rel="info_user_328351" href="###">i m zanskar</a></span><span>2010-06-28 12:39</span>
+                                                </div>
+                                            </div>
+                                            <div class="good_wrap">
+                                                <a class="good" tid="435673" title="好评">
+                                                    <span class="good_img"></span>
+                                                    <span class="good_count">117</span>
+                                                    <b class="goodNum">+1</b>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        <p>&nbsp; &nbsp;[ 于2010年6月 呼伦贝尔境内 贝尔湖–宝格德乌拉 草原公路 ]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 【绿皮火车的夜行序】&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;（一）呼伦贝尔 &nbsp;不别六月 &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 【父亲的草原母亲 ...</p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_wrap">
+                                        <a target="_blank" href="/forum/922417,0,0,0.html"><img src="http://c1.zdb.io/files/2012/11/06/5/56b1d0c70b9bc2fc340f73403c06ea73_m.jpg"></a>
+                                    </div>
+                                    <div class="desc">
+                                        <div class="widgetBox">
+                                            <div class="rounded_rectangle"><a href="/user/85500"><img src="http://c1.zdb.io/files/faces/00/user85500.jpg"></a></div>
+                                            <div class="fun_box">
+                                                <h3><a target="_blank" href="/forum/922417,0,0,0.html" title="1个男人和4个女人不得不说的故事－－孤独的游荡在呼伦贝尔">1个男人和4个女人不得不说的故事－－孤独的游荡在呼伦贝尔</a></h3>
+                                                <div class="top clearfix">
+                                                    <div class="widget_right">
+                                                        <span class="see_count" title="浏览">4410</span>
+                                                        <span class="comt_count" title="回复">120</span>
+                                                    </div>
+                                                    <span>作者：<a class="info_user" rel="info_user_85500" href="###">549</a></span><span>2012-11-06 15:00</span>
+                                                </div>
+                                            </div>
+                                            <div class="good_wrap">
+                                                <a class="good" tid="922417" title="好评">
+                                                    <span class="good_img"></span>
+                                                    <span class="good_count">27</span>
+                                                    <b class="goodNum">+1</b>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        <p>从04年开始，虽然每年都出去玩一趟，磨房是行程攻略的首选，但这是第2次在磨房写东西，深感人气不足，于是憋3天憋出一个煽情点的标题，就算沉底也要保持文艺青年的风骨！故事的开始是这样的。。。。话说在8月中 ...</p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_wrap">
+                                        <a target="_blank" href="/forum/378227,0,0,0.html"><img src="http://c1.zdb.io/files/2009/09/06/e/e84d7afe59c24dbbe129fc85b9883adb_m.jpg"></a>
+                                    </div>
+                                    <div class="desc">
+                                        <div class="widgetBox">
+                                            <div class="rounded_rectangle"><a href="/user/114"><img src="http://c1.zdb.io/files/faces/thumb_face_image56.gif"></a></div>
+                                            <div class="fun_box">
+                                                <h3><a target="_blank" href="/forum/378227,0,0,0.html" title="我要从南走到北，还要从白走到黑----2009呼伦贝尔漠河北极村之夏（完）">我要从南走到北，还要从白走到黑----2009呼伦贝尔漠河北极村之夏（完）</a></h3>
+                                                <div class="top clearfix">
+                                                    <div class="widget_right">
+                                                        <span class="see_count" title="浏览">13279</span>
+                                                        <span class="comt_count" title="回复">73</span>
+                                                    </div>
+                                                    <span>作者：<a class="info_user" rel="info_user_114" href="###">helen</a></span><span>2009-09-05 12:39</span>
+                                                </div>
+                                            </div>
+                                            <div class="good_wrap">
+                                                <a class="good" tid="378227" title="好评">
+                                                    <span class="good_img"></span>
+                                                    <span class="good_count">64</span>
+                                                    <b class="goodNum">+1</b>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <p>准 备 篇原定的暑假8月出行计划是川北、甘南、青海湖一线，因泥石流阻断了都汶线及新疆7.5事件而变得茫然。直到7/29日在亲子游部落看到鹿超强的“呼伦贝尔及漠河夏季公交亲子游不完全攻略”，才决定去呼伦贝尔草 ...</p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_wrap">
+                                        <a target="_blank" href="/forum/978690,0,0,0.html"><img src="http://c1.zdb.io/files/2013/08/19/f/fec59f07dadd4c5b82041d61ae932276_m.jpg"></a>
+                                    </div>
+                                    <div class="desc">
+                                        <div class="widgetBox">
+                                            <div class="rounded_rectangle"><a href="/user/137287"><img src="http://c1.zdb.io/files/faces/f/3/f308d6c41t.jpg"></a></div>
+                                            <div class="fun_box">
+                                                <h3><a target="_blank" href="/forum/978690,0,0,0.html" title="呼伦贝尔，充满潜规则">呼伦贝尔，充满潜规则</a></h3>
+                                                <div class="top clearfix">
+                                                    <div class="widget_right">
+                                                        <span class="see_count" title="浏览">1402</span>
+                                                        <span class="comt_count" title="回复">36</span>
+                                                    </div>
+                                                    <span>作者：<a class="info_user" rel="info_user_137287" href="###">Sarah Li</a></span><span>2013-08-14 21:22</span>
+                                                </div>
+                                            </div>
+                                            <div class="good_wrap">
+                                                <a class="good" tid="978690" title="好评">
+                                                    <span class="good_img"></span>
+                                                    <span class="good_count">6</span>
+                                                    <b class="goodNum">+1</b>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        <p>&nbsp; &nbsp; 在旺季中的旺季，7月底，我们4个人去了呼伦贝尔草原游，包车9天。海拉尔——额尔古纳——根河——满归——奇乾——莫尔道嘎——临江——九卡——七卡——恩和——满洲里——阿尔山。呼伦风景是美丽的，但 ...</p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_wrap">
+                                        <a target="_blank" href="/forum/520216,0,0,0.html"><img src="http://c1.zdb.io/files/2011/08/11/4/4ee06e38f5cdfb0b952d42e73a9f2bf3_m.jpg"></a>
+                                    </div>
+                                    <div class="desc">
+                                        <div class="widgetBox">
+                                            <div class="rounded_rectangle"><a href="/user/156100"><img src="http://c1.zdb.io/files/faces/9/b/9bb91e00dt.jpg"></a></div>
+                                            <div class="fun_box">
+                                                <h3><a target="_blank" href="/forum/520216,0,0,0.html" title="呼伦贝尔回来重要信息，2011年7月23日——8月2日">呼伦贝尔回来重要信息，2011年7月23日——8月2日</a></h3>
+                                                <div class="top clearfix">
+                                                    <div class="widget_right">
+                                                        <span class="see_count" title="浏览">4628</span>
+                                                        <span class="comt_count" title="回复">63</span>
+                                                    </div>
+                                                    <span>作者：<a class="info_user" rel="info_user_156100" href="###">huangandy</a></span><span>2011-08-04 09:45</span>
+                                                </div>
+                                            </div>
+                                            <div class="good_wrap">
+                                                <a class="good" tid="520216" title="好评">
+                                                    <span class="good_img"></span>
+                                                    <span class="good_count">22</span>
+                                                    <b class="goodNum">+1</b>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <p>1、在整个行程10多天，能不能和司机融合相处很重要，车况也很重要。在我找的司机里面，张师傅（手机13015110866）的车费是稍高一点点的，但是张师傅对于行程安排、景点介绍、道路状况、吃住建议安排，都很周到， ...</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--分页-->
+                <div>
+                    <div class="pages"><span>« Prev</span><a href="/dest/qiqian/rank/1" class="current">1</a><a href="/dest/qiqian/rank/2">2</a><a href="/dest/qiqian/rank/3">3</a><a href="/dest/qiqian/rank/4">4</a><a href="/dest/qiqian/rank/5">5</a><a href="/dest/qiqian/rank/6">6</a><a href="/dest/qiqian/rank/7">7</a><a href="/dest/qiqian/rank/2">Next »</a></div>
+                </div>
+
+            </div>
+
+            <div class="pageRight">
+
+                <div class="view-more ">
+                    <div class="view-exp">
+                        <p class="left-tit">
+                            <span>农场产品</span>
+                        </p>
+                        <ul class="farm-hots">
+                            <li>
+                                <a href="/product/532"><img src="http://img.caichongwang.com/thumbs/0033399_270..jpg" alt=""></a>
+                                <div class="farm-hot-info">
+                                    <p class="farm-hot-tit"><a href="/product/532" target="_blank">越南进口澳芒芒果</a></p>
+                                    <p>2个/份，约2.5斤。澳芒外表光滑靓丽，颜色呈金黄色略带有红色霞晕，个大，浓郁的香味和甜而不腻的口感，肉质细滑鲜美。</p>
+                                    <p>直供价：<b>¥52.00</b><a href="/product/532" class="farm-hot-buy">我要购买&gt;</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/product/3401"><img src="http://img.caichongwang.com/thumbs/0037060_270..jpg" alt=""></a>
+                                <div class="farm-hot-info">
+                                    <p class="farm-hot-tit"><a href="/product/3401" target="_blank">越南进口澳芒芒果</a></p>
+                                    <p>4个/份，约5斤。澳芒外表光滑靓丽，颜色呈金黄色略带有红色霞晕，个大，浓郁的香味和甜而不腻的口感，肉质细滑鲜美。</p>
+                                    <p>直供价：<b>¥99.00</b><a href="/product/3401" class="farm-hot-buy">我要购买&gt;</a></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="publish">
+                    <div class="content"><a href="/event/event/add" class="button-large">约伴去农场</a></div>
+                </div>
+                <!--约伴-->
+                <div class="company any_result">
+                    <div class="title">
+                        <!--<h2>约伴<a></a></h2>-->
+                        <h2><span>约么？</span></h2>
+                    </div>
+                    <div class="company_main">
+                        <ul class="clearfix">
+                            <li>
+                                <div class="image"><a href="/user/1256681"><img alt="" src="http://c1.zdb.io/files/faces/8/c/8cc234ad1t.jpg"></a></div>
+                                <div class="text">
+                                    <h3><a href="/forum/2283624,0,0,0.html">2015-6-24    约伴呼伦贝尔（现已满员）</a></h3>
+                                    <p><span>作者：</span><span><a href="###" class="info_user pr16" rel="info_user_1256681">sinorita76</a></span><span>2015-06-24</span></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--周边-->
+                <div class="scene_area">
+                    <div class="title">
+                        <h2>周边</h2>
+                    </div>
+                    <div class="content clearfix">
+                        <ul class="img_cover_info_wrap">
+                            <li>
+                                <a href="/dest/taipingcun" title="太平村 taipingcun"></a>
+                                <img src="http://c1.zdb.io/files/2013/09/11/4/45cc22dac8d0ccaff1db7de4d467ae65_t.jpg" alt="太平村 taipingcun">
+                                <div class="info img_cover_info"><h3>太平村<em>taipingcun</em></h3><p></p></div>
+
+                            </li>
+                            <li class="last">
+                                <a href="/dest/zhalantun" title="扎兰屯 zhalantun"></a>
+                                <img src="http://c1.zdb.io/files/2011/03/20/1/12a07b29777171a86118d211644dc361_t.jpg" alt="扎兰屯 zhalantun">
+                                <div class="info img_cover_info"><h3>扎兰屯<em>zhalantun</em></h3><p></p></div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            <!--pageRight--end-->
+        </div>
+    </div>
+</div>
+

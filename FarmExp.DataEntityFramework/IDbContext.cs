@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
-using Microsoft.Data.Entity;
 using System.Data;
 using FarmExp.Models;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace FarmExp.Data.EntityFramework
 {
@@ -16,28 +18,35 @@ namespace FarmExp.Data.EntityFramework
        /// <typeparam name="TEntity"></typeparam>
        /// <returns></returns>
        IDbSet<TEntity> Set<TEntity>() where TEntity :BaseEntity;
-       /// <summary>
-       /// 提交更改
-       /// </summary>
-       /// <returns></returns>
-       int SaveChanges();
-       /// <summary>
-       /// 执行存储过程
-       /// </summary>
-       /// <typeparam name="TEntity"></typeparam>
-       /// <param name="commandText"></param>
-       /// <param name="parameters"></param>
-       /// <returns></returns>
-       IList<TEntity> ExecuteStoredProcedureList<TEntity>(string commandText, params object[] parameters)
+       void Modified<TEntity>(TEntity item) where TEntity : BaseEntity;
+       void Modified<TEntity>(IEnumerable<TEntity> items) where TEntity : BaseEntity;
+        /// <summary>
+        /// 提交更改
+        /// </summary>
+        /// <returns></returns>
+        int SaveChangeToDb();
+        /// <summary>
+        /// 异步提交更改
+        /// </summary>
+        /// <returns></returns>
+         Task<int> SaveChangeToDbAsync();
+        /// <summary>
+        /// 执行存储过程
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <param name="commandText"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        IList<TEntity> ExecuteStoredProcedureList<TEntity>(string commandText, params object[] parameters)
            where TEntity : BaseEntity, new();
-       /// <summary>
-       /// 创建一个数据库查询
-       /// </summary>
-       /// <typeparam name="TElement"></typeparam>
-       /// <param name="sql"></param>
-       /// <param name="parameters"></param>
-       /// <returns></returns>
-       IEnumerable<TElement> SqlQuery<TElement>(string sql, params object[] parameters);
+        /// <summary>
+        /// 创建一个数据库查询
+        /// </summary>
+        /// <typeparam name="TElement"></typeparam>
+        /// <param name="sql"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        IQueryable<TElement> SqlQuery<TElement>(string sql, params object[] parameters);
        /// <summary>
        /// 执行Sql
        /// </summary>

@@ -1,0 +1,1916 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+ .dp_center {
+	/*width:1180px;*/
+	overflow:hidden;
+	margin:10px auto 30px auto;
+	color:#333333;
+}
+.dp_center a {
+	color:#333333;
+}
+.dp_center a:hover {
+	color:#333333;
+}
+.dp_right .tab_menu li {
+	cursor:pointer;
+}
+.dp_right .tab_box .hide {
+	display:none;
+}
+.dp_right {
+	width:1180px;
+	overflow:hidden;
+	float:right;
+}
+.dp_right .dp_right_title1 {
+	width:960px;
+	clear:both;
+	height:35px;
+	background:#F5F5F5;
+	
+	border-left:2px solid #009435;
+	font-size:14px;
+	font-weight:bold;
+	line-height:35px;
+	text-indent:10px;
+	margin-bottom:20px;
+	overflow:hidden;
+}
+.dp_right .dp_right_title1 h1 {
+	font-weight:bold;
+}
+.dp_right .dp_right_title1 span {
+	float:right;
+	font-size:12px;
+	padding-right:10px;
+	font-weight:normal;
+}
+
+
+/*面包屑导航*/
+.layout layout-col,.content{
+	display: block;
+}
+.layout-col .grid {
+	width: 1190px; 
+	margin:0px auto;
+}
+.grid, .grid-main, .grid-sub, .grid-extra { 
+	display:block;
+}
+.mod-brand-crumbs {
+	height: 30px;
+	margin-top: 8px;
+	overflow: hidden;
+	background-color:#ffffff;
+	margin-bottom: 10px;
+}
+.mod-brand-crumbs dl {
+	margin: 4px 0 0 0px;
+	color: #888;
+	zoom: 1;
+}
+.mod-brand-crumbs dt {
+	float: left;
+	display: inline;
+}
+.mod-brand-crumbs dd {
+float: left;
+display: inline;
+}
+.mod-brand-crumbs dd a:link, .mod-brand-crumbs dd a:visited {
+	color: #333;
+}
+.mod-brand-crumbs .crumbs {
+	display: inline;
+	margin: 1px 8px 0 6px;
+	font-family: "\5b8b\4f53",sans-serif;
+	color: #888;
+}
+
+
+/*左侧样式*/
+.dp_left {
+	width:210px;
+	overflow:hidden;
+	float:left;
+}
+.dp_left .dp_gystitle h1 {
+	font-weight:bold;
+}
+.dp_left .dp_left1 {
+	width:208px;
+	overflow:hidden;
+	float:left;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+}
+.dp_left .dp_left1 .dp_gystitle {
+	width:208px;
+	height:35px;
+	float:left;
+	font-size:14px;
+	font-weight:bold;
+	line-height:35px;
+	background:#F5F5F5;
+	text-indent:10px;
+	border-bottom:1px solid #CCCCCC;
+	border-top:2px solid #009435;
+}
+.dp_left .dp_left1 .ul1 {
+	width:208px;
+	overflow:hidden;
+	float:left;
+}
+.dp_left .dp_left1 .ul1 .li1 {
+	width:188px;
+	height:45px;
+	margin:0px 4px;
+	padding:0px 6px;
+	border-bottom:1px #CCC dashed;
+	float:left;
+	color:#077639;
+	font-size:14px;
+	line-height:45px;
+	font-weight:bold;
+}
+.dp_left .dp_left1 .ul1 .li2 {
+	width:188px;
+	height:45px;
+	float:left;
+	font-size:14px;
+	line-height:45px;
+	font-weight:bold;
+	padding:0px 10px;
+}
+.dp_left .dp_left1 .ul1 .li3 {
+	width:188px;
+	height:25px;
+	float:left;
+	line-height:25px;
+	padding:0px 10px;
+}
+.dp_left .dp_left1 .ul1 .li3 span {
+	width:60px;
+	float:left;
+	text-align:right;
+}
+.dp_left .dp_left1 .ul1 .li4 {
+	width:188px;
+	height:25px;
+	float:left;
+	line-height:25px;
+	padding:0px 10px;
+}
+.dp_left .dp_left1 .ul1 .li4 span {
+	width:80px;
+	float:left;
+	text-align:right;
+}
+.dp_left .dp_left1 .ul1 .li4 {
+	width:180px;
+	height:25px;
+	float:left;
+	line-height:25px;
+	padding:15px 10px;
+	margin:15px 4px 0px 4px;
+	line-height:55px;
+	border-top:1px #CCC dashed;
+}
+.dp_left .dp_left1 .ul1 .li5 {
+	width:188px;
+	overflow:hidden;
+	float:left;
+	line-height:21px;
+	padding:10px;
+}
+.dp_left .dp_left1 .dp_but_1 {
+	width:77px;
+	height:25px;
+	float:left;
+	color:#FFF;
+	line-height:25px;
+	text-align:center;
+	background:url(../../images/shop/dp_but_1.png) no-repeat;
+}
+.dp_left .dp_left1 .dp_but_1:hover {
+	text-decoration:none;
+	background:url(../../images/shop/dp_but_1_hover.png) no-repeat;
+}
+.dp_left .dp_left1 .dp_but_qq {
+	width:74px;
+	height:23px;
+	float:right;
+	margin-top:1px;
+	background:url(../../images/shop/dp_but_qq.png) no-repeat;
+}
+.dp_left .dp_left2 {
+	width:208px;
+	overflow:hidden;
+	float:left;
+	margin-top:10px;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+}
+.dp_left .dp_left2 .dp_gystitle {
+	width:208px;
+	height:35px;
+	float:left;
+	font-size:14px;
+	font-weight:bold;
+	line-height:35px;
+	background:#F5F5F5;
+	text-indent:10px;
+	border-bottom:1px solid #CCCCCC;
+	border-top:2px solid #009435;
+}
+.dp_left .dp_left2 .menu_1 {
+	width:208px;
+	overflow:hidden;
+	float:left;
+	padding:5px 0px;
+}
+.dp_left .dp_left2 .menu_1 > li {
+	width:206px;
+	overflow:hidden;
+	padding:0px 1px;
+	float:left;
+	line-height:35px;
+}
+.dp_left .dp_left2 .menu_1 > li.firstChild {
+	border: 0;
+}
+.dp_left .dp_left2 .menu_1 .header {
+	height: 35px;
+	line-height: 35px;
+	text-indent: 5px;
+	cursor: pointer;
+}
+.dp_left .dp_left2 .menu_1 .header:hover, .dp_left .dp_left2 .menu_1 .menuOne-current {
+	background:#F3F3F3;
+}
+.dp_left .dp_left2 .menu_1 .header > span {
+	display: block;
+}
+.dp_left .dp_left2 .menu_1 .header .txt {
+	float: left;
+	color: #333;
+}
+.dp_left .dp_left2 .menu_1 .header .arrow {
+	float: left;
+	width: 14px;
+	height:14px;
+	background:url(../../images/shop/dp_jiajian.png) 0px 0px no-repeat;
+	margin-top:12px;
+	margin-left:9px;
+}
+.dp_left .dp_left2 .menu_2 {
+	display: none;
+	width: 208px;
+	height: auto;
+}
+.dp_left .dp_left2 .menu_2 li {
+	width:178px;
+	margin:0px 15px;
+	height:35px;
+}
+.dp_left .dp_left2 .menu_2 li a {
+	width:100%;
+	height:100%;
+	line-height: 35px;
+	text-indent: 25px;
+	background:url(../../images/shop/dp_left_x1.gif) 0px 0px no-repeat;
+}
+.dp_left .dp_left2 .menu_2 li a.list {
+	background:url(../../images/shop/dp_left_x2.gif) 0px 0px no-repeat;
+}
+.dp_left .dp_left2 .menu_2 li.firstChild {
+	border: 0;
+}
+.dp_left .dp_left2 .menu_2 li a {
+	display: block;
+	color: #444444;
+}
+.dp_left .dp_left2 .menu_2 li a:hover {
+	font-weight:bold;
+}
+.dp_left .dp_left2 .menu_show .header .arrow {
+	background:url(../../images/shop/dp_jiajian.png) 0px -15px;
+}
+.dp_left .dp_left3 {
+	width:208px;
+	overflow:hidden;
+	float:left;
+	margin-top:10px;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+}
+.dp_left .dp_left3 .dp_gystitle {
+	width:208px;
+	height:35px;
+	float:left;
+	font-size:14px;
+	font-weight:bold;
+	line-height:35px;
+	background:#F5F5F5;
+	text-indent:10px;
+	border-bottom:1px solid #CCCCCC;
+	border-top:2px solid #009435;
+}
+.dp_left .dp_left3 .ul1 {
+	width:208px;
+	overflow:hidden;
+	float:left;
+}
+.dp_left .dp_left3 .ul1 .li1 {
+	width:188px;
+	float:left;
+	line-height:21px;
+	padding:10px;
+}
+.dp_left .dp_left4 {
+	width:208px;
+	overflow:hidden;
+	float:left;
+	border-bottom:1px solid #CCCCCC;
+	margin-top:10px;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+}
+.dp_left .dp_left4 .dp_gystitle {
+	width:208px;
+	height:35px;
+	float:left;
+	font-size:14px;
+	font-weight:bold;
+	line-height:35px;
+	background:#F5F5F5;
+	text-indent:10px;
+	border-bottom:1px solid #CCCCCC;
+	border-top:2px solid #009435;
+}
+.dp_left .dp_left4 .dp_gystitle span {
+	float:right;
+	padding-right:10px;
+	font-weight:normal;
+	font-size:12px;
+}
+.dp_left .dp_left4 .ul1 {
+	width:208px;
+	overflow:hidden;
+	float:left;
+	padding:10px 0px;
+}
+.dp_left .dp_left4 .ul1 .li1 {
+	width:179px;
+	height:117px;
+	float:left;
+	padding:8px 14px;
+}
+.dp_left .dp_left4 .dp_cccp {
+	padding-top:20px;
+	display:block;
+	width:100%;
+	overflow:hidden;
+}
+.dp_left .dp_left4 .ul2 {
+	width:170px;
+	overflow:hidden;
+	float:left;
+	padding:0px 19px 20px 19px;
+}
+.dp_left .dp_left4 .ul2 .li1 {
+	width:160px;
+	height:135px;
+	float:left;
+	padding:5px;
+}
+.dp_left .dp_left4 .ul2 .li2 {
+	width:160px;
+	height:45px;
+	float:left;
+	padding:0px 5px;
+}
+.dp_left .dp_left4 .ul2 .li2 span {
+	height:21px;
+	width:100%;
+	float:left;
+}
+
+/*but css*/
+.dp_but_add {
+	width:22px;
+	height:22px;
+	float:left;
+	background:url(../../images/shop/dp_xqjj.gif) 0px 0px no-repeat;
+	border:none;
+	margin-right:5px;
+	cursor:pointer;
+}
+.dp_but_cut {
+	width:22px;
+	height:22px;
+	float:left;
+	background:url(../../images/shop/dp_xqjj.gif) 0px -22px no-repeat;
+	border:none;
+	margin-right:5px;
+	cursor:pointer;
+}
+.dp_but_xq1 { width:75px;
+	height:40px;
+	float:left;
+	line-height:40px;
+	text-align:center;
+	padding:0px 20px;
+	background:#E71504;
+}
+.dp_but_xq2 {
+	width:75px;
+	height:40px;
+	float:left;
+	line-height:40px;
+	text-align:center;
+	padding:0px 20px;
+	background:#FB7C00;
+}
+.dp_but_xq3 {
+	width:75px;
+	height:40px;
+	float:left;
+	line-height:40px;
+	text-align:center;
+	padding:0px 20px;
+	background:#009534;
+}
+
+/* input css */
+.dp_input1 {
+	width:35px;
+	height:20px;
+	float:left;
+	border:1px #DDDDDD solid;
+	margin-right:5px;
+	text-align:center;
+}
+
+
+.dp_right .title_ul {
+	width:960px;
+	height:35px;
+	background:#FFF;
+	border:1px solid #cccccc;
+	z-index:9999;/* position: relative; */
+}
+.dp_right .title_ul .li1 {
+	overflow:hidden;
+	height:100%;
+	background:url(../../images/shop/dp_fg1.gif) no-repeat right;
+	line-height:35px;
+	float:left;
+	padding:0px 20px;
+}
+.dp_right .title_ul .li2 {
+	width:127px;
+	height:16px;
+	margin-top:10px;
+	float:right;
+}
+.dp_right .title_ul .current {
+	border-top:2px solid #BE0101;
+	height:34px;
+	color:#BE0101;
+	line-height:33px;
+	margin-top:-1px;
+	margin-left:-1px;
+	margin-right:-1px;
+	background:none;
+	border-right:1px solid #cccccc;
+	border-left:1px solid #cccccc;
+	text-decoration:none;
+}
+.dp_right .dp_xqy {
+	
+	overflow:hidden;
+	
+	line-height:30px;
+	padding:30px 10px;
+	text-indent:20px;
+}
+.dp_right .dp_xqy img {
+	margin:10px 0px;
+}
+.menuFixed {
+	position:fixed;
+	top:0px;
+}
+.dp_right .dp_pjth {
+	width:100%;
+	height:35px;
+	float:left;
+	text-align:center;
+	font-weight:bold;
+	line-height:35px;
+	background:#F7F7F7;
+	margin-top:5px;
+	text-indent:0px;
+}
+.dp_right .dp_pjth .li1 {
+	width:294px;
+	height:100%;
+	float:left;
+}
+.dp_right .dp_pjth .li2 {
+	width:120px;
+	height:100%;
+	float:left;
+}
+.dp_right .dp_pjth .li3 {
+	width:100px;
+	height:100%;
+	float:left;
+}
+.dp_right .dp_pjtd {
+	width:100%;
+	height:62px;
+	float:left;
+	text-align:center;
+	line-height:20px;
+	text-indent:0px;
+	border-bottom:1px #CCCCCC dashed;
+}
+.dp_right .dp_pjtd:hover {
+	background:#F6F6F6;
+}
+.dp_right .dp_pjtd li span {
+	display:block;
+	overflow:hidden;
+	width:100%;
+	height:20px;
+}
+.dp_right .dp_pjtd .li1 {
+	width:294px;
+	height:60px;
+	padding:0px;
+	float:left;
+	overflow:hidden;
+	word-wrap: break-word;
+}
+.dp_right .dp_pjtd .li2 {
+	width:120px;
+	height:42px;
+	padding:10px 0px;
+	float:left;
+}
+.dp_right .dp_pjtd .li3 {
+	width:100px;
+	height:42px;
+	padding:10px 0px;
+	float:left;
+}
+
+/*天猫*/
+.tb-gallery{
+  float: left;
+  width: 460px;
+  position: relative;}
+.tm-clear{*zoom:1}.tb-clearfix{*zoom:1}
+                  * {
+  margin: 0;
+  padding: 0;
+}
+    #detail .tm-fcs-panel {
+  background-color: #e9e9e9;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 0;
+  z-index: 10;
+  font: 12px/1.5 "Microsoft Yahei",tahoma,arial;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-right: 20px;
+}
+  #detail .tm-fcs-panel dl dt.tb-metatit {
+  color: #999;
+  font-size: 12px;
+  text-align: left;
+  float: left;
+  width: 50px;
+  margin: 0 10px;
+}
+ .tb-property{width:100%;*overflow:hidden}
+ .tb-wrap{margin:0 0 0 460px;color:#666;padding:0 0 10px}
+ .tb-detail-hd h1{text-align: left; padding-bottom:.2em;line-height:1;font-size:16px;font-weight:700;color:#000;font-family:"microsoft yahei"}
+    .tm-promo-panel .tm-promo-price {
+  line-height: 24px;
+  font-size: 12px;
+}
+    .tm-promo-panel.tm-promo-cur .tm-promo-price .tm-price {
+  vertical-align: middle;
+  font-size: 30px;
+  color: #c40000;
+  font-weight: bolder;
+  font-family: Arial;
+  -webkit-font-smoothing: antialiased;
+}
+        #detail .tm-fcs-panel dl dt.tb-metatit {
+            color: #999;
+            font-size: 12px;
+            text-align: left;
+            float: left;
+            width: 50px;
+            margin: 0 10px;
+        }
+    .tm-price-panel {
+  position: static;
+  color: #333;
+  padding-left: 0;
+}
+  detail .tb-metatit {
+  text-align: left;
+  float: left;
+  width: 66px;
+    color: #999;
+}
+  .tm-yen {
+  font-family: arial;
+}
+    .tm-price-panel .tm-price {
+        text-decoration: line-through;
+        font-size: 14px;
+    }
+ .tm-fcs-panel dl dd {
+  color: #333;
+  margin-left: 70px;
+}
+ .tm-promo-panel .tm-promo-price .tm-promo-type {
+  background-color: #f47a86;
+  border-radius: 1px;
+  color: #fff;
+  height: 16px;
+  line-height: 16px;
+  margin: 0 2px 4px 6px;
+  padding: 1px 5px;
+  position: relative;
+}
+ .tm-fcs-panel dl.tm-shopPromo-panel {
+  position: relative;
+  z-index: 5;
+  line-height: 32px;
+}
+ ail .tm-fcs-panel dl.tm-shopPromo-panel .tm-shopPromotion-title {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+ ail .tm-fcs-panel dl.tm-shopPromo-panel .tm-floater-Box .floater {
+  white-space: normal;
+  position: relative;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+}
+ #detail .tb-meta {
+  margin: 5px 0;
+  margin-right: 20px;
+}
+ .tm-delivery-panel {
+  color: #333;
+  position: relative;
+}
+ #detail .tb-meta dl .tb-metatit {
+  color: #999;
+  font-size: 12px;
+  text-align: left;
+  float: left;
+  width: 50px;
+  margin: 0 10px;
+}
+ .tm-delivery-panel .tb-postAge {
+  line-height: 18px;
+  padding: 9px 0;
+}
+ .tm-delivery-panel .tb-postAge .tb-deliveryAdd {
+  margin: 0 6px 0 0;
+}
+ .tm-delivery-panel .tb-postAge .tb-postAge-info {
+  color: #333;
+  padding: 0 5px 0 0;
+  position: relative;
+  display: inline-block;
+}
+ .tm-delivery-panel .tb-postAge .mui_addr_tri .mui_addr_tri_1 {
+  color: #333;
+  margin-right: -12px;
+  padding-right: 12px;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+  position: relative;
+  z-index: 2;
+}
+ .tm-delivery-panel .tb-postAge .mui_addr_tri .mui_addr_icon {
+  color: #333;
+  font-family: tm-detail-font;
+  font-style: normal;
+  position: relative;
+  z-index: 1;
+}
+ .tm-ind-panel {
+  border: 1px dotted #c9c9c9;
+  border-width: 1px 0;
+  margin: -1px 20px 0 0;
+  padding: 10px 0;
+  position: relative;
+  overflow: hidden;
+  _zoom: 1;
+  clear: both;
+  display: flex;
+}
+ .tm-ind-panel .canClick {
+  cursor: pointer;
+}
+.tm-ind-item {
+  float: left;
+  width: 33%;
+  text-align: center;
+  position: relative;
+  left: -1px;
+  border-left: 1px solid #e5dfda;
+  flex: 1;
+  line-height: 16px;
+}
+.tm-ind-item .tm-label {
+  display: inline-block;
+  line-height: 16px;
+  height: 16px;
+  color: #999;
+}
+.tm-ind-panel .tm-count {
+  display: inline-block;
+  line-height: 16px;
+  height: 16px;
+  color: #c40000;
+  font-weight: 700;
+  margin-left: 3px;
+}
+.tm-ind-emPointCount .tm-indcon {
+  display: inline-block;
+  margin: 0 auto;
+  line-height: 16px;
+}
+.tb-key {
+  margin: 0 20px 24px 10px;
+}
+.tb-skin {
+  padding: 10px 0;
+}
+ .tb-sku {
+  padding: 5px 0 12px;
+  position: relative;
+}
+ .tb-prop {
+  padding-bottom: 6px;
+}
+ .tb-metatit {
+  text-align: left;
+  float: left;
+  width: 66px;
+}
+ .tm-sale-prop dt {
+  margin-top: 6px;
+}
+ .tb-prop dt {
+  float: left;
+  margin-top: 4px;
+}
+ .tb-key .tb-metatit {
+  color: #838383;
+}
+ .tb-prop li {
+  float: left;
+  position: relative;
+  margin: 0 4px 4px 0;
+  line-height: 20px;
+  vertical-align: middle;
+  padding: 1px;
+}
+ .tb-prop .tb-selected i {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  overflow: hidden;
+  text-indent: -99em;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: -62px -16px;
+}
+ .tm-clear:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+ .tb-amount dd {
+  height: 35px;
+  line-height: 31px;
+  color: #878787;
+}
+ .tb-amount-widget .mui-amount-input {
+  vertical-align: middle;
+}
+ .tb-text {
+  color: #666;
+  font-size: 12px;
+  margin: 0;
+  padding: 3px 2px 0 3px;
+  height: 26px;
+  border: 1px solid #a7a6ac;
+  width: 36px;
+  line-height: 26px;
+  background-position: -406px -41px;
+}
+ #content .tb-amount dd {
+  height: 35px;
+  line-height: 31px;
+  color: #878787;
+}
+ .tb-amount-widget .mui-amount-btn {
+  display: inline-block;
+  vertical-align: middle;
+}
+ .tb-amount-widget .mui-amount-increase {
+  width: 16px;
+  height: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #a7a6ab;
+  display: block;
+  font-family: tm-detail-font;
+  line-height: 12px;
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+ .tb-amount-widget .mui-amount-decrease {
+  width: 16px;
+  height: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #a7a6ab;
+  display: block;
+  font-family: tm-detail-font;
+  line-height: 12px;
+  font-size: 16px;
+}
+ .tb-amount-widget .mui-amount-unit {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+ .tb-amount em {
+  color: #878787;
+  margin-left: 1.2em;
+}
+ #detail .tb-hidden {
+  display: none;
+}
+ .tb-action {
+  clear: both;
+  padding: 10px 0 0 66px;
+  margin: 10px 0 0;
+}
+ .tb-btn-sku {
+  margin-right: 10px;
+  float: left;
+}
+ .tb-btn-sku a {
+  margin-right: 0;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  width: 178px;
+  height: 38px;
+  line-height: 38px;
+  background-color: #ffeded;
+  border: 1px solid #c40000;
+  color: #c40000;
+  font-family: 'Microsoft Yahei';
+  font-size: 16px;
+  text-align: center;
+}
+ .tb-btn-basket {
+  margin-right: 1px;
+}
+ .tb-btn-basket a {
+  background-color: #c40000;
+  border: 1px solid #c40000;
+  color: #fff;
+}
+ .tm-ser {
+  margin: 0 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+ .tm-ser dl {
+  margin-right: 67px;
+}
+ .tm-ser .tm-laysku-dd {
+  margin-left: 66px;
+  width: auto;
+  float: none;
+}
+ .tm-laysku-dd {
+  width: 100%;
+  float: left;
+  margin-left: -66px;
+}
+ .tm-ser .tb-serPromise {
+  overflow: hidden;
+}
+ .tm-ser .tb-serPromise li {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+ .tm-ser .tb-serPromise a {
+  display: inline-block;
+  padding: 0 2px 0 0;
+  margin: 0 10px 0 0;
+  color: #666;
+  white-space: nowrap;
+}
+ .tm-ser .tm-pay-box {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+ .tm-ser .tm-pay-box .tm-pay {
+  width: 67px;
+  overflow: visible;
+  z-index: 3;
+}
+ .tm-ser .tm-pay-box .tm-pay .pay-toggler {
+  display: none;
+  font-family: tm-detail-font;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+ .tm-ser .tm-pay-box .tm-pay.pay-credit-hover .pay-credit {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  width: 165px;
+  right: -5px;
+  top: 0;
+  padding: 2em 1em 1em;
+  border: 1px solid #e2e2e4;
+}
+ .tm-ser .tm-pay-box .tm-pay .pay-credit {
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  display: none;
+  text-align: left;
+}
+ .tb-gallery .tb-booth {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  z-index: 1;
+  width: 420px;
+  height: 420px;
+  margin: 20px auto 0;
+  _overflow: hidden;
+}
+ .tb-gallery .tb-booth a {
+  width: 418px;
+  height: 418px;
+  border: 1px solid rgba(0,0,0,.05);
+  border: 1px solid #c0c0c0\9;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+ .tb-gallery .tb-booth .zoomIcon {
+  font-family: tm-detail-font;
+  font-style: normal;
+  font-weight: 400;
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+  z-index: 2;
+  position: absolute;
+  background-color: #fff;
+  opacity: .6;
+  color: #333;
+  font-size: 18px;
+  right: 0;
+  bottom: 0;
+}
+ .tb-gallery .tb-booth a .ks-imagezoom-wrap {
+  margin: -1px 0 0 -1px;
+}
+ .tb-gallery .tb-booth a img {
+  vertical-align: middle;
+  max-width: 100%;
+  max-height: 100%;
+}
+ .ks-imagezoom-lens {
+  background-color: transparent;
+  background-attachment: scroll;
+  background-repeat: repeat;
+  cursor: move;
+  z-index: 1;
+  position: absolute;
+  overflow: hidden;
+  background-position: 0 0;
+}
+ .tb-gallery .tb-thumb {
+  overflow: hidden;
+  text-align: center;
+  margin-left: -16px;
+}
+ .tb-gallery .tb-thumb li {
+  display: inline-block;
+  margin: 0 0 0 16px;
+  padding-top: 22px;
+}
+ .tb-gallery .tb-thumb a {
+  float: left;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+}
+ .tb-gallery .tb-thumb img {
+  position: relative;
+  max-width: 60px;
+  max-height: 60px;
+}
+ .tb-gallery .tb-thumb .tb-selected a {
+  border: 2px solid #000;
+  width: 56px;
+  height: 56px;
+}
+ .tb-gallery .tm-action {
+  padding: 38px 40px 25px;
+  color: #999;
+}
+ .tb-gallery .tm-action #J_EditItem {
+  float: right;
+}
+ .tb-gallery .tm-action .iShare {
+  text-decoration: none;
+  float: left;
+  margin-right: 2em;
+}
+ .tb-gallery .tm-action a {
+  color: #999;
+}
+ .tb-gallery .tm-action .iShare i {
+  margin-right: 4px;
+  font-family: tm-detail-font;
+  font-style: normal;
+  color: #baaa99;
+  text-decoration: none;
+}
+ 
+.tb-gallery .tm-action .favorite {
+  text-decoration: none;
+}
+.tb-gallery .tm-action a {
+  color: #999;
+}
+.w1190 .tm-style-detail #detail {
+  border: 0;
+}
+.w1190 #detail {
+  width: 1190px!important;
+}
+#detail {
+  width: 1180px!important;
+  margin: 20px auto;
+  _zoom: 1;
+}
+</style>
+<div class="dp_center">
+    <div class="layout layout-col">
+        <div class="grid">
+            <div class="mod-brand-crumbs">
+                <div class="content">
+                    <dl>
+                        <dt>您当前位置：</dt>
+                        <dd>
+                            <a href="http://shop1265402.cnhnb.com/" title="农鲜直达">农鲜直达</a>
+                            <span class="crumbs">&gt;</span>
+                        </dd>
+                        <dd>供应产品</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="detail">
+        <div class="tm-clear">
+            <div class="tb-gallery">
+                <div class="tb-booth">
+                    <a href="http://www.taobao.com/view_image.php?pic=Wx0GGlFDXANRBR1fEUcSCAIPEhwWWl1eG1pSBl0fGwAcBVxRVx0cWFwwKV0SSg4AenVsYGsxEQQzHCs8YGxrai0xKzw0TVdCFVBGVllnQwARRAEcFA==&amp;title=ob6w2bLdzrYtscy4%2Bbn7MjE4Z3gytPyhv8HjyrO84bn7uMm5%2ByAgxMzTzc62s6TK2bn7yb26y8zS&amp;version=2&amp;c=OTBhZjYyNjI4ZDBlMmFmNTQwMTMwMjljMWI4MDQ1N2Q%3D&amp;itemId=35534067670&amp;shopId=63612646&amp;sellerRate=15291401&amp;dbId=&amp;fv=9" rel="nofollow" target="_blank">
+                        <span class="zoomIcon">󰄬</span><span class="ks-imagezoom-wrap"><img id="J_ImgBooth" alt="【百草味-碧根果218gx2袋】零食坚果干果  奶油味长寿果山核桃" src="http://gi2.md.alicdn.com/imgextra/i2/TB1X.R9HFXXXXXnaXXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" data-haszoom="700"><span style="position: absolute; top: 27.8043969726563px; left: 200.101927490234px; width: 218.405px; height: 218.405px; display: none;" class="ks-imagezoom-lens"></span></span>
+                    </a>
+                </div>
+                <ul id="J_UlThumb" class="tb-thumb tm-clear">
+                    <li class="">
+                        <a href="#"><img src="http://gi1.md.alicdn.com/bao/uploaded/i1/TB1d869HFXXXXcnXpXXXXXXXXXX_!!0-item_pic.jpg_60x60q90.jpg"></a>
+                    </li>
+                    <li class="tb-selected">
+                        <a href="#"><img src="http://gi2.md.alicdn.com/imgextra/i2/TB1X.R9HFXXXXXnaXXXXXXXXXXX_!!0-item_pic.jpg_60x60q90.jpg"></a>
+                    </li>
+                    <li class="">
+                        <a href="#"><img src="http://gi3.md.alicdn.com/imgextra/i3/628189716/TB2vS.mcpXXXXXpXXXXXXXXXXXX_!!628189716.jpg_60x60q90.jpg"></a>
+                    </li>
+                    <li class="">
+                        <a href="#"><img src="http://gi3.md.alicdn.com/imgextra/i3/628189716/T2LcYLXvxaXXXXXXXX_!!628189716.jpg_60x60q90.jpg"></a>
+                    </li>
+                    <li class="">
+                        <a href="#"><img src="http://gi1.md.alicdn.com/imgextra/i1/628189716/TB2rlD4cFXXXXaxXXXXXXXXXXXX_!!628189716.jpg_60x60q90.jpg"></a>
+                    </li>
+                </ul>
+                <p class="tm-action tm-clear">
+                    <span id="J_EditItem"><a href="//archer.taobao.com/myservice/report/entry.htm?auction_num_id=35534067670&amp;display_type=3" target="_blank">举报</a></span>        <a id="J_IShare" class="iShare tm-event" href="#"><i></i>分享</a>
+                    <a id="J_AddFavorite" href="javascript:;" data-aldurl="//ald.taobao.com/recommend.htm?appId=03136&amp;itemId=35534067670 " class="favorite"><i></i><span>收藏商品</span></a>
+                    <!-- ruleBanner-->
+                    <span id="J_CollectCount">（139657人气）</span>
+                </p>
+            </div>
+            <div class="tb-property">
+                <div class="tb-wrap">
+                    <div class="tb-detail-hd">
+                        <h1 data-spm="1000983">
+                            【百草味-碧根果218gx2袋】零食坚果干果  奶油味长寿果山核桃
+                        </h1>
+                        <p>
+                        </p>
+                    </div>
+                    <!--引入normalBasic-->
+                    <div class="tm-fcs-panel">
+                        <dl class="tm-price-panel" id="J_StrPriceModBox">
+                            <dt class="tb-metatit">价格</dt>
+                            <dd><em class="tm-yen">¥</em> <span class="tm-price">64.80</span></dd>
+                        </dl>
+                        <dl class="tm-promo-panel tm-promo-cur" id="J_PromoPrice" data-label="促销">
+                            <dt class="tb-metatit">促销价</dt>
+                            <dd>
+                                <div class="tm-promo-price">
+                                    <em class="tm-yen">¥</em> <span class="tm-price">32.90</span>
+                                    <em class="tm-promo-type "><s></s>吃货节特价</em>
+                                </div> <p>   </p>
+                            </dd>
+                        </dl>
+
+                        <dl class="tm-shopPromo-panel">
+                            <div class="tm-shopPromotion-title tm-gold">
+                                <dt class="tb-metatit">本店活动</dt>
+                                <dd>满68元,包邮</dd>
+                                <a class="more">更多优惠<s></s></a>
+                            </div>
+                            <div class="tm-floater-Box  hidden">
+                                <div class="floater fold">
+                                    <div class="hd">
+                                        <em class="title">本店活动</em>
+                                        <a class="more unmore">收起<s></s></a>
+                                        <a class="more">更多优惠<s></s></a>
+                                    </div>
+                                    <ul class="bd">
+                                        <li class="noCoupon" data-index="0">
+                                            <p>满<em>68</em>元,包邮</p>
+                                        </li>
+                                    </ul>
+                                    <div class="ft">
+                                        <span class="title">不包邮地区：</span>内蒙古;甘肃;青海;宁夏;新疆;西藏;台湾;香港;澳门;海外
+                                        <a class="all" target="_blank" href="//marketing.tmall.com/home/tsp/page.htm?id=54811316_63612646">所有活动商品</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="tb-meta">
+                        <dl class="tm-delivery-panel" id="J_RSPostageCont">
+                            <dt class="tb-metatit">运费</dt>
+                            <dd>
+                                <div class="tb-postAge">
+                                    <span class="tb-deliveryAdd" id="J_deliveryAdd">浙江杭州</span>至
+                                    <span id="J_AddrSelectTrigger" class="mui_addr_tri">
+                                        <span data-code="430700" class="mui_addr_tri_1">常德<i class="mui_addr_icon"></i></span>
+                                    </span>
+                                    <div id="J_PostageToggleCont" class="tb-postAge-info">
+                                        <p>
+                                            <span>快递: 5.00 </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+
+                    </div>
+                    <ul class="tm-ind-panel">
+                        <li class="tm-ind-item tm-ind-sellCount canClick" data-label="月销量"><div class="tm-indcon"><span class="tm-label">月销量</span><span class="tm-count">73513</span></div></li>
+                        <li class="tm-ind-item tm-ind-reviewCount canClick tm-line3" id="J_ItemRates"><div class="tm-indcon"><span class="tm-label">累计评价</span><span class="tm-count">659514</span></div></li>
+
+                        <li class="tm-ind-item tm-ind-emPointCount" data-spm="1000988"><div class="tm-indcon"><a href="//vip.tmall.com/vip/index.htm" target="_blank"><span class="tm-label">送天猫积分</span><span class="tm-count">16</span></a></div></li>
+                    </ul>
+                    <div class="tb-key">
+                        <div class="tb-skin">
+                            <div class="tb-sku">
+
+
+                                <dl class="tb-prop tm-sale-prop tm-clear ">
+                                    <dt class="tb-metatit">食品口味</dt>
+                                    <dd>
+                                        <ul data-property="食品口味" class="tm-clear J_TSaleProp  ">
+                                            <li data-value="122216494:107599" class="tb-selected"><a href="#"><span>奶油口味</span></a><i>已选中</i></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                <dl class="tb-amount tm-clear">
+                                    <dt class="tb-metatit">数量</dt>
+                                    <dd id="J_Amount">
+                                        <span class="tb-amount-widget mui-amount-wrap">
+                                            <input type="text" class="tb-text mui-amount-input" value="1" maxlength="8" title="请输入购买量">
+                                            <span class="mui-amount-btn">
+                                                <span class="mui-amount-increase"></span>
+                                                <span class="mui-amount-decrease"></span>
+                                            </span>
+                                            <span class="mui-amount-unit">件</span>
+                                        </span>
+
+                                        <em id="J_EmStock" class="tb-hidden" style="display: inline;">库存52587件</em>
+                                        <span id="J_StockTips">
+                                        </span>
+                                    </dd>
+                                </dl>
+
+
+                                <div class="tb-action tm-clear">
+                                    <div class="tb-btn-buy tb-btn-sku">
+                                        <a id="J_LinkBuy" href="#" rel="nofollow" data-addfastbuy="true" title="点击此按钮，到下一步确认购买信息。">立即购买<span class="ensureText">确认</span></a>
+                                    </div>
+                                    <div class="tb-btn-basket tb-btn-sku "><a href="#" rel="nofollow" id="J_LinkBasket"><i></i>加入购物车<span class="ensureText">确认</span></a></div>
+                                    <div class="tb-btn-add tb-btn-sku tb-hidden"><a href="#" rel="nofollow" id="J_LinkAdd"><i></i>加入购物车</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tm-ser tm-clear">
+                        <dl class="tm-clear">
+                            <dt class="tb-metatit">服务承诺</dt>
+                            <dd class="tm-laysku-dd">
+                                <ul class="tb-serPromise">
+                                    <li data-spm="0">
+                                        <a href="http://service.tmall.com/support/tmall/knowledge-1126800.htm?spm=a220o.1000855.0.116.lkS5km" title="按时发货" target="_blank">
+                                            按时发货
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://vip.tmall.com/vip/privilege.htm?spm=3.1000588.0.141.2a0ae8&amp;priv=speed" title="极速退款是天猫为T2-T4天猫会员提供的退款退货流程专享特权，目前对部分T2-T4天猫会员开放" target="_blank">
+                                            <s>T2</s>                                    极速退款
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://vip.tmall.com/member/card_center.htm?spm=3.1000591.0.164.2QKIZ8&amp;card=1" title="退货保障卡是天猫为会员提供的会员特权，购物凭退货保障卡可免费获保退运费险" target="_blank">
+                                            <s>T1</s>                                    退货保障卡
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.tmall.com/market/mall/qttk.php?spm=3.7095809.2000g001.2.RuHN6j" title="七天无理由退换" target="_blank">
+                                            七天无理由退换
+                                        </a>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <div class="tm-pay-box">
+                            <div class="tm-pay">
+                                <em class="pay-title">支付方式</em>
+                                <em title="显示所有信息" class="pay-toggler" id="J_Toggler" style="display: inline;"></em>
+                                <div data-spm="1998099674" class="pay-credit J_Paylist">
+                                    <a title="支持使用信用卡分期支付" target="_blank" href="http://help.alipay.com/lab/help_detail.htm?help_id=249183">信用卡分期<s></s></a>
+                                    <a title="支持用绑定了支付宝的银行卡付款" href="http://help.alipay.com/lab/help_detail.htm?help_id=245296" target="_blank">快捷支付</a>
+                                    <a title="支持用开通了网上银行的银行卡付款" href="http://help.alipay.com/lab/help_detail.htm?help_id=251545" target="_blank">网银支付</a>
+                                    <a title="拍下商品后，让其他人帮您付款" href="http://help.alipay.com/lab/help_detail.htm?help_id=214301" target="_blank">找人代付</a>
+                                    <a title="支持手机话费卡充值付款" href="http://help.alipay.com/lab/help_detail.htm?help_id=251558" target="_blank">消费卡</a>
+                                    <a title="到支付宝合作的线下网点（如便利店、邮局、药店等），用现金或刷卡即可完成网上订单付款" href="http://help.alipay.com/lab/help_detail.htm?help_id=211741" target="_blank">网点支付</a>
+                                    <a title="支持使用支付宝账户余额的钱付款" href="http://help.alipay.com/lab/help_detail.htm?help_id=251547" target="_blank">支付宝余额</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="dp_right">
+            <div class="demo1">
+                <ul class="title_ul tab_menu">
+                    <li class="li1 current">详细信息</li>
+                    <li class="li1">成交（0个）/评价（0）</li>
+                    <li class="li2">
+                        <a onclick="javascript:jiathis_sendto('qzone'); return false;" href="#" title="QQ空间分享" style="opacity: 1;">
+                            <img src="http://static.cnhnb.com/shopProduct/images/shop/dp_fx_ico2.jpg">
+                        </a>
+                        <a onclick="javascript:jiathis_sendto('tsina');return false;" href="#" title="新浪微博分享" style="opacity: 1;">
+                            <img src="http://static.cnhnb.com/shopProduct/images/shop/dp_fx_ico3.jpg">
+                        </a>
+                        <a onclick="javascript:jiathis_sendto('tqq');return false;" href="#" title="腾讯微博分享" style="opacity: 1;">
+                            <img src="http://static.cnhnb.com/shopProduct/images/shop/dp_fx_ico4.jpg">
+                        </a>
+                        <a onclick="javascript:jiathis_sendto('renren');return false;" href="#" title="人人网分享" style="opacity: 1;">
+                            <img src="http://static.cnhnb.com/shopProduct/images/shop/dp_fx_ico5.jpg">
+                        </a>
+                        <a onclick="javascript:jiathis_sendto('weixin');return false;" href="#" title="微信分享" style="opacity: 1;">
+                            <img src="http://static.cnhnb.com/shopProduct/images/shop/dp_fx_ico6.jpg">
+                        </a>
+                        <a onclick="javascript:$CKE.center(this);return false;" href="#" title="查看更多." style="opacity: 1;">
+                            <img src="http://static.cnhnb.com/shopProduct/images/shop/dp_fx_ico1.jpg">
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="tab_box">
+                    <div class="dp_xqy" style="line-height:20px;">
+                        <p>
+                            <img alt="" src="http://img.cnhnb.com/2015/1/8/93BE7CEBE90D47B3B4996277C53F27C2.jpg">
+                        </p>
+                        <img alt="" src="http://img.cnhnb.com/2015/1/8/90157ED1063141E0A1EEF28D50ABCA04.jpg"><img alt="" src="http://img.cnhnb.com/2015/1/8/BE37061DAFAF4F5DA8B53795D4D54F21.jpg">
+                        <p>
+                            &nbsp;
+                        </p>
+                    </div>
+
+                    <div class="dp_xqy hide">
+                        <div id="shop_comments">
+
+                            <div class="comment_pinnumb m m2">
+                                <div class="mt">
+                                    <h2>商品评价</h2>
+                                </div>
+                                <div class="mc clearfix">
+                                    <div id="i-comment">
+                                        <div class="rate">
+                                            <strong>
+                                                0
+                                                <span>%</span>
+                                            </strong>
+                                            <br>
+                                            <span>好评度</span>
+                                        </div>
+                                        <div class="percent">
+                                            <dl>
+                                                <dt>
+                                                    好评
+                                                    <span>
+                                                        (0%)
+                                                    </span>
+                                                </dt>
+                                                <dd>
+                                                    <div style="width:0.0px;">
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>
+                                                    中评
+                                                    <span>
+                                                        (0%)
+                                                    </span>
+                                                </dt>
+                                                <dd class="d1">
+                                                    <div style="width:0.0px;"></div>
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>
+                                                    差评
+                                                    <span>
+                                                        (0%)
+                                                    </span>
+                                                </dt>
+                                                <dd class="d1">
+                                                    <div style="width:0.0px;"></div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dp-tabs">
+                                <input type="hidden" name="maxPage" id="maxPage" value="0">
+                                <input type="hidden" name="scoreType" id="scoreType" value="">
+                                <ul>
+                                    <li class="tabs-li li1 cur" id="0">全部评价(0)</li>
+                                    <li class="tabs-li" id="1">好评(0)</li>
+                                    <li class="tabs-li" id="2">中评(0)</li>
+                                    <li class="tabs-li" id="3">差评(0)</li>
+                                </ul>
+                            </div>
+                            <div class="dp-list">
+                                <ul class="dp_pjth">
+                                    <li class="li1">采购商</li>
+                                    <li class="li2">成交单价（元）</li>
+                                    <li class="li2">数量</li>
+                                    <li class="li1">评价内容</li>
+                                    <li class="li3">评价</li>
+                                </ul>
+
+                            </div>
+                            <div class="dp-list hidden">
+                                <ul class="dp_pjth">
+                                    <li class="li1">采购商</li>
+                                    <li class="li2">成交单价（元）</li>
+                                    <li class="li2">数量</li>
+                                    <li class="li1">评价内容</li>
+                                    <li class="li3">评价</li>
+                                </ul>
+
+                            </div>
+                            <div class="dp-list hidden">
+                                <ul class="dp_pjth">
+                                    <li class="li1">采购商</li>
+                                    <li class="li2">成交单价（元）</li>
+                                    <li class="li2">数量</li>
+                                    <li class="li1">评价内容</li>
+                                    <li class="li3">评价</li>
+                                </ul>
+
+                            </div>
+                            <div class="dp-list hidden">
+                                <ul class="dp_pjth">
+                                    <li class="li1">采购商</li>
+                                    <li class="li2">成交单价（元）</li>
+                                    <li class="li2">数量</li>
+                                    <li class="li1">评价内容</li>
+                                    <li class="li3">评价</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="dp_page" style="display: none;">
+
+                            <div class="page-bottom">
+                                <a href="javascript:productComments.goPrevious();" id="previousBtn">&lt;&lt;上一页</a>
+                                <a href="javascript:productComments.goNext();" class="last" id="nextBtn">下一页&gt;&gt;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .mz {
+                    width: 748px;
+                    overflow: hidden;
+                    float: left;
+                    border: 1px #EDD9C8 solid;
+                    background: #FFF6EF;
+                    padding: 10px;
+                    line-height: 20px;
+                    font-size: 12px;
+                    color: #333333;
+                }
+
+                    .mz hr {
+                        border: none;
+                        border-top: 1px dotted #999;
+                        HEIGHT: 0;
+                    }
+
+                    .mz a {
+                        color: #3550AD;
+                        text-decoration: none;
+                    }
+
+                        .mz a:hover {
+                            text-decoration: underline;
+                        }
+
+                    .mz .mz_left {
+                        width: 65px;
+                        height: 50px;
+                        float: left;
+                    }
+
+                    .mz .mz_right {
+                        width: 681px;
+                        overflow: hidden;
+                        float: left;
+                    }
+
+                .mz_line {
+                    border-bottom: 1px solid #EFECD1;
+                    overflow: hidden;
+                    display: block;
+                    padding-bottom: 5px;
+                    margin-bottom: 5px;
+                }
+            </style>
+            <div class="mz">
+                <div class="mz_line">
+                    <strong class="mz_left">安全提示：</strong>
+                    <div class="mz_right">
+                        交易中请尽量使用正规的聊天工具沟通，不要接受<font color="#FF7300">可疑文件</font>和不要点击<font color="#FF7300">不明来源</font>的链接，支付前核实好域名和支付详情。
+                        中国惠农网不会以订单有问题，让您提供任何<font color="#FF7300">银行卡</font>、<font color="#FF7300">密码</font>、<font color="#FF7300">手机验证码</font>！遇此情况请举报给中国惠农网客服中心 <a href="http://hnuser.cnhnb.com/hnuser/help/index.html" target="_blank">投诉举报</a><br>
+                        详细了解交易安全常识：<a href="http://hnuser.cnhnb.com/hnuser/help/buy.html" target="_blank">买家防骗</a> <a href="http://hnuser.cnhnb.com/hnuser/help/sale.html" target="_blank">卖家防骗</a> <a href="http://hnuser.cnhnb.com/hnuser/help/jiufeng.html" target="_blank">交易纠纷</a> <a href="http://hnuser.cnhnb.com/hnuser/help/index.html" target="_blank">交易安全中心&gt;&gt;</a>
+                    </div>
+                </div>
+
+                <div>
+                    <strong class="mz_left">免责声明：</strong>
+                    <div class="mz_right">
+                        中国惠农网所展示的产品供求信息由买卖双方自行提供，其真实性、准确性和合法性由信息发布人负责。中国惠农网不提供任何保证，并不承担任何法律责任。中国惠农网友情提醒：如涉及大宗额度买卖产品推荐使用支付宝担保交易，保障您的交易安全！
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        @*<ul class="ul1">
+                <li class="li1 jqzoom" id="spec-n1">
+
+
+                    <img src="http://img.cnhnb.com/2015/1/8/E1520BA17523485DADF75D5419D1BBA8_400x400.jpg" jqimg="http://img.cnhnb.com/2015/1/8/E1520BA17523485DADF75D5419D1BBA8_650x650.jpg" alt="">
+
+
+
+                </li>
+                <li class="li2">
+
+                    放心鸡蛋
+                </li>
+                <li class="li3">
+
+
+
+                    <ul>
+                        <li>起批量(个)</li>
+                        <li>价格（¥）</li>
+                        <li>&nbsp;</li>
+
+
+                        <li>
+                            100
+                            -
+                            2000
+                        </li>
+                        <li>
+
+
+                            <b>2.80</b>
+
+
+
+                        </li>
+                        <li>&nbsp;</li>
+
+
+                    </ul>
+
+
+                </li>
+                <li class="li4">
+                    <ul>
+                        <li>点击次数：111次</li>
+                        <li>询价次数：0次</li>
+                        <li>
+
+                            成 交 量：0个
+
+                        </li>
+                        <li>产地：黑龙江省 齐齐哈尔市</li>
+                        <li style="width:340px;">物流说明：</li>
+                        <li>&nbsp;</li>
+                    </ul>
+                </li>
+                <li class="li5">
+                    <ul>
+                        <li>采购量：</li>
+                        <li>
+                            <input id="cut" type="button" class="dp_but_cut">
+                        </li>
+                        <li>
+                            <input type="hidden" value="100.0" id="minBuyCount">
+                            <input type="hidden" value="2000.0" id="stockCount">
+                            <input id="buy_num" class="dp_input1" maxlength="8" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" value="1">
+                        </li>
+                        <li>
+                            <input id="add" type="button" class="dp_but_add">
+                            &nbsp;&nbsp;&nbsp;
+                        </li>
+                        <li>库存量：2000&nbsp;个</li>
+
+                    </ul>
+                </li>
+                <li class="li6">
+                    <ul>
+
+                        <li><a href="javascript:buyNow(550619,368380,264035);" class="dp_but_xq1">立即购买</a></li>
+                        <li><a href="javascript:addToCart(368380,550619);" title="加入购物车" class="dp_but_xq2">加入购物车</a></li>
+                        <li><a href="javascript:dp_opentheme2();" class="dp_but_xq3">点击询价</a></li>
+
+                    </ul>
+                </li>
+                <li class="li7">
+                    <div id="spec-list">
+
+                        <ul class="list-h" style="width: 236px; overflow: hidden;">
+
+                            <li class="li11">
+                                <img src="http://img.cnhnb.com/2015/1/8/E1520BA17523485DADF75D5419D1BBA8_120x120.jpg" src400="http://img.cnhnb.com/2015/1/8/E1520BA17523485DADF75D5419D1BBA8_400x400.jpg" src650="http://img.cnhnb.com/2015/1/8/E1520BA17523485DADF75D5419D1BBA8_650x650.jpg">
+                            </li>
+
+                            <li class="li11">
+                                <img src="http://img.cnhnb.com/2015/1/8/EC4681AACC5043C08B50B2E9C3DD38A9_120x120.jpg" src400="http://img.cnhnb.com/2015/1/8/EC4681AACC5043C08B50B2E9C3DD38A9_400x400.jpg" src650="http://img.cnhnb.com/2015/1/8/EC4681AACC5043C08B50B2E9C3DD38A9_650x650.jpg">
+                            </li>
+
+                            <li class="li11">
+                                <img src="http://img.cnhnb.com/2015/1/8/5402E4B605B0423685D7D9A69100CCB4_120x120.jpg" src400="http://img.cnhnb.com/2015/1/8/5402E4B605B0423685D7D9A69100CCB4_400x400.jpg" src650="http://img.cnhnb.com/2015/1/8/5402E4B605B0423685D7D9A69100CCB4_650x650.jpg">
+                            </li>
+
+                            <li class="li11">
+                                <img src="http://img.cnhnb.com/2015/1/8/274989C011B94E0183C1903B4AF71645_120x120.jpg" src400="http://img.cnhnb.com/2015/1/8/274989C011B94E0183C1903B4AF71645_400x400.jpg" src650="http://img.cnhnb.com/2015/1/8/274989C011B94E0183C1903B4AF71645_650x650.jpg">
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </li>
+            </ul>*@
+
+
+    @*<div class="dp_left">
+
+
+        <div class="sidebar sidebar-1 info">
+
+
+
+            <h2><strong>供应商信息</strong></h2>
+            <div class="line"></div>
+            <div class="clear"></div>
+            <div class="container">
+                <div class="type">
+                    <em><img src="http://static.cnhnb.com/img/logo/npt-personal.png" width="16" height="16" title="农批通个人版"></em>
+                    <span>农批通个人版 第<strong> 1 </strong>年</span>
+                </div>
+                <div class="title" id="supplierName">梅里斯达斡尔族区绿源林养禽场</div>
+
+                <p class="rz">
+                    <span>认证信息：</span>
+
+
+                    <img src="http://static.cnhnb.com/img/logo/personal-yes.png" title="个人认证" width="18" height="18">
+
+                    <img src="http://static.cnhnb.com/img/logo/enterprise-yes.png" title="企业认证" width="18" height="18">
+
+                    <img src="http://static.cnhnb.com/img/logo/phone-yes.png" title="手机认证" width="18" height="18">
+
+                    <img src="http://static.cnhnb.com/img/logo/email-yes.png" title="邮箱认证" width="18" height="18">
+
+
+                </p><p>所在地：黑龙江齐齐哈尔梅里斯达斡尔族区达呼店镇二合村</p>
+                <p>产品供应量：<span class="red">9</span>条</p>
+                <p>店铺点击量：<span class="red">606</span>次</p>
+                <div class="but-sc">
+                    <a href="#"><img src="http://static.cnhnb.com/shopProduct/images/shop/temp1/but-sc.png" width="182" height="30" id="shop_collect_a"></a>
+                </div>
+
+                <div class="but-qq">
+                    <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=345733372&amp;site=qq&amp;menu=yes" target="_blank">
+                        <img src="http://static.cnhnb.com/shopProduct/images/shop/temp1/but-qq.png" width="182" height="30" title="请点击这里给和我交谈">
+                    </a>
+                </div>
+
+                <div class="blank_10"></div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+        <div class="blank_10"></div>
+        <div class="sidebar sidebar-1 product">
+
+
+
+
+
+        </div>
+
+        <div class="blank_10"></div>
+        <div class="sidebar sidebar-1 contact">
+
+            <h2><strong>联系我们</strong></h2>
+            <div class="line"></div>
+            <div class="container">
+                <input type="hidden" id="linkMan" value="张炳超">
+                <p>
+                    联 系 人：张炳超<br>
+                    电话：<br>
+                    手机：13946287379<br>
+                    传真：<br>
+                    电子邮箱：lyl_happyegg@126.com<br>
+                    地址：黑龙江省齐齐哈尔市梅里斯达斡尔族区达呼店镇二合村<br>
+                    邮编：161000
+                </p>
+            </div>
+        </div>
+
+        <div class="blank_10"></div>
+        <div class="sidebar sidebar-1 s-recommend">
+
+
+
+
+
+            <h2><strong>橱窗产品</strong></h2>
+            <div class="line"></div>
+            <div class="container">
+                <div class="tabs">
+                    <div class="demo" style="height: 1593px; margin-top: -531px;">
+                        <div class="demo1" style="height: 531px;">
+
+
+
+                            <div class="list">
+                                <em>
+                                    <a href="http://www.cnhnb.com/product/557884">
+                                        <img src="http://img.cnhnb.com//2015/3/19/0B0B478F7A4B4FC99EAFCBE37AEBC250_400x400.jpg" width="146" height="110">
+                                    </a>
+                                </em>
+                                <span>
+
+                                    面议
+
+
+                                </span>
+                                <h3><a href="http://www.cnhnb.com/product/557884">林下散养笨鸡</a></h3>
+                            </div>
+
+                            <div class="list">
+                                <em>
+                                    <a href="http://www.cnhnb.com/product/398153">
+                                        <img src="http://img.cnhnb.com//2015/1/7/C00F0E4F2803431CA3A319CCCAD4C43F_400x400.jpg" width="146" height="110">
+                                    </a>
+                                </em>
+                                <span>
+
+                                    面议
+
+
+                                </span>
+                                <h3><a href="http://www.cnhnb.com/product/398153">林下散养笨鸡蛋</a></h3>
+                            </div>
+
+                            <div class="list">
+                                <em>
+                                    <a href="http://www.cnhnb.com/product/550618">
+                                        <img src="http://img.cnhnb.com//2015/1/8/3C7049E9271D49DF96674E623127A36D_400x400.jpg" width="146" height="110">
+                                    </a>
+                                </em>
+                                <span>
+
+                                    面议
+
+
+                                </span>
+                                <h3><a href="http://www.cnhnb.com/product/550618">笨鸡蛋</a></h3>
+                            </div>
+
+
+                        </div>
+                        <div class="demo2" style="height: 531px;">
+
+
+
+                            <div class="list">
+                                <em>
+                                    <a href="http://www.cnhnb.com/product/557884">
+                                        <img src="http://img.cnhnb.com//2015/3/19/0B0B478F7A4B4FC99EAFCBE37AEBC250_400x400.jpg" width="146" height="110">
+                                    </a>
+                                </em>
+                                <span>
+
+                                    面议
+
+
+                                </span>
+                                <h3><a href="http://www.cnhnb.com/product/557884">林下散养笨鸡</a></h3>
+                            </div>
+
+                            <div class="list">
+                                <em>
+                                    <a href="http://www.cnhnb.com/product/398153">
+                                        <img src="http://img.cnhnb.com//2015/1/7/C00F0E4F2803431CA3A319CCCAD4C43F_400x400.jpg" width="146" height="110">
+                                    </a>
+                                </em>
+                                <span>
+
+                                    面议
+
+
+                                </span>
+                                <h3><a href="http://www.cnhnb.com/product/398153">林下散养笨鸡蛋</a></h3>
+                            </div>
+
+                            <div class="list">
+                                <em>
+                                    <a href="http://www.cnhnb.com/product/550618">
+                                        <img src="http://img.cnhnb.com//2015/1/8/3C7049E9271D49DF96674E623127A36D_400x400.jpg" width="146" height="110">
+                                    </a>
+                                </em>
+                                <span>
+
+                                    面议
+
+
+                                </span>
+                                <h3><a href="http://www.cnhnb.com/product/550618">笨鸡蛋</a></h3>
+                            </div>
+
+
+                        </div>
+                        <div class="demo3" style="height: 531px;">
+
+
+
+                            <div class="list">
+                                <em>
+                                    <a href="http://www.cnhnb.com/product/557884">
+                                        <img src="http://img.cnhnb.com//2015/3/19/0B0B478F7A4B4FC99EAFCBE37AEBC250_400x400.jpg" width="146" height="110">
+                                    </a>
+                                </em>
+                                <span>
+
+                                    面议
+
+
+                                </span>
+                                <h3><a href="http://www.cnhnb.com/product/557884">林下散养笨鸡</a></h3>
+                            </div>
+
+                            <div class="list">
+                                <em>
+                                    <a href="http://www.cnhnb.com/product/398153">
+                                        <img src="http://img.cnhnb.com//2015/1/7/C00F0E4F2803431CA3A319CCCAD4C43F_400x400.jpg" width="146" height="110">
+                                    </a>
+                                </em>
+                                <span>
+
+                                    面议
+
+
+                                </span>
+                                <h3><a href="http://www.cnhnb.com/product/398153">林下散养笨鸡蛋</a></h3>
+                            </div>
+
+                            <div class="list">
+                                <em>
+                                    <a href="http://www.cnhnb.com/product/550618">
+                                        <img src="http://img.cnhnb.com//2015/1/8/3C7049E9271D49DF96674E623127A36D_400x400.jpg" width="146" height="110">
+                                    </a>
+                                </em>
+                                <span>
+
+                                    面议
+
+
+                                </span>
+                                <h3><a href="http://www.cnhnb.com/product/550618">笨鸡蛋</a></h3>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>*@
+
+
+</div>
+

@@ -20,15 +20,15 @@ namespace FarmExp.CommonLibary
         /// 指示所指定的正则表达式在指定的输入字符串中是否找到了匹配项
         /// </summary>
         /// <param name="value">要搜索匹配项的字符串</param>
-        /// <param name="pattern">要匹配的正则表达式模式</param>
+        /// <param name="pattern">要匹配的正则表达式模式,默认忽略大小写</param>
         /// <returns>如果正则表达式找到匹配项，则为 true；否则，为 false</returns>
-        public static bool IsMatch(this string value, string pattern)
+        public static bool IsMatch(this string value, string pattern, RegexOptions Options=RegexOptions.IgnoreCase)
         {
             if (value == null)
             {
                 return false;
             }
-            return Regex.IsMatch(value, pattern);
+            return Regex.IsMatch(value, pattern,Options);
         }
 
         /// <summary>
