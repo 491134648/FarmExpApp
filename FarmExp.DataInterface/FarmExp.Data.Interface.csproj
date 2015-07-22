@@ -40,10 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBaseDataProvider.cs" />
-    <Compile Include="IDataProvider.cs" />
     <Compile Include="IFarmArticlDal.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="IUserDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

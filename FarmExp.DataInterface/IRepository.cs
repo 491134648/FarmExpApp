@@ -1,85 +1,78 @@
 ﻿using FarmExp.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
+using System.Threading.Tasks;
 
-namespace Farm.Data.Interface
+namespace FarmExp.Data.Interface
 {
     public interface IRepository<TEntity> where TEntity : BaseEntity
     {
 
         /// <summary>
-        ///     获取 当前实体的查询数据集
+        /// 依据唯一标识获得T对象
         /// </summary>
-        IQueryable<TEntity> Entities { get; }
+        /// <param name="id">唯一对象</param>
+        /// <returns>Entity</returns>
+        TEntity GetById(object id);
 
         /// <summary>
-        ///     插入实体记录
+        /// 插入一个实体
         /// </summary>
-        /// <param name="entity"> 实体对象 </param>
-        /// <param name="isSave"> 是否执行保存 </param>
-        /// <returns> 操作影响的行数 </returns>
-        int Insert(TEntity entity, bool isSave = true);
+        /// <param name="entity">Entity</param>
+        /// <param name="saveChange">是否立即提交</param>
+        int Insert(TEntity entity, bool saveChange);
 
         /// <summary>
-        ///     批量插入实体记录集合
+        /// 插入实体枚举
         /// </summary>
-        /// <param name="entities"> 实体记录集合 </param>
-        /// <param name="isSave"> 是否执行保存 </param>
-        /// <returns> 操作影响的行数 </returns>
-        int Insert(IEnumerable<TEntity> entities, bool isSave = true);
+        /// <param name="entities">Entities</param>
+        /// <param name="saveChange">是否立即提交</param>
+        int Insert(IEnumerable<TEntity> entities, bool saveChange);
 
         /// <summary>
-        ///     删除指定编号的记录
+        /// 更新一个实体
         /// </summary>
-        /// <param name="id"> 实体记录编号 </param>
-        /// <param name="isSave"> 是否执行保存 </param>
-        /// <returns> 操作影响的行数 </returns>
-        int Delete(object id, bool isSave = true);
+        /// <param name="entity">Entity</param>
+        /// <param name="saveChange">是否立即提交</param>
+        int Update(TEntity entity, bool saveChange);
 
         /// <summary>
-        ///     删除实体记录
+        /// 更新实体枚举
         /// </summary>
-        /// <param name="entity"> 实体对象 </param>
-        /// <param name="isSave"> 是否执行保存 </param>
-        /// <returns> 操作影响的行数 </returns>
-        int Delete(TEntity entity, bool isSave = true);
+        /// <param name="entities">Entities</param>
+        /// <param name="saveChange">是否立即提交</param>
+        int Update(IEnumerable<TEntity> entities, bool saveChange);
 
         /// <summary>
-        ///     删除实体记录集合
+        /// Delete entity
         /// </summary>
-        /// <param name="entities"> 实体记录集合 </param>
-        /// <param name="isSave"> 是否执行保存 </param>
-        /// <returns> 操作影响的行数 </returns>
-        int Delete(IEnumerable<TEntity> entities, bool isSave = true);
+        /// <param name="entity">Entity</param>
+        int Delete(TEntity entity, bool saveChange);
 
         /// <summary>
-        ///     删除所有符合特定表达式的数据
+        /// Delete entities
         /// </summary>
-        /// <param name="predicate"> 查询条件谓语表达式 </param>
-        /// <param name="isSave"> 是否执行保存 </param>
-        /// <returns> 操作影响的行数 </returns>
-        int Delete(Expression<Func<TEntity, bool>> predicate, bool isSave = true);
+        /// <param name="entities">Entities</param>
+        int Delete(IEnumerable<TEntity> entities, bool saveChange);
 
         /// <summary>
-        ///     更新实体记录
+        /// 提交更改
         /// </summary>
-        /// <param name="entity"> 实体对象 </param>
-        /// <param name="isSave"> 是否执行保存 </param>
-        /// <returns> 操作影响的行数 </returns>
-        int Update(TEntity entity, bool isSave = true);
+        /// <returns></returns>
+        int SaveChangeToDb();
+        /// <summary>
+        /// 异步提交更改
+        /// </summary>
+        /// <returns></returns>
+        Task<int> SaveChangeToDbAsync();
+        /// <summary>
+        /// Gets a table
+        /// </summary>
+        IQueryable<TEntity> Table { get; }
 
         /// <summary>
-        ///     查找指定主键的实体记录
+        /// Gets a table with "no tracking" enabled (EF feature) Use it only when you load record(s) only for read-only operations
         /// </summary>
-        /// <param name="key"> 指定主键 </param>
-        /// <returns> 符合编号的记录，不存在返回null </returns>
-        TEntity GetByKey(object key);
-       /// <summary>
-       /// 提交至数据库
-       /// </summary>
-       /// <returns></returns>
-        int SaveChanges();
+        IQueryable<TEntity> TableNoTracking { get; }
     }
 }

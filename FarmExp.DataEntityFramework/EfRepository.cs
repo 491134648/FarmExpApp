@@ -5,6 +5,7 @@ using FarmExp.Models;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Threading.Tasks;
+using Farm.Data.Interface;
 
 namespace FarmExp.Data.EntityFramework
 {
@@ -27,9 +28,9 @@ namespace FarmExp.Data.EntityFramework
         /// EF仓储构造器
         /// </summary>
         /// <param name="context">Object context</param>
-        public EfRepository(IDbContext context)
+        public EfRepository()
         {
-            this.context = context;
+            this.context = DataContext.CurrentContext ;
         }
 
         #endregion

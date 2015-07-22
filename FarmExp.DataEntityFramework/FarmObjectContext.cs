@@ -7,15 +7,19 @@ using System.Data.Common;
 using System.Data.Entity;
 using FarmExp.Models;
 using System.Data.Entity.Infrastructure;
+using FarmExp.CommonLibary;
 using System.Threading.Tasks;
 
 namespace FarmExp.Data.EntityFramework
 {
    public class FarmObjectContext:DbContext,IDbContext
     {
+        public FarmObjectContext():base(GetConnectionStringName())
+        {
+
+        }
         public FarmObjectContext(string nameOrConnectionString):base(nameOrConnectionString)
         {
-     
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -166,6 +170,11 @@ namespace FarmExp.Data.EntityFramework
             {
                 base.Entry<TEntity>(item).State = EntityState.Modified;
             }
+        }
+        private static string GetConnectionStringName()
+        {
+            string name = ConfigurationExtend.GetConnectString("FarmExpConnectionString")??"default";
+            return name;
         }
     }
 }

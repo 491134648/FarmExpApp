@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "FarmExp.WebSite"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-FarmExp.WebSite-308a7ee5-973c-4c2f-bd8e-578a23f0ccfd;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}

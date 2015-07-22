@@ -40,7 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FarmExp.CommonLibary\FarmExp.CommonLibary.csproj">
+      <Project>{9c81ad75-76c1-4e28-a3b1-90113d001604}</Project>
+      <Name>FarmExp.CommonLibary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FarmExp.DataInterface\FarmExp.Data.Interface.csproj">
+      <Project>{a1f0d180-5c4c-440e-b308-a0c5441d3fa0}</Project>
+      <Name>FarmExp.Data.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FarmExp.Models\FarmExp.Models.csproj">
+      <Project>{14961e62-b32c-45f2-b609-37a9b59f2943}</Project>
+      <Name>FarmExp.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

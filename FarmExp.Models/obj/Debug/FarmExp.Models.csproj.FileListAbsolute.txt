@@ -6,3 +6,4 @@ C:\FarmExp\FarmExpApp\FarmExp.Models\bin\Debug\FarmExp.Models.dll
 C:\FarmExp\FarmExpApp\FarmExp.Models\bin\Debug\FarmExp.Models.pdb
 C:\FarmExp\FarmExpApp\FarmExp.Models\obj\Debug\FarmExp.Models.dll
 C:\FarmExp\FarmExpApp\FarmExp.Models\obj\Debug\FarmExp.Models.pdb
+C:\FarmExp\FarmExpApp\FarmExp.Models\obj\Debug\FarmExp.Models.csprojResolveAssemblyReference.cache
