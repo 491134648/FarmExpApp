@@ -59,6 +59,7 @@
     <Compile Include="Customers\StateProvince.cs" />
     <Compile Include="Customers\Town.cs" />
     <Compile Include="Log\LogLevel.cs" />
+    <Compile Include="MessageState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
